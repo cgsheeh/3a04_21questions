@@ -24,7 +24,8 @@
 % Title Details
 %------------------------------------------------------------------------------
 \title{21 Questions - Requirements Specification}
-\author{Gabriel Lopez de Leon - \\Curtis Milo - \\Max Moore - \\Alex Rahman - \\Connor Sheehan - sheehacg - 1330964}
+\author{Gabriel Lopez de Leon - \\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
+
 \date{February 8th, 2016}                            
 %------------------------------------------------------------------------------
 
@@ -63,9 +64,10 @@ This section of the SRS should provide an overview of the entire SRS.
 \subsection{Definitions, Acronyms, and Abbreviations}
 \label{sub:definitions_acronyms_and_abbreviations}
 % Begin SubSection
-\begin{enumerate}[a)]
-	\item Provide the definitions of all terms, acronyms, and abbreviations required to properly interpret the SRS
-\end{enumerate}
+\begin{itemize}
+	\item[Area of Interest]
+	The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+\end{itemize}
 % End SubSection
 
 \subsection{References}
@@ -250,9 +252,20 @@ For example, if you wish to organization by business events:
 \section{Non-Functional Requirements}
 \label{sec:non-functional_requirements}
 % Begin Section
+
+
 \subsection{Look and Feel Requirements}
 \label{sub:look_and_feel_requirements}
-% Begin SubSection
+\begin{enumerate}
+\item
+The system shall be easy to use for any user over the age of 10 use.
+\item
+The system shall display any information in a visual way.
+\item
+The system shall show locations in a graphical way.
+\item
+The system shall include screen prompts when a user first uses the application, to explain the functionality.
+\end{enumerate}
 
 \subsubsection{Appearance Requirements}
 \label{ssub:appearance_requirements}
@@ -274,12 +287,17 @@ For example, if you wish to organization by business events:
 
 \subsection{Usability and Humanity Requirements}
 \label{sub:usability_and_humanity_requirements}
-% Begin SubSection
+\begin{enumerate}
+\item
+The system shall provide question that are easy to understand.
+\item
+The system shall be easy to navigate and understand the layout.
+\end{enumerate}
 
 \subsubsection{Ease of Use Requirements}
 \label{ssub:ease_of_use_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
+\begin{enumerate}[{UH}1.]
 	\item 
 \end{enumerate}
 % End SubSubSection
@@ -320,13 +338,16 @@ For example, if you wish to organization by business events:
 
 \subsection{Performance Requirements}
 \label{sub:performance_requirements}
-% Begin SubSection
+
 
 \subsubsection{Speed and Latency Requirements}
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}
+\item
+Any operation that does not require use of the internet will respond in 2 seconds.
+\item
+Any operation that does require use of the internet will respond within 30 seconds.
 \end{enumerate}
 % End SubSubSection
 
@@ -341,8 +362,13 @@ For example, if you wish to organization by business events:
 \subsubsection{Precision or Accuracy Requirements}
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}
+\item
+The system shall predict the correct location with 75\% accuracy.
+\item
+The system shall predict the user's environment 90\% of the time.
+\item
+The system shall predict landmarks 80\% of the time.
 \end{enumerate}
 % End SubSubSection
 
@@ -373,8 +399,9 @@ For example, if you wish to organization by business events:
 \subsubsection{Scalability or Extensibility Requirements}
 \label{ssub:scalability_or_extensibility_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}
+\item
+The system should be able to add new AOEs easily.
 \end{enumerate}
 % End SubSubSection
 
@@ -390,7 +417,12 @@ For example, if you wish to organization by business events:
 
 \subsection{Operational and Environmental Requirements}
 \label{sub:operational_and_environmental_requirements}
-% Begin SubSection
+\begin{enumerate}
+\item
+The system shall check to ensure that there is sufficient internet connectivity.
+\item
+The system shall ensure that any servers are up for 80\% of the time.
+\end{enumerate}
 
 \subsubsection{Expected Physical Environment}
 \label{ssub:expected_physical_environment}
@@ -433,24 +465,29 @@ For example, if you wish to organization by business events:
 \subsubsection{Maintenance Requirements}
 \label{ssub:maintenance_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{MS}1. ]
+\begin{enumerate}
 	\item 
+	The system shall be easy to update.
+	\item
+	The system shall 
 \end{enumerate}
 % End SubSubSection
 
 \subsubsection{Supportability Requirements}
 \label{ssub:supportability_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{MS}1. ]
+\begin{enumerate}
 	\item 
+	The system shall be able to run on 90\% of Android devices.
 \end{enumerate}
 % End SubSubSection
 
 \subsubsection{Adaptability Requirements}
 \label{ssub:adaptability_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{MS}1. ]
-	\item 
+\begin{enumerate}
+\item
+The system shall be 
 \end{enumerate}
 % End SubSubSection
 
@@ -458,13 +495,21 @@ For example, if you wish to organization by business events:
 
 \subsection{Security Requirements}
 \label{sub:security_requirements}
-% Begin SubSection
+\begin{enumerate}
+\item
+Any information that enters or exits the system shall be encrypted.
+\item
+The system will not store or transmit information related to user location.
+\item
+The system will not store usernames or passwords.
+\end{enumerate}
 
 \subsubsection{Access Requirements}
 \label{ssub:access_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{SR}1. ]
-	\item 
+	\item
+	The system should be able to run anywhere that a data or wifi connection is available.
 \end{enumerate}
 % End SubSubSection
 
@@ -506,27 +551,34 @@ For example, if you wish to organization by business events:
 \label{sub:cultural_and_political_requirements}
 % Begin SubSection
 
+% business event: user tries to update database from old versioned app
 \subsubsection{Cultural Requirements}
 \label{ssub:cultural_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{CP}1. ]
-	\item 
+\begin{enumerate}
+	\item
+	The system shall ensure that culturally significant AOEs are presented in a respectful manner.
 \end{enumerate}
 % End SubSubSection
 
 \subsubsection{Political Requirements}
 \label{ssub:political_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{CP}1. ]
-	\item 
+\begin{enumerate}
+	\item
+	The system shall show no bias towards any political party or related organization.
+	\item
+	The system will not endorse or associate with any political group or government.
 \end{enumerate}
 % End SubSubSection
 
 % End SubSection
-
 \subsection{Legal Requirements}
 \label{sub:legal_requirements}
-% Begin SubSection
+\begin{enumerate}
+\item
+The system shall operate within the laws of Canada and the United States of America.
+\end{enumerate}
 
 \subsubsection{Compliance Requirements}
 \label{ssub:compliance_requirements}
