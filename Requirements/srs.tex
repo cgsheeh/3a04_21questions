@@ -16,7 +16,9 @@
 
 % Header and Footer
 %------------------------------------------------------------------------------
-\pagestyle{plain}  
+\pagestyle{fancy}  
+\lhead{SFWR 3A04 - Group 3}
+\rhead{Requirements Specification}
 \renewcommand\headrulewidth{0.4pt}                                      
 \renewcommand\footrulewidth{0.4pt}                                    
 %------------------------------------------------------------------------------
@@ -26,6 +28,7 @@
 \title{21 Questions - Requirements Specification}
 \author{Gabriel Lopez de Leon - \\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
 
+
 \date{February 8th, 2016}                            
 %------------------------------------------------------------------------------
 
@@ -33,8 +36,12 @@
 %------------------------------------------------------------------------------
 \begin{document}
 
-\maketitle	
-
+\maketitle
+\vspace{4cm}	
+\abstract{\begin{center}
+Requirements Specification for the 21 Questions phenomenon identifier project in SFWR 3A04 at McMaster University.
+\end{center}}
+\clearpage{}
 \section{Introduction}
 \label{sec:introduction}
 % Begin Section
@@ -66,7 +73,9 @@ This section of the SRS should provide an overview of the entire SRS.
 % Begin SubSection
 \begin{itemize}
 	\item[Area of Interest]
-	The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+	The phenomenon initially unknown to the system but known to the user. Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+	\item[Questions]
+	The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
 \end{itemize}
 % End SubSection
 
@@ -258,13 +267,13 @@ For example, if you wish to organization by business events:
 \label{sub:look_and_feel_requirements}
 \begin{enumerate}
 \item
-The system shall be easy to use for any user over the age of 10 use.
+The system shall be usable on the first use by any user over the age of ten.
 \item
-The system shall display any information in a visual way.
+The system shall display any information in a visual way. % Expand
 \item
-The system shall show locations in a graphical way.
+The system shall show a graphical view of locations and \textbf{AOE}s.
 \item
-The system shall include screen prompts when a user first uses the application, to explain the functionality.
+The system shall include a tutorial to teach new users correct usage of the application.
 \end{enumerate}
 
 \subsubsection{Appearance Requirements}
@@ -272,6 +281,7 @@ The system shall include screen prompts when a user first uses the application, 
 % Begin SubSubSection
 \begin{enumerate}[{LF}1. ]
 	\item 
+	The game will appear in a pleasant manner suitable for all demographics.
 \end{enumerate}
 % End SubSubSection
 
@@ -280,6 +290,11 @@ The system shall include screen prompts when a user first uses the application, 
 % Begin SubSubSection
 \begin{enumerate}[{LF}1. ]
 	\item 
+	The style of the game's GUI will not distract from the essence of the game.
+	\item
+	The game will be playable by colorblind persons.
+	\item
+	The game will be playable by dead persons.
 \end{enumerate}
 % End SubSubSection
 
@@ -287,18 +302,16 @@ The system shall include screen prompts when a user first uses the application, 
 
 \subsection{Usability and Humanity Requirements}
 \label{sub:usability_and_humanity_requirements}
-\begin{enumerate}
-\item
-The system shall provide question that are easy to understand.
-\item
-The system shall be easy to navigate and understand the layout.
-\end{enumerate}
+
 
 \subsubsection{Ease of Use Requirements}
 \label{ssub:ease_of_use_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH}1.]
 	\item 
+	The system shall provide questions that are easy to understand.
+	\item
+The system shall be easy to navigate and understand the layout.
 \end{enumerate}
 % End SubSubSection
 
@@ -307,6 +320,9 @@ The system shall be easy to navigate and understand the layout.
 % Begin SubSubSection
 \begin{enumerate}[{UH}1. ]
 	\item 
+	The system should be able to present information in a variety of languages.
+	\item
+	The system shall be able to set fonts and colors to the users preference.
 \end{enumerate}
 % End SubSubSection
 
@@ -314,7 +330,8 @@ The system shall be easy to navigate and understand the layout.
 \label{ssub:learning_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH}1. ]
-	\item 
+	\item
+	The system will provide a method of learning the game's rules and objectives.
 \end{enumerate}
 % End SubSubSection
 
@@ -323,6 +340,9 @@ The system shall be easy to navigate and understand the layout.
 % Begin SubSubSection
 \begin{enumerate}[{UH}1. ]
 	\item 
+	The questions asked in the game will be simple and focus on one specific point. %% Research lawsuits about language used in referendums for more details to add to this.
+	\item
+	The questions asked in the game will not include offensive, insensitive or immature remarks.
 \end{enumerate}
 % End SubSubSection
 
@@ -331,6 +351,11 @@ The system shall be easy to navigate and understand the layout.
 % Begin SubSubSection
 \begin{enumerate}[{UH}1. ]
 	\item 
+	The system will be usable by colour blind persons.
+	\item
+	The system will be usable by deaf persons.
+	\item
+	The system will be able to read questions aloud to the user.
 \end{enumerate}
 % End SubSubSection
 
@@ -354,9 +379,7 @@ Any operation that does require use of the internet will respond within 30 secon
 \subsubsection{Safety-Critical Requirements}
 \label{ssub:safety_critical_requirements}
 % Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
-\end{enumerate}
+There are no safety critical requirements for this application.
 % End SubSubSection
 
 \subsubsection{Precision or Accuracy Requirements}
@@ -376,7 +399,8 @@ The system shall predict landmarks 80\% of the time.
 \label{ssub:reliability_and_availability_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR}1. ]
-	\item 
+	\item
+	The game will remain online to play 
 \end{enumerate}
 % End SubSubSection
 
@@ -393,6 +417,7 @@ The system shall predict landmarks 80\% of the time.
 % Begin SubSubSection
 \begin{enumerate}[{PR}1. ]
 	\item 
+	The system should be able to respond to at least 20 client queries at a time.
 \end{enumerate}
 % End SubSubSection
 
@@ -401,7 +426,7 @@ The system shall predict landmarks 80\% of the time.
 % Begin SubSubSection
 \begin{enumerate}
 \item
-The system should be able to add new AOEs easily.
+The system should be able to add new \textbf{AOE}s easily.
 \end{enumerate}
 % End SubSubSection
 
@@ -478,7 +503,9 @@ The system shall ensure that any servers are up for 80\% of the time.
 % Begin SubSubSection
 \begin{enumerate}
 	\item 
-	The system shall be able to run on 90\% of Android devices.
+	The system shall be able to run on at least 90\% of Android devices.
+	\item
+	The system 
 \end{enumerate}
 % End SubSubSection
 
@@ -526,6 +553,9 @@ The system will not store usernames or passwords.
 % Begin SubSubSection
 \begin{enumerate}[{SR}1. ]
 	\item 
+	The system shall not store any user's location data.
+	\item
+	The system shall not store any user passwords.
 \end{enumerate}
 % End SubSubSection
 
@@ -557,7 +587,7 @@ The system will not store usernames or passwords.
 % Begin SubSubSection
 \begin{enumerate}
 	\item
-	The system shall ensure that culturally significant AOEs are presented in a respectful manner.
+	The system shall ensure that culturally significant \textbf{AOE}s are presented in a respectful manner.
 \end{enumerate}
 % End SubSubSection
 
@@ -600,6 +630,7 @@ The system shall operate within the laws of Canada and the United States of Amer
 
 % End Section
 
+\clearpage{}
 \appendix
 \section{Division of Labour}
 \label{sec:division_of_labour}
@@ -607,6 +638,9 @@ The system shall operate within the laws of Canada and the United States of Amer
 Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
 % End Section
 
+
+%% Important notes from TAs, commented out
+\iffalse
 \newpage
 \section*{IMPORTANT NOTES}
 \begin{itemize}
@@ -618,7 +652,7 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 	\item Highlight terms that are defined in Section~1.3 (\textbf{Definitions, Acronyms, and Abbreviations}) with \textbf{bold}, \emph{italic} or \underline{underline}
 	\item For Deliverable 1, please highlight, in some fashion, all (you may have more than one) creative and innovative features. Your creative and innovative features will generally be described in Section~2.2 (\textbf{Product Functions}), but it will depend on the type of creative or innovative features you are including.
 \end{itemize}
-
+\fi
 
 \end{document}
 %------------------------------------------------------------------------------
