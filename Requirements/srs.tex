@@ -192,92 +192,259 @@ The following constraints are to limit the design of the software to be:
 	
 \end{enumerate}
 % End Section
-
 \section{Functional Requirements}
 \label{sec:functional_requirements}
 % Begin Section
 This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output.
-
-You normally have two options for organizing your functional requirements:
-\begin{enumerate}
-	\item Organize first by \emph{business events}, then by \emph{viewpoints}
-	\item Organize first by \emph{viewpoints}, then by \emph{business events}
+\begin{enumerate}[\textbf{{BE}1.}]
+	\item User enters new search.
+	\begin{enumerate}[\textbf{{VP1}.1}]
+		
+		\item Users
+			\begin{enumerate}
+				\item The system shall be able to display the resulting locations on a map.
+				\item The system shall be able to ask the user questions.
+				\item The system shall allow the user to answer yes or no to questions.
+				\item The system shall determine the closest locations, environment and place.
+				\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
+			\end{enumerate}
+		
+		\item Paying Customers
+			\begin{enumerate}
+				\item The system shall be able to display the resulting locations on a map.
+				\item The system shall be able to ask the user questions.
+				\item The system shall allow the user to answer yes or no to questions.
+				\item The system shall determine the closest locations, environment and place.
+				\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
+			\end{enumerate}
+		
+		\item Businesses
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item TA/Prof (Management role)
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item IT Maintenance
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Front End Developpers
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+			
+		\item Back End Developpers
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+	\end{enumerate}
+	
+	\item A business requests to be added to the database.
+	\begin{enumerate}[\textbf{{VP2}.1}]
+		
+		\item Users
+			\begin{enumerate}
+				\item Not Applicable 
+			\end{enumerate}
+		
+		\item Paying Customers
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Businesses
+			\begin{enumerate}
+				\item The system shall be able to display the resulting locations on a map.
+			\end{enumerate}
+		
+		\item TA/Prof (Management role)
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item IT Maintenance
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+		
+		\item Front End Developers
+			\begin{enumerate}
+				\item The system shall be able to display the resulting locations on a map.				\end{enumerate}
+			
+		\item Back End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+	\end{enumerate}
+	
+	\item Updates or maintenance of the app is required.
+	\begin{enumerate}[\textbf{{VP3}.1}]
+				
+		\item Users
+			\begin{enumerate}
+				\item The system shall inform the user if an update or maintenance is required.
+			\end{enumerate}
+		
+		\item Paying Customers
+			\begin{enumerate}
+				\item The system shall inform the user if an update or maintenance is required.
+			\end{enumerate}
+		
+		\item Businesses
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item TA/Prof (Management role)
+			\begin{enumerate}
+				\item The system shall allow the user to flag or report any inappropriate answers or questions.
+			\end{enumerate}
+			
+		\item IT Maintenance
+			\begin{enumerate}
+				\item  The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+		
+		\item Front End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+			
+		\item Back End Developers
+			\begin{enumerate}
+				\item The system shall have 3 experts that will be able to be easily swapped out.
+				\item The system shall developers to easily add or remove queries(entries).
+				\item The system shall allow the user to flag or report any inappropriate answers or questions.
+			\end{enumerate}
+			\end{enumerate}
+			
+	\item Adding Functionality
+	\begin{enumerate}[\textbf{{VP4}.1}]
+		
+		\item Users
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Paying Customers
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Businesses
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item TA/Prof (Management role)
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item IT Maintenance
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+		
+		\item Front End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+				\item The system shall include one interesting feature.
+			\end{enumerate}
+			
+		\item Back End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+				\item The system shall include one interesting feature.
+			\end{enumerate}
+	\end{enumerate}
+	
+	\item Removing Functionality
+	\begin{enumerate}[\textbf{{VP5}.1}]
+		
+		\item Users
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Paying Customers
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Businesses
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item TA/Prof (Management role)
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item IT Maintenance
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item Front End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+				\item The system shall include one interesting feature.
+			\end{enumerate}
+			
+		\item Back End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+				\item The system shall include one interesting feature.
+			\end{enumerate}
+	\end{enumerate}
+		
+	\item User flags an incorrect or inappropriate search or result.
+	\begin{enumerate}[\textbf{{VP6}.1}]
+		
+		\item Users
+			\begin{enumerate}
+				\item The system shall allow the user to flag or report any inappropriate answers or questions.
+			\end{enumerate}
+		
+		\item Paying Customers
+			\begin{enumerate}
+				\item The system shall allow the user to flag or report any inappropriate answers or questions.
+			\end{enumerate}
+		
+		\item Businesses
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+		
+		\item TA/Prof (Management role)
+			\begin{enumerate}
+				\item The system shall allow the user to flag or report any inappropriate answers or questions.
+			\end{enumerate}
+		
+		\item IT Maintenance
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+		
+		\item Front End Developers
+			\begin{enumerate}
+				\item Not Applicable
+			\end{enumerate}
+			
+		\item Back End Developers
+			\begin{enumerate}
+				\item The system shall developers to easily add or remove queries(entries).
+			\end{enumerate}
+	\end{enumerate}
+		
 \end{enumerate}
-Choose the one which makes the most sense.
-
-For example, if you wish to organization by business events:
-\begin{enumerate}[{BE}1.]
-	\item Business Event
-	\begin{enumerate}[{VP1}.1]
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item \dots
-	\end{enumerate}
-	\item Business Event
-	\begin{enumerate}[{VP2}.1]
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item \dots
-	\end{enumerate}
-\end{enumerate}
-
-\underline{OR}, if you wish to organization by viewpoints:
-\begin{enumerate}[{VP}1.]
-	\item Viewpoint 
-	\begin{enumerate}[{BE1}.1]
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item \dots
-	\end{enumerate}
-	\item Viewpoint
-	\begin{enumerate}[{BE2}.1]
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item \dots
-	\end{enumerate}
-\end{enumerate}
-
-% End Section
 
 \section{Non-Functional Requirements}
 \label{sec:non-functional_requirements}
