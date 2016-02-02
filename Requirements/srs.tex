@@ -72,10 +72,10 @@ This section of the SRS should provide an overview of the entire SRS.
 \label{sub:definitions_acronyms_and_abbreviations}
 % Begin SubSection
 \begin{itemize}
-	\item[Area of Interest]
-	The phenomenon initially unknown to the system but known to the user. Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
-	\item[Questions]
-	The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
+	\item \textbf{Area of Interest} -
+	The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+	\item \textbf{API} - Short form for application programming interface.
+	\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
 \end{itemize}
 % End SubSection
 
@@ -142,11 +142,22 @@ This section of the SRS should describe the general factors that affect the prod
 \end{enumerate}
 % End SubSection
 
+
 \subsection{Constraints}
 \label{sub:constraints}
 % Begin SubSection
+The following constraints are to limit the design of the software to be:
+
 \begin{enumerate}[a)]
-	\item Provide a general description of any other items that will limit the developer's options
+	\item The system must have three experts modules in which will determine an aspect about the location to identify.
+	\item The systems software experts are not able to communicate between each other.
+	\item The system should use the Google maps API.
+	\item The should must be designed so that we can swap out experts.
+	\item The system must have Internet access.
+	\item The system must use cryptography for sending messages from experts.
+	\item The system must follow all legal rules of the Canadian laws.
+	\item The system must follow all rules that the Google maps API.
+	
 \end{enumerate}
 % End SubSection
 
@@ -154,10 +165,19 @@ This section of the SRS should describe the general factors that affect the prod
 \label{sub:assumptions_and_dependencies}
 % Begin SubSection
 \begin{enumerate}[a)]
-	\item List each of the factors that affect the requirements stated in the SRS
-	\item These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS
+	\item Assumptions
+\begin{itemize}
+		\item The system can only find locations within a set domain.
+		\item The user will only use the system to identify real locations.
+		
+	\end{itemize}
+	\item Dependencies
+	
 	\begin{itemize}
-		\item \textbf{Example}: An assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not available, the SRS would then have to change accordingly.
+		\item The system is dependent on the functionality the Google Maps API.
+		\item The system's performance is dependent on the speed of the user's Internet.
+		\item The system's performance is dependent on the operating systems overhead.
+		
 	\end{itemize}
 \end{enumerate}
 % End SubSection
@@ -166,10 +186,11 @@ This section of the SRS should describe the general factors that affect the prod
 \label{sub:apportioning_of_requirements}
 % Begin SubSection
 \begin{enumerate}[a)]
-	\item Identify requirements that may be delayed until future versions of the system
+	\item Letting the user add locations to list of locations
+	\item Using social media to allow the user to share the location that the system predicted.
+	\item Trying to guesses base on events from there face book event list and large news stories.
+	
 \end{enumerate}
-% End SubSection
-
 % End Section
 
 \section{Functional Requirements}
