@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[titlepage]{article}
 
 % Imported Packages
 %------------------------------------------------------------------------------
@@ -17,7 +17,8 @@
 % Header and Footer
 %------------------------------------------------------------------------------
 \pagestyle{fancy}  
-\lhead{SFWR 3A04 - Group 3}
+\lhead{Group 3}
+\chead{SFWR 3A04}
 \rhead{Requirements Specification}
 \renewcommand\headrulewidth{0.4pt}                                      
 \renewcommand\footrulewidth{0.4pt}                                    
@@ -41,7 +42,6 @@
 \abstract{\begin{center}
 Requirements Specification for the 21 Questions phenomenon identifier project in SFWR 3A04 at McMaster University.
 \end{center}}
-\clearpage{}
 \section{Introduction}
 \label{sec:introduction}
 % Begin Section
@@ -282,6 +282,8 @@ The system shall include a tutorial to teach new users correct usage of the appl
 \begin{enumerate}[{LF}1. ]
 	\item 
 	The game will appear in a pleasant manner suitable for all demographics.
+	\item
+	The game will appear innovative, and it should be apparent the application was developed in 2016.
 \end{enumerate}
 % End SubSubSection
 
@@ -427,6 +429,8 @@ The system shall predict landmarks 80\% of the time.
 \begin{enumerate}
 \item
 The system should be able to add new \textbf{AOE}s easily.
+\item
+The system should be able to be implemented on new systems without changing 
 \end{enumerate}
 % End SubSubSection
 
@@ -452,9 +456,7 @@ The system shall ensure that any servers are up for 80\% of the time.
 \subsubsection{Expected Physical Environment}
 \label{ssub:expected_physical_environment}
 % Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
-\end{enumerate}
+The application's expected physical environment will be anywhere that a mobile phone can operate. Typically users will not interact with the system in an emergency or other circumstantial event.
 % End SubSubSection
 
 \subsubsection{Requirements for Interfacing with Adjacent Systems}
@@ -462,6 +464,7 @@ The system shall ensure that any servers are up for 80\% of the time.
 % Begin SubSubSection
 \begin{enumerate}[{OE}1. ]
 	\item 
+	The system should provide an interface to connect with adjacent systems 
 \end{enumerate}
 % End SubSubSection
 
@@ -486,7 +489,6 @@ The system shall ensure that any servers are up for 80\% of the time.
 \subsection{Maintainability and Support Requirements}
 \label{sub:maintainability_and_support_requirements}
 % Begin SubSection
-
 \subsubsection{Maintenance Requirements}
 \label{ssub:maintenance_requirements}
 % Begin SubSubSection
@@ -504,8 +506,6 @@ The system shall ensure that any servers are up for 80\% of the time.
 \begin{enumerate}
 	\item 
 	The system shall be able to run on at least 90\% of Android devices.
-	\item
-	The system 
 \end{enumerate}
 % End SubSubSection
 
