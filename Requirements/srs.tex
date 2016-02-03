@@ -26,8 +26,8 @@
 
 % Title Details
 %------------------------------------------------------------------------------
-\title{21 Questions - Requirements Specification}
-\author{Gabriel Lopez de Leon - \\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
+\title{\textbf{21 Questions - Requirements Specification}}
+\author{Gabriel Lopez de Leon - 1310514\\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
 
 
 \date{February 8th, 2016}                            
@@ -36,811 +36,824 @@
 % Document
 %------------------------------------------------------------------------------
 \begin{document}
-
-\maketitle
-\vspace{4cm}	
-\abstract{\begin{center}
-Requirements Specification for the 21 Questions phenomenon identifier project in SFWR 3A04 at McMaster University.
-\end{center}}
-\section{Introduction}
-\label{sec:introduction}
-% Begin Section
-
-This section of the SRS should provide an overview of the entire SRS.
-
-\subsection{Purpose}
-\label{sub:purpose}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Delineate the purpose of the SRS
-	\item Specify the intended audience for the SRS
-\end{enumerate}
-% End SubSection
-
-\subsection{Scope}
-\label{sub:scope}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Identify the software product(s) to be produced by name (e.g., Host DBMS, Report Generator, etc.)
-	\item Explain what the software product(s) will, and, if necessary, will not do
-	\item Describe the application of the software being specified, including relevant benefits, objectives, and goals
-	\item Be consistent with similar statements in higher-level specifications (e.g., the system requirements specification), if they exist
-\end{enumerate}
-% End SubSection
-
-\subsection{Definitions, Acronyms, and Abbreviations}
-\label{sub:definitions_acronyms_and_abbreviations}
-% Begin SubSection
-\begin{itemize}
-	\item \textbf{Area of Interest} -
-	The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
-	\item \textbf{API} - Short form for application programming interface.
-	\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
-\end{itemize}
-% End SubSection
-
-\subsection{References}
-\label{sub:references}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Provide a complete list of all documents referenced elsewhere in the SRS
-	\item Identify each document by title, report number (if applicable), date, and publishing organization
-	\item Specify the sources from which the references can be obtained
-\end{enumerate}
-% End SubSection
-
-\subsection{Overview}
-\label{sub:overview}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Describe what the rest of the SRS contains
-	\item Explain how the SRS is organized
-\end{enumerate}
-% End SubSection
-
-% End Section
-
-\section{Overall Description}
-\label{sec:overall_description}
-% Begin Section
-
-This section of the SRS should describe the general factors that affect the product and its requirements. It does not state specific requirements; it provides a background for those requirements and makes them easier to understand.
-
-\subsection{Product Perspective}
-\label{sub:product_perspective}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Put the product into perspective with other related products, i.e., context
-	\item If the product is independent and totally self-contained, it should be stated here
-	\item If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software
-	\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
-\end{enumerate}
-% End SubSection
-
-\subsection{Product Functions}
-\label{sub:product_functions}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Provide a summary of the major functions that the software will perform.
-	\begin{itemize}
-		\item \textbf{Example}: An SRS for an accounting program may use this part to address customer account maintenance, customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.
-	\end{itemize}
-	\item Functions should be organized in a way that makes the list of functions understandable to the customer or to anyone else reading the document for the first time
-	\item Textual or graphical methods can be used to show the different functions and their relationships
-	\begin{itemize}
-		\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
-	\end{itemize} 
-\end{enumerate}
-% End SubSection
-
-\subsection{User Characteristics}
-\label{sub:user_characteristics}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Describe those general characteristics of the intended users of the product including educational level, experience, and technical expertise
-	\item Do not state specific requirements, but rather provide the reasons why certain specific requirements are later specified
-\end{enumerate}
-% End SubSection
-
-
-\subsection{Constraints}
-\label{sub:constraints}
-% Begin SubSection
-The following constraints are to limit the design of the software to be:
-
-\begin{enumerate}[a)]
-	\item The system must have three experts modules in which will determine an aspect about the location to identify.
-	\item The systems software experts are not able to communicate between each other.
-	\item The system should use the Google maps API.
-	\item The should must be designed so that we can swap out experts.
-	\item The system must have Internet access.
-	\item The system must use cryptography for sending messages from experts.
-	\item The system must follow all legal rules of the Canadian laws.
-	\item The system must follow all rules that the Google maps API.
 	
-\end{enumerate}
-% End SubSection
-
-\subsection{Assumptions and Dependencies}
-\label{sub:assumptions_and_dependencies}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Assumptions
-\begin{itemize}
-		\item The system can only find locations within a set domain.
-		\item The user will only use the system to identify real locations.
+	\maketitle
+	\vspace{4cm}	
+	\abstract{\begin{center}
+			Requirements Specification for the 21 Questions phenomenon identifier project in SFWR 3A04 at McMaster University.
+		\end{center}}
+		\newpage
+		\tableofcontents
+		\newpage
+		\section{Introduction}
+		\label{sec:introduction}
+		% Begin Section
 		
-	\end{itemize}
-	\item Dependencies
-	
-	\begin{itemize}
-		\item The system is dependent on the functionality the Google Maps API.
-		\item The system's performance is dependent on the speed of the user's Internet.
-		\item The system's performance is dependent on the operating systems overhead.
+		This section of the SRS should provide an overview of the entire SRS.
 		
-	\end{itemize}
-\end{enumerate}
-% End SubSection
-
-\subsection{Apportioning of Requirements}
-\label{sub:apportioning_of_requirements}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Letting the user add locations to list of locations
-	\item Using social media to allow the user to share the location that the system predicted.
-	\item Trying to guesses base on events from there face book event list and large news stories.
-	
-\end{enumerate}
-% End Section
-\section{Functional Requirements}
-\label{sec:functional_requirements}
-% Begin Section
-This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output.
-\begin{enumerate}[\textbf{{BE}1.}]
-	\item User enters new search.
-	\begin{enumerate}[\textbf{{VP1}.1}]
+		\subsection{Purpose}
+		\label{sub:purpose}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Delineate the purpose of the SRS
+			\item Specify the intended audience for the SRS
+		\end{enumerate}
+		% End SubSection
 		
-		\item Users
-			\begin{enumerate}
-				\item The system shall be able to display the resulting locations on a map.
-				\item The system shall be able to ask the user questions.
-				\item The system shall allow the user to answer yes or no to questions.
-				\item The system shall determine the closest locations, environment and place.
-				\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
-			\end{enumerate}
+		\subsection{Scope}
+		\label{sub:scope}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Identify the software product(s) to be produced by name (e.g., Host DBMS, Report Generator, etc.)
+			\item Explain what the software product(s) will, and, if necessary, will not do
+			\item Describe the application of the software being specified, including relevant benefits, objectives, and goals
+			\item Be consistent with similar statements in higher-level specifications (e.g., the system requirements specification), if they exist
+		\end{enumerate}
+		% End SubSection
 		
-		\item Paying Customers
-			\begin{enumerate}
-				\item The system shall be able to display the resulting locations on a map.
-				\item The system shall be able to ask the user questions.
-				\item The system shall allow the user to answer yes or no to questions.
-				\item The system shall determine the closest locations, environment and place.
-				\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
-			\end{enumerate}
+		\subsection{Definitions, Acronyms, and Abbreviations}
+		\label{sub:definitions_acronyms_and_abbreviations}
+		% Begin SubSection
+		\begin{itemize}
+			\item \textbf{Area of Interest} -
+			The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+			\item \textbf{API} - Short form for application programming interface.
+			\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
+			\item \textbf{SRS} - Short form for Software Requirements Specification, refers to this document.
+		\end{itemize}
+		% End SubSection
 		
-		\item Businesses
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
+		\subsection{References}
+		\label{sub:references}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Provide a complete list of all documents referenced elsewhere in the SRS
+			\item Identify each document by title, report number (if applicable), date, and publishing organization
+			\item Specify the sources from which the references can be obtained
+		\end{enumerate}
+		% End SubSection
 		
-		\item TA/Prof (Management role)
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
+		\subsection{Overview}
+		\label{sub:overview}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Describe what the rest of the SRS contains
+			\item Explain how the SRS is organized
+		\end{enumerate}
+		% End SubSection
 		
-		\item IT Maintenance
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
+		% End Section
 		
-		\item Front End Developpers
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
+		\section{Overall Description}
+		\label{sec:overall_description}
+		% Begin Section
+		
+		This section of the SRS should describe the general factors that affect the product and its requirements. It does not state specific requirements; it provides a background for those requirements and makes them easier to understand.
+		
+		\subsection{Product Perspective}
+		\label{sub:product_perspective}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Put the product into perspective with other related products, i.e., context\\
 			
-		\item Back End Developpers
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-	\end{enumerate}
-	
-	\item A business requests to be added to the database.
-	\begin{enumerate}[\textbf{{VP2}.1}]
+			21 Questions is simple location identification application which asks the user a total of 21 questions to try and identify the AOE. 21 Questions is very similar to other identification applications such as Akinator or the game 20Q. Akinator is a web based program where the user thinks of a character and answers a series of questions, leading to the program guessing the character the user has thought of. 20Q or 20 Questions is the original inspiration for our program, like Akinator, the user thinks of something but in this case it can be any person, place or thing. The game would then ask the user a total of 20 questions to try and guess what the user is thinking of. To differentiate our application with 20Q, 21 Questions focuses on locations only with an end goal of outputting the result through Google maps.
+			\item If the product is independent and totally self-contained, it should be stated here
+			\item If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software. 
+			\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
+		\end{enumerate}
+		% End SubSection
 		
-		\item Users
-			\begin{enumerate}
-				\item Not Applicable 
-			\end{enumerate}
+		\subsection{Product Functions}
+		\label{sub:product_functions}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Provide a summary of the major functions that the software will perform.
+			\begin{itemize}
+				\item \textbf{Example}: An SRS for an accounting program may use this part to address customer account maintenance, customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.
+			\end{itemize}
+			\item Functions should be organized in a way that makes the list of functions understandable to the customer or to anyone else reading the document for the first time
+			\item Textual or graphical methods can be used to show the different functions and their relationships
+			\begin{itemize}
+				\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
+			\end{itemize} 
+		\end{enumerate}
+		% End SubSection
 		
-		\item Paying Customers
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
+		\subsection{User Characteristics}
+		\label{sub:user_characteristics}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item General Characteristics of Intended Users 
+			\begin{itemize}
+				\item 21 Questions is a location identifier application whose intended use is for any user above the age of ten. The application requires little education, experience or technical expertise to use, and can be easily picked up and used by anyone. 21 Questions can be used as a game where users select a location and see if the software can identify it based on the user's answers to preset questions. The application can also be used to identify a location, structure, or establishment as answering the questions will output the result via Google maps.
+			\end{itemize}
+			\item Reasoning for Requirements
+			\begin{itemize}
+				\item As later stated in the non-functional requirements, any user can easily learn how to use the application. With game like aspects, 21 questions is meant for users of all ages and thus it should be simple enough to be used by younger users while still appealing to an older audience. 
+				\item The application targets a wide variety of users of different ethnicities and thus must be respectful of other peoples' cultures.
+			\end{itemize}
+		\end{enumerate}
+		% End SubSection
 		
-		\item Businesses
-			\begin{enumerate}
-				\item The system shall be able to display the resulting locations on a map.
-			\end{enumerate}
 		
-		\item TA/Prof (Management role)
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
+		\subsection{Constraints}
+		\label{sub:constraints}
+		% Begin SubSection
+		The following constraints are to limit the design of the software to be:
 		
-		\item IT Maintenance
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-			\end{enumerate}
-		
-		\item Front End Developers
-			\begin{enumerate}
-				\item The system shall be able to display the resulting locations on a map.				\end{enumerate}
+		\begin{enumerate}[a)]
+			\item The system must have three experts modules in which will determine an aspect about the location to identify.
+			\item The systems software experts are not able to communicate between each other.
+			\item The system should use the Google maps API.
+			\item The should must be designed so that we can swap out experts.
+			\item The system must have Internet access.
+			\item The system must use cryptography for sending messages from experts.
+			\item The system must follow all legal rules of the Canadian laws.
+			\item The system must follow all rules that the Google maps API.
 			
-		\item Back End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-			\end{enumerate}
-	\end{enumerate}
-	
-	\item Updates or maintenance of the app is required.
-	\begin{enumerate}[\textbf{{VP3}.1}]
+		\end{enumerate}
+		% End SubSection
+		
+		\subsection{Assumptions and Dependencies}
+		\label{sub:assumptions_and_dependencies}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Assumptions
+			\begin{itemize}
+				\item The system can only find locations within a set domain.
+				\item The user will only use the system to identify real locations.
 				
-		\item Users
-			\begin{enumerate}
-				\item The system shall inform the user if an update or maintenance is required.
-			\end{enumerate}
+			\end{itemize}
+			\item Dependencies
+			
+			\begin{itemize}
+				\item The system is dependent on the functionality the Google Maps API.
+				\item The system's performance is dependent on the speed of the user's Internet.
+				\item The system's performance is dependent on the operating systems overhead.
+				
+			\end{itemize}
+		\end{enumerate}
+		% End SubSection
 		
-		\item Paying Customers
-			\begin{enumerate}
-				\item The system shall inform the user if an update or maintenance is required.
-			\end{enumerate}
-		
-		\item Businesses
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item TA/Prof (Management role)
-			\begin{enumerate}
-				\item The system shall allow the user to flag or report any inappropriate answers or questions.
+		\subsection{Apportioning of Requirements}
+		\label{sub:apportioning_of_requirements}
+		% Begin SubSection
+		\begin{enumerate}[a)]
+			\item Letting the user add locations to list of locations
+			\item Using social media to allow the user to share the location that the system predicted.
+			\item Trying to guesses base on events from there face book event list and large news stories.
+			
+		\end{enumerate}
+		% End Section
+		\section{Functional Requirements}
+		\label{sec:functional_requirements}
+		% Begin Section
+		This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output.
+		\begin{enumerate}[\textbf{{BE}1.}]
+			\item User enters new search.
+			\begin{enumerate}[\textbf{{VP1}.1}]
+				
+				\item Users
+				\begin{enumerate}
+					\item The system shall be able to display the resulting locations on a map.
+					\item The system shall be able to ask the user questions.
+					\item The system shall allow the user to answer yes or no to questions.
+					\item The system shall determine the closest locations, environment and place.
+					\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
+				\end{enumerate}
+				
+				\item Paying Customers
+				\begin{enumerate}
+					\item The system shall be able to display the resulting locations on a map.
+					\item The system shall be able to ask the user questions.
+					\item The system shall allow the user to answer yes or no to questions.
+					\item The system shall determine the closest locations, environment and place.
+					\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
+				\end{enumerate}
+				
+				\item Businesses
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item TA/Prof (Management role)
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item IT Maintenance
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Front End Developpers
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Back End Developpers
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
 			\end{enumerate}
 			
-		\item IT Maintenance
-			\begin{enumerate}
-				\item  The system shall developers to easily add or remove queries(entries).
-			\end{enumerate}
-		
-		\item Front End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-			\end{enumerate}
-			
-		\item Back End Developers
-			\begin{enumerate}
-				\item The system shall have 3 experts that will be able to be easily swapped out.
-				\item The system shall developers to easily add or remove queries(entries).
-				\item The system shall allow the user to flag or report any inappropriate answers or questions.
-			\end{enumerate}
-			\end{enumerate}
-			
-	\item Adding Functionality
-	\begin{enumerate}[\textbf{{VP4}.1}]
-		
-		\item Users
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item Paying Customers
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item Businesses
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item TA/Prof (Management role)
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item IT Maintenance
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-			\end{enumerate}
-		
-		\item Front End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-				\item The system shall include one interesting feature.
+			\item A business requests to be added to the database.
+			\begin{enumerate}[\textbf{{VP2}.1}]
+				
+				\item Users
+				\begin{enumerate}
+					\item Not Applicable 
+				\end{enumerate}
+				
+				\item Paying Customers
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Businesses
+				\begin{enumerate}
+					\item The system shall be able to display the resulting locations on a map.
+				\end{enumerate}
+				
+				\item TA/Prof (Management role)
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item IT Maintenance
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
+				
+				\item Front End Developers
+				\begin{enumerate}
+					\item The system shall be able to display the resulting locations on a map.				\end{enumerate}
+				
+				\item Back End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
 			\end{enumerate}
 			
-		\item Back End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-				\item The system shall include one interesting feature.
-			\end{enumerate}
-	\end{enumerate}
-	
-	\item Removing Functionality
-	\begin{enumerate}[\textbf{{VP5}.1}]
-		
-		\item Users
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item Paying Customers
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item Businesses
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item TA/Prof (Management role)
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item IT Maintenance
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item Front End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-				\item The system shall include one interesting feature.
-			\end{enumerate}
-			
-		\item Back End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-				\item The system shall include one interesting feature.
-			\end{enumerate}
-	\end{enumerate}
-		
-	\item User flags an incorrect or inappropriate search or result.
-	\begin{enumerate}[\textbf{{VP6}.1}]
-		
-		\item Users
-			\begin{enumerate}
-				\item The system shall allow the user to flag or report any inappropriate answers or questions.
-			\end{enumerate}
-		
-		\item Paying Customers
-			\begin{enumerate}
-				\item The system shall allow the user to flag or report any inappropriate answers or questions.
-			\end{enumerate}
-		
-		\item Businesses
-			\begin{enumerate}
-				\item Not Applicable
-			\end{enumerate}
-		
-		\item TA/Prof (Management role)
-			\begin{enumerate}
-				\item The system shall allow the user to flag or report any inappropriate answers or questions.
-			\end{enumerate}
-		
-		\item IT Maintenance
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
-			\end{enumerate}
-		
-		\item Front End Developers
-			\begin{enumerate}
-				\item Not Applicable
+			\item Updates or maintenance of the app is required.
+			\begin{enumerate}[\textbf{{VP3}.1}]
+				
+				\item Users
+				\begin{enumerate}
+					\item The system shall inform the user if an update or maintenance is required.
+				\end{enumerate}
+				
+				\item Paying Customers
+				\begin{enumerate}
+					\item The system shall inform the user if an update or maintenance is required.
+				\end{enumerate}
+				
+				\item Businesses
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item TA/Prof (Management role)
+				\begin{enumerate}
+					\item The system shall allow the user to flag or report any inappropriate answers or questions.
+				\end{enumerate}
+				
+				\item IT Maintenance
+				\begin{enumerate}
+					\item  The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
+				
+				\item Front End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
+				
+				\item Back End Developers
+				\begin{enumerate}
+					\item The system shall have 3 experts that will be able to be easily swapped out.
+					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall allow the user to flag or report any inappropriate answers or questions.
+				\end{enumerate}
 			\end{enumerate}
 			
-		\item Back End Developers
-			\begin{enumerate}
-				\item The system shall developers to easily add or remove queries(entries).
+			\item Adding Functionality
+			\begin{enumerate}[\textbf{{VP4}.1}]
+				
+				\item Users
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Paying Customers
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Businesses
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item TA/Prof (Management role)
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item IT Maintenance
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
+				
+				\item Front End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall include one interesting feature.
+				\end{enumerate}
+				
+				\item Back End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall include one interesting feature.
+				\end{enumerate}
 			\end{enumerate}
-	\end{enumerate}
+			
+			\item Removing Functionality
+			\begin{enumerate}[\textbf{{VP5}.1}]
+				
+				\item Users
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Paying Customers
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Businesses
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item TA/Prof (Management role)
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item IT Maintenance
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Front End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall include one interesting feature.
+				\end{enumerate}
+				
+				\item Back End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall include one interesting feature.
+				\end{enumerate}
+			\end{enumerate}
+			
+			\item User flags an incorrect or inappropriate search or result.
+			\begin{enumerate}[\textbf{{VP6}.1}]
+				
+				\item Users
+				\begin{enumerate}
+					\item The system shall allow the user to flag or report any inappropriate answers or questions.
+				\end{enumerate}
+				
+				\item Paying Customers
+				\begin{enumerate}
+					\item The system shall allow the user to flag or report any inappropriate answers or questions.
+				\end{enumerate}
+				
+				\item Businesses
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item TA/Prof (Management role)
+				\begin{enumerate}
+					\item The system shall allow the user to flag or report any inappropriate answers or questions.
+				\end{enumerate}
+				
+				\item IT Maintenance
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
+				
+				\item Front End Developers
+				\begin{enumerate}
+					\item Not Applicable
+				\end{enumerate}
+				
+				\item Back End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove queries(entries).
+				\end{enumerate}
+			\end{enumerate}
+			
+		\end{enumerate}
 		
-\end{enumerate}
-
-\section{Non-Functional Requirements}
-\label{sec:non-functional_requirements}
-% Begin Section
-
-
-\subsection{Look and Feel Requirements}
-\label{sub:look_and_feel_requirements}
-\begin{enumerate}
-\item
-The system shall be usable on the first use by any user over the age of ten.
-\item
-The system shall display any information in a visual way. % Expand
-\item
-The system shall show a graphical view of locations and \textbf{AOE}s.
-\item
-The system shall include a tutorial to teach new users correct usage of the application.
-\end{enumerate}
-
-\subsubsection{Appearance Requirements}
-\label{ssub:appearance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LF}1. ]
-	\item 
-	The game will appear in a pleasant manner suitable for all demographics.
-	\item
-	The game will appear innovative, and it should be apparent the application was developed in 2016.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Style Requirements}
-\label{ssub:style_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LF}1. ]
-	\item 
-	The style of the game's GUI will not distract from the essence of the game.
-	\item
-	The game will be playable by colorblind persons.
-	\item
-	The game will be playable by dead persons.
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-\subsection{Usability and Humanity Requirements}
-\label{sub:usability_and_humanity_requirements}
-
-
-\subsubsection{Ease of Use Requirements}
-\label{ssub:ease_of_use_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1.]
-	\item 
-	The system shall provide questions that are easy to understand.
-	\item
-The system shall be easy to navigate and understand the layout.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Personalization and Internationalization Requirements}
-\label{ssub:personalization_and_internationalization_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
-	The system should be able to present information in a variety of languages.
-	\item
-	The system shall be able to set fonts and colors to the users preference.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Learning Requirements}
-\label{ssub:learning_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item
-	The system will provide a method of learning the game's rules and objectives.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Understandability and Politeness Requirements}
-\label{ssub:understandability_and_politeness_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
-	The questions asked in the game will be simple and focus on one specific point. %% Research lawsuits about language used in referendums for more details to add to this.
-	\item
-	The questions asked in the game will not include offensive, insensitive or immature remarks.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Accessibility Requirements}
-\label{ssub:accessibility_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
-	The system will be usable by colour blind persons.
-	\item
-	The system will be usable by deaf persons.
-	\item
-	The system will be able to read questions aloud to the user.
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-\subsection{Performance Requirements}
-\label{sub:performance_requirements}
-
-
-\subsubsection{Speed and Latency Requirements}
-\label{ssub:speed_and_latency_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-\item
-Any operation that does not require use of the internet will respond in 2 seconds.
-\item
-Any operation that does require use of the internet will respond within 30 seconds.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Safety-Critical Requirements}
-\label{ssub:safety_critical_requirements}
-% Begin SubSubSection
-There are no safety critical requirements for this application.
-% End SubSubSection
-
-\subsubsection{Precision or Accuracy Requirements}
-\label{ssub:precision_or_accuracy_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-\item
-The system shall predict the correct location with 75\% accuracy.
-\item
-The system shall predict the user's environment 90\% of the time.
-\item
-The system shall predict landmarks 80\% of the time.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Reliability and Availability Requirements}
-\label{ssub:reliability_and_availability_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item
-	The game will remain online to play 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Robustness or Fault-Tolerance Requirements}
-\label{ssub:robustness_or_fault_tolerance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Capacity Requirements}
-\label{ssub:capacity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
-	The system should be able to respond to at least 20 client queries at a time.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Scalability or Extensibility Requirements}
-\label{ssub:scalability_or_extensibility_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-\item
-The system should be able to add new \textbf{AOE}s easily.
-\item
-The system should be able to be implemented on new systems without changing 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Longevity Requirements}
-\label{ssub:longevity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-\subsection{Operational and Environmental Requirements}
-\label{sub:operational_and_environmental_requirements}
-\begin{enumerate}
-\item
-The system shall check to ensure that there is sufficient internet connectivity.
-\item
-The system shall ensure that any servers are up for 80\% of the time.
-\end{enumerate}
-
-\subsubsection{Expected Physical Environment}
-\label{ssub:expected_physical_environment}
-% Begin SubSubSection
-The application's expected physical environment will be anywhere that a mobile phone can operate. Typically users will not interact with the system in an emergency or other circumstantial event.
-% End SubSubSection
-
-\subsubsection{Requirements for Interfacing with Adjacent Systems}
-\label{ssub:requirements_for_interfacing_with_adjacent_systems}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
-	The system should provide an interface to connect with adjacent systems 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Productization Requirements}
-\label{ssub:productization_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Release Requirements}
-\label{ssub:release_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-\subsection{Maintainability and Support Requirements}
-\label{sub:maintainability_and_support_requirements}
-% Begin SubSection
-\subsubsection{Maintenance Requirements}
-\label{ssub:maintenance_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-	\item 
-	The system shall be easy to update.
-	\item
-	The system shall 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Supportability Requirements}
-\label{ssub:supportability_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-	\item 
-	The system shall be able to run on at least 90\% of Android devices.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Adaptability Requirements}
-\label{ssub:adaptability_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-\item
-The system shall be 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-\subsection{Security Requirements}
-\label{sub:security_requirements}
-\begin{enumerate}
-\item
-Any information that enters or exits the system shall be encrypted.
-\item
-The system will not store or transmit information related to user location.
-\item
-The system will not store usernames or passwords.
-\end{enumerate}
-
-\subsubsection{Access Requirements}
-\label{ssub:access_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item
-	The system should be able to run anywhere that a data or wifi connection is available.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Integrity Requirements}
-\label{ssub:integrity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Privacy Requirements}
-\label{ssub:privacy_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-	The system shall not store any user's location data.
-	\item
-	The system shall not store any user passwords.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Audit Requirements}
-\label{ssub:audit_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Immunity Requirements}
-\label{ssub:immunity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-\subsection{Cultural and Political Requirements}
-\label{sub:cultural_and_political_requirements}
-% Begin SubSection
-
-% business event: user tries to update database from old versioned app
-\subsubsection{Cultural Requirements}
-\label{ssub:cultural_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-	\item
-	The system shall ensure that culturally significant \textbf{AOE}s are presented in a respectful manner.
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Political Requirements}
-\label{ssub:political_requirements}
-% Begin SubSubSection
-\begin{enumerate}
-	\item
-	The system shall show no bias towards any political party or related organization.
-	\item
-	The system will not endorse or associate with any political group or government.
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-\subsection{Legal Requirements}
-\label{sub:legal_requirements}
-\begin{enumerate}
-\item
-The system shall operate within the laws of Canada and the United States of America.
-\end{enumerate}
-
-\subsubsection{Compliance Requirements}
-\label{ssub:compliance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-\subsubsection{Standards Requirements}
-\label{ssub:standards_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-% End Section
-
-\clearpage{}
-\appendix
-\section{Division of Labour}
-\label{sec:division_of_labour}
-% Begin Section
-Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
-% End Section
-
-
-%% Important notes from TAs, commented out
-\iffalse
-\newpage
-\section*{IMPORTANT NOTES}
-\begin{itemize}
-	\item Be sure to include all sections of the template in your document regardless whether you have something to write for each or not
-	\begin{itemize}
-		\item If you do not have anything to write in a section, indicate this by the \emph{N/A}, \emph{void}, \emph{none}, etc.
-	\end{itemize}
-	\item Uniquely number each of your requirements for easy identification and cross-referencing
-	\item Highlight terms that are defined in Section~1.3 (\textbf{Definitions, Acronyms, and Abbreviations}) with \textbf{bold}, \emph{italic} or \underline{underline}
-	\item For Deliverable 1, please highlight, in some fashion, all (you may have more than one) creative and innovative features. Your creative and innovative features will generally be described in Section~2.2 (\textbf{Product Functions}), but it will depend on the type of creative or innovative features you are including.
-\end{itemize}
-\fi
-
-\end{document}
-%------------------------------------------------------------------------------
+		\section{Non-Functional Requirements}
+		\label{sec:non-functional_requirements}
+		% Begin Section
+		
+		
+		\subsection{Look and Feel Requirements}
+		\label{sub:look_and_feel_requirements}
+		\begin{enumerate}
+			\item
+			The system shall be usable on the first use by any user over the age of ten.
+			\item
+			The system shall display any information in a visual way. % Expand
+			\item
+			The system shall show a graphical view of locations and \textbf{AOE}s.
+			\item
+			The system shall include a tutorial to teach new users correct usage of the application.
+		\end{enumerate}
+		
+		\subsubsection{Appearance Requirements}
+		\label{ssub:appearance_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{LF}1. ]
+			\item 
+			The game will appear in a pleasant manner suitable for all demographics.
+			\item
+			The game will appear innovative, and it should be apparent the application was developed in 2016.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Style Requirements}
+		\label{ssub:style_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{LF}1. ]
+			\item 
+			The style of the game's GUI will not distract from the essence of the game.
+			\item
+			The game will be playable by colorblind persons.
+			\item
+			The game will be playable by dead persons.
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		\subsection{Usability and Humanity Requirements}
+		\label{sub:usability_and_humanity_requirements}
+		
+		
+		\subsubsection{Ease of Use Requirements}
+		\label{ssub:ease_of_use_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{UH}1.]
+			\item 
+			The system shall provide questions that are easy to understand.
+			\item
+			The system shall be easy to navigate and understand the layout.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Personalization and Internationalization Requirements}
+		\label{ssub:personalization_and_internationalization_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{UH}1. ]
+			\item 
+			The system should be able to present information in a variety of languages.
+			\item
+			The system shall be able to set fonts and colors to the users preference.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Learning Requirements}
+		\label{ssub:learning_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{UH}1. ]
+			\item
+			The system will provide a method of learning the game's rules and objectives.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Understandability and Politeness Requirements}
+		\label{ssub:understandability_and_politeness_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{UH}1. ]
+			\item 
+			The questions asked in the game will be simple and focus on one specific point. %% Research lawsuits about language used in referendums for more details to add to this.
+			\item
+			The questions asked in the game will not include offensive, insensitive or immature remarks.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Accessibility Requirements}
+		\label{ssub:accessibility_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{UH}1. ]
+			\item 
+			The system will be usable by colour blind persons.
+			\item
+			The system will be usable by deaf persons.
+			\item
+			The system will be able to read questions aloud to the user.
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		\subsection{Performance Requirements}
+		\label{sub:performance_requirements}
+		
+		
+		\subsubsection{Speed and Latency Requirements}
+		\label{ssub:speed_and_latency_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item
+			Any operation that does not require use of the internet will respond in 2 seconds.
+			\item
+			Any operation that does require use of the internet will respond within 30 seconds.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Safety-Critical Requirements}
+		\label{ssub:safety_critical_requirements}
+		% Begin SubSubSection
+		There are no safety critical requirements for this application.
+		% End SubSubSection
+		
+		\subsubsection{Precision or Accuracy Requirements}
+		\label{ssub:precision_or_accuracy_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item
+			The system shall predict the correct location with 75\% accuracy.
+			\item
+			The system shall predict the user's environment 90\% of the time.
+			\item
+			The system shall predict landmarks 80\% of the time.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Reliability and Availability Requirements}
+		\label{ssub:reliability_and_availability_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{PR}1. ]
+			\item
+			The game will remain online to play 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Robustness or Fault-Tolerance Requirements}
+		\label{ssub:robustness_or_fault_tolerance_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{PR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Capacity Requirements}
+		\label{ssub:capacity_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{PR}1. ]
+			\item 
+			The system should be able to respond to at least 20 client queries at a time.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Scalability or Extensibility Requirements}
+		\label{ssub:scalability_or_extensibility_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item
+			The system should be able to add new \textbf{AOE}s easily.
+			\item
+			The system should be able to be implemented on new systems without changing 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Longevity Requirements}
+		\label{ssub:longevity_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{PR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		\subsection{Operational and Environmental Requirements}
+		\label{sub:operational_and_environmental_requirements}
+		\begin{enumerate}
+			\item
+			The system shall check to ensure that there is sufficient internet connectivity.
+			\item
+			The system shall ensure that any servers are up for 80\% of the time.
+		\end{enumerate}
+		
+		\subsubsection{Expected Physical Environment}
+		\label{ssub:expected_physical_environment}
+		% Begin SubSubSection
+		The application's expected physical environment will be anywhere that a mobile phone can operate. Typically users will not interact with the system in an emergency or other circumstantial event.
+		% End SubSubSection
+		
+		\subsubsection{Requirements for Interfacing with Adjacent Systems}
+		\label{ssub:requirements_for_interfacing_with_adjacent_systems}
+		% Begin SubSubSection
+		\begin{enumerate}[{OE}1. ]
+			\item 
+			The system should provide an interface to connect with adjacent systems 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Productization Requirements}
+		\label{ssub:productization_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{OE}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Release Requirements}
+		\label{ssub:release_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{OE}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		\subsection{Maintainability and Support Requirements}
+		\label{sub:maintainability_and_support_requirements}
+		% Begin SubSection
+		\subsubsection{Maintenance Requirements}
+		\label{ssub:maintenance_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item 
+			The system shall be easy to update.
+			\item
+			The system shall 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Supportability Requirements}
+		\label{ssub:supportability_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item 
+			The system shall be able to run on at least 90\% of Android devices.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Adaptability Requirements}
+		\label{ssub:adaptability_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item
+			The system shall be 
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		\subsection{Security Requirements}
+		\label{sub:security_requirements}
+		\begin{enumerate}
+			\item
+			Any information that enters or exits the system shall be encrypted.
+			\item
+			The system will not store or transmit information related to user location.
+			\item
+			The system will not store usernames or passwords.
+		\end{enumerate}
+		
+		\subsubsection{Access Requirements}
+		\label{ssub:access_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{SR}1. ]
+			\item
+			The system should be able to run anywhere that a data or wifi connection is available.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Integrity Requirements}
+		\label{ssub:integrity_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{SR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Privacy Requirements}
+		\label{ssub:privacy_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{SR}1. ]
+			\item 
+			The system shall not store any user's location data.
+			\item
+			The system shall not store any user passwords.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Audit Requirements}
+		\label{ssub:audit_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{SR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Immunity Requirements}
+		\label{ssub:immunity_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{SR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		\subsection{Cultural and Political Requirements}
+		\label{sub:cultural_and_political_requirements}
+		% Begin SubSection
+		
+		% business event: user tries to update database from old versioned app
+		\subsubsection{Cultural Requirements}
+		\label{ssub:cultural_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item
+			The system shall ensure that culturally significant \textbf{AOE}s are presented in a respectful manner.
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Political Requirements}
+		\label{ssub:political_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}
+			\item
+			The system shall show no bias towards any political party or related organization.
+			\item
+			The system will not endorse or associate with any political group or government.
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		\subsection{Legal Requirements}
+		\label{sub:legal_requirements}
+		\begin{enumerate}
+			\item
+			The system shall operate within the laws of Canada and the United States of America.
+		\end{enumerate}
+		
+		\subsubsection{Compliance Requirements}
+		\label{ssub:compliance_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{LR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		\subsubsection{Standards Requirements}
+		\label{ssub:standards_requirements}
+		% Begin SubSubSection
+		\begin{enumerate}[{LR}1. ]
+			\item 
+		\end{enumerate}
+		% End SubSubSection
+		
+		% End SubSection
+		
+		% End Section
+		
+		\clearpage{}
+		\appendix
+		\section{Division of Labour}
+		\label{sec:division_of_labour}
+		% Begin Section
+		Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
+		% End Section
+		
+		
+		%% Important notes from TAs, commented out
+		\iffalse
+		\newpage
+		\section*{IMPORTANT NOTES}
+		\begin{itemize}
+			\item Be sure to include all sections of the template in your document regardless whether you have something to write for each or not
+			\begin{itemize}
+				\item If you do not have anything to write in a section, indicate this by the \emph{N/A}, \emph{void}, \emph{none}, etc.
+			\end{itemize}
+			\item Uniquely number each of your requirements for easy identification and cross-referencing
+			\item Highlight terms that are defined in Section~1.3 (\textbf{Definitions, Acronyms, and Abbreviations}) with \textbf{bold}, \emph{italic} or \underline{underline}
+			\item For Deliverable 1, please highlight, in some fashion, all (you may have more than one) creative and innovative features. Your creative and innovative features will generally be described in Section~2.2 (\textbf{Product Functions}), but it will depend on the type of creative or innovative features you are including.
+		\end{itemize}
+		\fi
+		
+	\end{document}
+	%------------------------------------------------------------------------------
