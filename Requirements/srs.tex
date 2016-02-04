@@ -44,7 +44,7 @@ Connor Sheehan - sheehacg - 1330964}
 	\maketitle
 	\vspace{4cm}	
 	\abstract{\begin{center}
-			Requirements Specification for the 21 Questions phenomenon identifier project in SFWR 3A04 at McMaster University.
+			Requirements Specification for the 21 Questions phenomenon identifier project in SFWR ENG 3A04 at McMaster University.
 		\end{center}}
 		\newpage
 		\tableofcontents
@@ -80,10 +80,11 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSection
 		\begin{itemize}
 			\item \textbf{Area of Interest} -
-			The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+			The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOI}}.
 			\item \textbf{API} - Short form for application programming interface.
 			\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
 			\item \textbf{SRS} - Short form for Software Requirements Specification, refers to this document.
+			\item \textbf{IT} - Short form for information technology.
 		\end{itemize}
 		% End SubSection
 		
@@ -120,7 +121,7 @@ Connor Sheehan - sheehacg - 1330964}
 		\begin{enumerate}[a)]
 			\item Put the product into perspective with other related products, i.e., context\\
 			
-			21 Questions is simple location identification application which asks the user a total of 21 questions to try and identify the AOE. 21 Questions is very similar to other identification applications such as Akinator or the game 20Q. Akinator is a web based program where the user thinks of a character and answers a series of questions, leading to the program guessing the character the user has thought of. 20Q or 20 Questions is the original inspiration for our program, like Akinator, the user thinks of something but in this case it can be any person, place or thing. The game would then ask the user a total of 20 questions to try and guess what the user is thinking of. To differentiate our application with 20Q, 21 Questions focuses on locations only with an end goal of outputting the result through Google maps.
+			21 Questions is simple location identification application which asks the user a total of 21 questions to try and identify the AOI. 21 Questions is very similar to other identification applications such as Akinator or the game 20Q. Akinator is a web based program where the user thinks of a character and answers a series of questions, leading to the program guessing the character the user has thought of. 20Q or 20 Questions is the original inspiration for our program, like Akinator, the user thinks of something but in this case it can be any person, place or thing. The game would then ask the user a total of 20 questions to try and guess what the user is thinking of. To differentiate our application with 20Q, 21 Questions focuses on locations only with an end goal of outputting the result through Google maps.
 			\item If the product is independent and totally self-contained, it should be stated here
 			\item If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software. 
 			\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
@@ -169,11 +170,11 @@ Connor Sheehan - sheehacg - 1330964}
 			\item The system must have three experts modules in which will determine an aspect about the location to identify.
 			\item The systems software experts are not able to communicate between each other.
 			\item The system should use the Google maps API.
-			\item The should must be designed so that we can swap out experts.
-			\item The system must have Internet access.
-			\item The system must use cryptography for sending messages from experts.
-			\item The system must follow all legal rules of the Canadian laws.
-			\item The system must follow all rules that the Google maps API.
+			\item The should must be designed so that one could swap out any expert for another.
+			\item The system must have access to the Internet.
+			\item The system must encrypt all transmitted messages.
+			\item The system must abide to all the Canadian laws.
+			\item The system must abide to all terms and conditions set by the Google maps API.
 			
 		\end{enumerate}
 		% End SubSection
@@ -184,7 +185,7 @@ Connor Sheehan - sheehacg - 1330964}
 		\begin{enumerate}[a)]
 			\item Assumptions
 			\begin{itemize}
-				\item The system can only find locations within a set domain.
+				\item The system can only find locations within the set domain.
 				\item The user will only use the system to identify real locations.
 				
 			\end{itemize}
@@ -192,7 +193,7 @@ Connor Sheehan - sheehacg - 1330964}
 			
 			\begin{itemize}
 				\item The system is dependent on the functionality the Google Maps API.
-				\item The system's performance is dependent on the speed of the user's Internet.
+				\item The system's performance is dependent on the speed and quality of the user's Internet.
 				\item The system's performance is dependent on the operating systems overhead.
 				
 			\end{itemize}
@@ -203,261 +204,231 @@ Connor Sheehan - sheehacg - 1330964}
 		\label{sub:apportioning_of_requirements}
 		% Begin SubSection
 		\begin{enumerate}[a)]
-			\item Letting the user add locations to list of locations
+			\item Letting the user add locations to the existing set of locations.
 			\item Using social media to allow the user to share the location that the system predicted.
-			\item Trying to guesses base on events from there face book event list and large news stories.
+			\item Suggest locations based off of interest and large news stories through social media.
 			
 		\end{enumerate}
 		% End Section
+		
 		\section{Functional Requirements}
 		\label{sec:functional_requirements}
 		% Begin Section
-		This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output.
+		
+		The system will react to a set of key stimuli based on the interests of a set of people. The system will provide output based on the following requirements:
+		
 		\begin{enumerate}[\textbf{{BE}1.}]
+			
+			% Business Event 1
 			\item User enters new search.
 			\begin{enumerate}[\textbf{{VP1}.1}]
 				
+				% Viewpoint 1
 				\item Users
 				\begin{enumerate}
 					\item The system shall be able to display the resulting locations on a map.
 					\item The system shall be able to ask the user questions.
 					\item The system shall allow the user to answer yes or no to questions.
 					\item The system shall determine the closest locations, environment and place.
-					\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
+					\item The system shall allow each expert� to determine the answer given the set of questions and their answers.
 				\end{enumerate}
 				
-				\item Paying Customers
-				\begin{enumerate}
-					\item The system shall be able to display the resulting locations on a map.
-					\item The system shall be able to ask the user questions.
-					\item The system shall allow the user to answer yes or no to questions.
-					\item The system shall determine the closest locations, environment and place.
-					\item The system shall allow each “expert” to determine the answer given the set of questions and their answers.
-				\end{enumerate}
-				
-				\item Businesses
+				%Viewpoint 3
+				\item Estabilishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
+				%Viewpoint 4
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
+				%Viewpoint 5
 				\item IT Maintenance
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
-				\item Front End Developpers
+				%Viewpoint 6
+				\item Front End Developers
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
-				\item Back End Developpers
+				%Viewpoint 7
+				\item Back End Developers
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 			\end{enumerate}
 			
+			
+			%Business Event 2
 			\item A business requests to be added to the database.
 			\begin{enumerate}[\textbf{{VP2}.1}]
 				
+				%Viewpoint 1
 				\item Users
 				\begin{enumerate}
 					\item Not Applicable 
 				\end{enumerate}
 				
-				\item Paying Customers
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				\item Businesses
+				%Viewpoint 3
+				\item Estabilishments
 				\begin{enumerate}
 					\item The system shall be able to display the resulting locations on a map.
 				\end{enumerate}
 				
+				%Viewpoint 4
 				\item TA/Prof (Management role)
 				\begin{enumerate}
-					\item Not Applicable
+					\item The system shall allow developers to easily add or remove questions or locations.
 				\end{enumerate}
 				
+				%Viewpoint 5
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall allow developers to easily add or remove questions or locations.
 				\end{enumerate}
 				
+				%Viewpoint 6
 				\item Front End Developers
 				\begin{enumerate}
 					\item The system shall be able to display the resulting locations on a map.				\end{enumerate}
 				
+				%Viewpoint 7
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall allow developers to easily add or remove questions and locations.
 				\end{enumerate}
 			\end{enumerate}
 			
+			%Business Event 3
 			\item Updates or maintenance of the app is required.
 			\begin{enumerate}[\textbf{{VP3}.1}]
 				
+				%Viewpoint 1
 				\item Users
 				\begin{enumerate}
 					\item The system shall inform the user if an update or maintenance is required.
 				\end{enumerate}
 				
-				\item Paying Customers
-				\begin{enumerate}
-					\item The system shall inform the user if an update or maintenance is required.
-				\end{enumerate}
-				
-				\item Businesses
+				%Viewpoint 2
+				\item Establishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
+				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item The system shall allow the user to flag or report any inappropriate answers or questions.
 				\end{enumerate}
 				
+				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item  The system shall developers to easily add or remove queries(entries).
+					\item  The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 				
+				%Viewpoint 5
 				\item Front End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
+					\item The system shall have 3 experts that will be able to be easily swapped out.
 				\end{enumerate}
 				
+				%Viewpoint 6
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall have 3 experts that will be able to be easily swapped out.
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall allow the user to flag or report any inappropriate answers or questions.
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 			\end{enumerate}
 			
-			\item Adding Functionality
+			%Business Event 4
+			\item Adding and Removing Functionality
 			\begin{enumerate}[\textbf{{VP4}.1}]
 				
+				%Viewpoint 1
 				\item Users
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
-				
-				\item Paying Customers
+
+				%Viewpoint 2
+				\item Establishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
-				\item Businesses
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
+				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
+				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
+					\item The system shall not effect the integrity of the existing information.
 				\end{enumerate}
 				
+				%Viewpoint 5
 				\item Front End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall include one interesting feature.
+					\item The system shall developers to easily add or remove questions and locations.
+					\item The system shall not effect the integrity of the existing information.
 				\end{enumerate}
 				
+				%Viewpoint 6
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall include one interesting feature.
+					\item The system shall developers to easily add or remove questions and locations.
+					\item The system shall not effect the integrity of the existing information.
 				\end{enumerate}
 			\end{enumerate}
 			
-			\item Removing Functionality
+			%Business Event 5
+			\item User flags an incorrect or inappropriate search or result.
 			\begin{enumerate}[\textbf{{VP5}.1}]
 				
-				\item Users
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				\item Paying Customers
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				\item Businesses
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				\item TA/Prof (Management role)
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				\item IT Maintenance
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				\item Front End Developers
-				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall include one interesting feature.
-				\end{enumerate}
-				
-				\item Back End Developers
-				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall include one interesting feature.
-				\end{enumerate}
-			\end{enumerate}
-			
-			\item User flags an incorrect or inappropriate search or result.
-			\begin{enumerate}[\textbf{{VP6}.1}]
-				
+				%Viewpoint 1
 				\item Users
 				\begin{enumerate}
 					\item The system shall allow the user to flag or report any inappropriate answers or questions.
 				\end{enumerate}
 				
-				\item Paying Customers
-				\begin{enumerate}
-					\item The system shall allow the user to flag or report any inappropriate answers or questions.
-				\end{enumerate}
-				
-				\item Businesses
+				%Viewpoint 2
+				\item Establishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
+				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item The system shall allow the user to flag or report any inappropriate answers or questions.
 				\end{enumerate}
 				
+				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 				
+				%Viewpoint 5
 				\item Front End Developers
 				\begin{enumerate}
-					\item Not Applicable
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 				
+				%Viewpoint 6
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 			\end{enumerate}
 			
@@ -476,7 +447,7 @@ Connor Sheehan - sheehacg - 1330964}
 			\item
 			The system shall display any information in a visual way. % Expand
 			\item
-			The system shall show a graphical view of locations and \textbf{AOE}s.
+			The system shall show a graphical view of locations and \textbf{AOI}s.
 			\item
 			The system shall include a tutorial to teach new users correct usage of the application.
 		\end{enumerate}
@@ -488,7 +459,7 @@ Connor Sheehan - sheehacg - 1330964}
 			\item 
 			The game will appear in a pleasant manner suitable for all demographics.
 			\item
-			The game will appear innovative, and it should be apparent the application was developed in 2016.
+			The game will appear innovative, and it should be apparent that the application was developed in 2016.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -499,9 +470,9 @@ Connor Sheehan - sheehacg - 1330964}
 			\item 
 			The style of the game's GUI will not distract from the essence of the game.
 			\item
-			The game will be playable by colorblind persons.
+			The game will be playable by people affected by colour vision deficiencies.
 			\item
-			The game will be playable by dead persons.
+			The game will be playable by people affected by hearing deficiencies.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -529,7 +500,7 @@ Connor Sheehan - sheehacg - 1330964}
 			\item 
 			The system should be able to present information in a variety of languages.
 			\item
-			The system shall be able to set fonts and colors to the users preference.
+			The system shall be able to set fonts and colours to the users preference.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -558,9 +529,9 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{UH}1. ]
 			\item 
-			The system will be usable by colour blind persons.
+			The game will be playable by people affected by colour vision deficiencies.
 			\item
-			The system will be usable by deaf persons.
+			The game will be playable by people affected by hearing deficiencies.
 			\item
 			The system will be able to read questions aloud to the user.
 		\end{enumerate}
@@ -577,7 +548,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}
 			\item
-			Any operation that does not require use of the internet will respond in 2 seconds.
+			Any operation that does not require use of the internet will respond within 2 seconds.
 			\item
 			Any operation that does require use of the internet will respond within 30 seconds.
 		\end{enumerate}
@@ -607,7 +578,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
 			\item
-			The game will remain online to play 
+			The game will require internet access to play.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -616,6 +587,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
 			\item 
+			The system shall include a wide variety of locations.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -633,9 +605,9 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}
 			\item
-			The system should be able to add new \textbf{AOE}s easily.
+			The system should be able to add new \textbf{AOI}s easily.
 			\item
-			The system should be able to be implemented on new systems without changing 
+			The system should be able to be implemented on new operating systems without change.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -643,7 +615,7 @@ Connor Sheehan - sheehacg - 1330964}
 		\label{ssub:longevity_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
-			\item 
+			\item Not Applicable
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -653,7 +625,7 @@ Connor Sheehan - sheehacg - 1330964}
 		\label{sub:operational_and_environmental_requirements}
 		\begin{enumerate}
 			\item
-			The system shall check to ensure that there is sufficient internet connectivity.
+			The system shall check to ensure that there is a sufficient internet connection.
 			\item
 			The system shall ensure that any servers are up for 80\% of the time.
 		\end{enumerate}
@@ -669,7 +641,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{OE}1. ]
 			\item 
-			The system should provide an interface to connect with adjacent systems 
+			The system should provide an interface to connect with adjacent systems.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -677,7 +649,7 @@ Connor Sheehan - sheehacg - 1330964}
 		\label{ssub:productization_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{OE}1. ]
-			\item 
+			\item Not Applicable
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -704,7 +676,7 @@ Connor Sheehan - sheehacg - 1330964}
 			\item 
 			The system shall be easy to update.
 			\item
-			The system shall 
+			The system shall be able to easily swap out modules.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -722,7 +694,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}
 			\item
-			The system shall be 
+			The system shall be CURTIS!!!!!
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -734,7 +706,7 @@ Connor Sheehan - sheehacg - 1330964}
 			\item
 			Any information that enters or exits the system shall be encrypted.
 			\item
-			The system will not store or transmit information related to user location.
+			The system will not store or transmit information related to the user's location.
 			\item
 			The system will not store usernames or passwords.
 		\end{enumerate}
@@ -744,7 +716,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
 			\item
-			The system should be able to run anywhere that a data or wifi connection is available.
+			The system should be able to operate anywhere that a data or wifi connection is available.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -753,6 +725,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
 			\item 
+			The system shall not allow any data to be modified by any algorithms.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -764,6 +737,8 @@ Connor Sheehan - sheehacg - 1330964}
 			The system shall not store any user's location data.
 			\item
 			The system shall not store any user passwords.
+			\item
+			The system shall not release information to outside parties about a specific business.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -772,6 +747,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
 			\item 
+			Following a security audit at least 80\% of the changes necessary shall be implemented.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -780,6 +756,9 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
 			\item 
+			The system shall not lend itself vulnerable to hackers.
+			\item
+			The system shall only allow those with certain clearances to modify the data.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -795,7 +774,7 @@ Connor Sheehan - sheehacg - 1330964}
 		% Begin SubSubSection
 		\begin{enumerate}
 			\item
-			The system shall ensure that culturally significant \textbf{AOE}s are presented in a respectful manner.
+			The system shall ensure that culturally significant \textbf{AOI}s are presented in a respectful manner.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -815,14 +794,16 @@ Connor Sheehan - sheehacg - 1330964}
 		\label{sub:legal_requirements}
 		\begin{enumerate}
 			\item
-			The system shall operate within the laws of Canada and the United States of America.
 		\end{enumerate}
 		
 		\subsubsection{Compliance Requirements}
 		\label{ssub:compliance_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{LR}1. ]
-			\item 
+			\item
+			The system shall operate within the laws of Canada and the United States of America.
+			\item
+			The system shall comply with any libraries offered by Google Maps.
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -830,7 +811,10 @@ Connor Sheehan - sheehacg - 1330964}
 		\label{ssub:standards_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{LR}1. ]
-			\item 
+			\item
+			The system shall meet the standards set by Management \(Professor and TAs\).
+			\item
+			The system shall meet the standards set by Canadian BLAH BLAH BLAH.
 		\end{enumerate}
 		% End SubSubSection
 		
