@@ -40,7 +40,7 @@
 	\maketitle
 	\vspace{4cm}	
 	\abstract{\begin{center}
-			Requirements Specification for the 21 Questions phenomenon identifier project in SFWR 3A04 at McMaster University.
+			Requirements Specification for the 21 Questions phenomenon identifier project in SFWR ENG 3A04 at McMaster University.
 		\end{center}}
 		\newpage
 		\tableofcontents
@@ -76,10 +76,11 @@
 		% Begin SubSection
 		\begin{itemize}
 			\item \textbf{Area of Interest} -
-			The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOE}}.
+			The phenomenon initially unknown to the system but known to the user. 		Throughout this document it will be referred to as the \textit{\textbf{AOI}}.
 			\item \textbf{API} - Short form for application programming interface.
 			\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
 			\item \textbf{SRS} - Short form for Software Requirements Specification, refers to this document.
+			\item \textbf{IT} - Short form for information technology.
 		\end{itemize}
 		% End SubSection
 		
@@ -116,7 +117,7 @@
 		\begin{enumerate}[a)]
 			\item Put the product into perspective with other related products, i.e., context\\
 			
-			21 Questions is simple location identification application which asks the user a total of 21 questions to try and identify the AOE. 21 Questions is very similar to other identification applications such as Akinator or the game 20Q. Akinator is a web based program where the user thinks of a character and answers a series of questions, leading to the program guessing the character the user has thought of. 20Q or 20 Questions is the original inspiration for our program, like Akinator, the user thinks of something but in this case it can be any person, place or thing. The game would then ask the user a total of 20 questions to try and guess what the user is thinking of. To differentiate our application with 20Q, 21 Questions focuses on locations only with an end goal of outputting the result through Google maps.
+			21 Questions is simple location identification application which asks the user a total of 21 questions to try and identify the AOI. 21 Questions is very similar to other identification applications such as Akinator or the game 20Q. Akinator is a web based program where the user thinks of a character and answers a series of questions, leading to the program guessing the character the user has thought of. 20Q or 20 Questions is the original inspiration for our program, like Akinator, the user thinks of something but in this case it can be any person, place or thing. The game would then ask the user a total of 20 questions to try and guess what the user is thinking of. To differentiate our application with 20Q, 21 Questions focuses on locations only with an end goal of outputting the result through Google maps.
 			\item If the product is independent and totally self-contained, it should be stated here
 			\item If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software. 
 			\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
@@ -165,11 +166,11 @@
 			\item The system must have three experts modules in which will determine an aspect about the location to identify.
 			\item The systems software experts are not able to communicate between each other.
 			\item The system should use the Google maps API.
-			\item The should must be designed so that we can swap out experts.
-			\item The system must have Internet access.
-			\item The system must use cryptography for sending messages from experts.
-			\item The system must follow all legal rules of the Canadian laws.
-			\item The system must follow all rules that the Google maps API.
+			\item The should must be designed so that one could swap out any expert for another.
+			\item The system must have access to the Internet.
+			\item The system must encrypt all transmitted messages.
+			\item The system must abide to all the Canadian laws.
+			\item The system must abide to all terms and conditions set by the Google maps API.
 			
 		\end{enumerate}
 		% End SubSection
@@ -180,7 +181,7 @@
 		\begin{enumerate}[a)]
 			\item Assumptions
 			\begin{itemize}
-				\item The system can only find locations within a set domain.
+				\item The system can only find locations within the set domain.
 				\item The user will only use the system to identify real locations.
 				
 			\end{itemize}
@@ -188,7 +189,7 @@
 			
 			\begin{itemize}
 				\item The system is dependent on the functionality the Google Maps API.
-				\item The system's performance is dependent on the speed of the user's Internet.
+				\item The system's performance is dependent on the speed and quality of the user's Internet.
 				\item The system's performance is dependent on the operating systems overhead.
 				
 			\end{itemize}
@@ -199,9 +200,9 @@
 		\label{sub:apportioning_of_requirements}
 		% Begin SubSection
 		\begin{enumerate}[a)]
-			\item Letting the user add locations to list of locations
+			\item Letting the user add locations to the existing set of locations.
 			\item Using social media to allow the user to share the location that the system predicted.
-			\item Trying to guesses base on events from there face book event list and large news stories.
+			\item Suggest locations based off of interest and large news stories through social media.
 			
 		\end{enumerate}
 		% End Section
@@ -209,7 +210,9 @@
 		\section{Functional Requirements}
 		\label{sec:functional_requirements}
 		% Begin Section
-		This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output.
+		
+		The system will react to a set of key stimuli based on the interests of a set of people. The system will provide output based on the following requirements:
+		
 		\begin{enumerate}[\textbf{{BE}1.}]
 			
 			% Business Event 1
@@ -226,18 +229,8 @@
 					\item The system shall allow each expert€ to determine the answer given the set of questions and their answers.
 				\end{enumerate}
 				
-				%Viewpoint 2
-				\item Paying Customers
-				\begin{enumerate}
-					\item The system shall be able to display the resulting locations on a map.
-					\item The system shall be able to ask the user questions.
-					\item The system shall allow the user to answer yes or no to questions.
-					\item The system shall determine the closest locations, environment and place.
-					\item The system shall allow each €œexpert€ to determine the answer given the set of questions and their answers.
-				\end{enumerate}
-				
 				%Viewpoint 3
-				\item Businesses
+				\item Estabilishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
@@ -278,14 +271,8 @@
 					\item Not Applicable 
 				\end{enumerate}
 				
-				%Viewpoint 2
-				\item Paying Customers
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
 				%Viewpoint 3
-				\item Businesses
+				\item Estabilishments
 				\begin{enumerate}
 					\item The system shall be able to display the resulting locations on a map.
 				\end{enumerate}
@@ -293,13 +280,13 @@
 				%Viewpoint 4
 				\item TA/Prof (Management role)
 				\begin{enumerate}
-					\item The system shall allow developers to easily add or remove queries(entries).
+					\item The system shall allow developers to easily add or remove questions or locations.
 				\end{enumerate}
 				
 				%Viewpoint 5
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall allow developers to easily add or remove queries(entries).
+					\item The system shall allow developers to easily add or remove questions or locations.
 				\end{enumerate}
 				
 				%Viewpoint 6
@@ -310,7 +297,7 @@
 				%Viewpoint 7
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall allow developers to easily add or remove queries(entries).
+					\item The system shall allow developers to easily add or remove questions and locations.
 				\end{enumerate}
 			\end{enumerate}
 			
@@ -325,40 +312,34 @@
 				\end{enumerate}
 				
 				%Viewpoint 2
-				\item Paying Customers
-				\begin{enumerate}
-					\item The system shall inform the user if an update or maintenance is required.
-				\end{enumerate}
-				
-				%Viewpoint 3
-				\item Businesses
+				\item Establishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
-				%Viewpoint 4
+				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item The system shall allow the user to flag or report any inappropriate answers or questions.
 				\end{enumerate}
 				
-				%Viewpoint 5
+				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item  The system shall developers to easily add or remove queries(entries).
+					\item  The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 				
-				%Viewpoint 6
+				%Viewpoint 5
 				\item Front End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
 					\item The system shall have 3 experts that will be able to be easily swapped out.
 				\end{enumerate}
 				
-				%Viewpoint 7
+				%Viewpoint 6
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 			\end{enumerate}
 			
@@ -371,45 +352,37 @@
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
-				
+
 				%Viewpoint 2
-				\item Paying Customers
+				\item Establishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
 				%Viewpoint 3
-				\item Businesses
-				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				%Viewpoint 4
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
-				%Viewpoint 5
+				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
+					\item The system shall not effect the integrity of the existing information.
+				\end{enumerate}
+				
+				%Viewpoint 5
+				\item Front End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove questions and locations.
 					\item The system shall not effect the integrity of the existing information.
 				\end{enumerate}
 				
 				%Viewpoint 6
-				\item Front End Developers
-				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall include one interesting feature.
-					\item The system shall not effect the integrity of the existing information.
-				\end{enumerate}
-				
-				%Viewpoint 7
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-					\item The system shall include one interesting feature.
+					\item The system shall developers to easily add or remove questions and locations.
 					\item The system shall not effect the integrity of the existing information.
 				\end{enumerate}
 			\end{enumerate}
@@ -425,39 +398,33 @@
 				\end{enumerate}
 				
 				%Viewpoint 2
-				\item Paying Customers
-				\begin{enumerate}
-					\item The system shall allow the user to flag or report any inappropriate answers or questions.
-				\end{enumerate}
-				
-				%Viewpoint 3
-				\item Businesses
+				\item Establishments
 				\begin{enumerate}
 					\item Not Applicable
 				\end{enumerate}
 				
-				%Viewpoint 4
+				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
 					\item The system shall allow the user to flag or report any inappropriate answers or questions.
 				\end{enumerate}
 				
-				%Viewpoint 5
+				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
+				\end{enumerate}
+				
+				%Viewpoint 5
+				\item Front End Developers
+				\begin{enumerate}
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 				
 				%Viewpoint 6
-				\item Front End Developers
-				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
-				\end{enumerate}
-				
-				%Viewpoint 7
 				\item Back End Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove queries(entries).
+					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
 			\end{enumerate}
 			
@@ -476,7 +443,7 @@
 			\item
 			The system shall display any information in a visual way. % Expand
 			\item
-			The system shall show a graphical view of locations and \textbf{AOE}s.
+			The system shall show a graphical view of locations and \textbf{AOI}s.
 			\item
 			The system shall include a tutorial to teach new users correct usage of the application.
 		\end{enumerate}
@@ -634,7 +601,7 @@
 		% Begin SubSubSection
 		\begin{enumerate}
 			\item
-			The system should be able to add new \textbf{AOE}s easily.
+			The system should be able to add new \textbf{AOI}s easily.
 			\item
 			The system should be able to be implemented on new operating systems without change.
 		\end{enumerate}
@@ -800,7 +767,7 @@
 		% Begin SubSubSection
 		\begin{enumerate}
 			\item
-			The system shall ensure that culturally significant \textbf{AOE}s are presented in a respectful manner.
+			The system shall ensure that culturally significant \textbf{AOI}s are presented in a respectful manner.
 		\end{enumerate}
 		% End SubSubSection
 		

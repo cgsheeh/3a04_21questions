@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 FEB 2016 10:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 FEB 2016 15:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -316,53 +316,49 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 [4] [5]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \textbf {{BE}1.} on input line 213.
+             The label is: \textbf {{BE}1.} on input line 216.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \textbf {{VP1}.1} on input line 217.
+             The label is: \textbf {{VP1}.1} on input line 220.
 
 Missing character: There is no € in font cmr10!
 [6]
-Missing character: There is no € in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no € in font cmr10!
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \textbf {{VP2}.1} on input line 266.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \textbf {{VP2}.1} on input line 273.
+             The label is: \textbf {{VP3}.1} on input line 306.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \textbf {{VP3}.1} on input line 319.
+             The label is: \textbf {{VP4}.1} on input line 348.
 
 [7]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \textbf {{VP4}.1} on input line 367.
+             The label is: \textbf {{VP5}.1} on input line 392.
 
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \textbf {{VP5}.1} on input line 419.
-
-[8] [9] [10] [11] [12] [13
+[8] [9] [10] [11] [12
 
 ] (./srs.aux) ) 
 Here is how much of TeX's memory you used:
  3217 strings out of 493089
  44439 string characters out of 6134842
- 116824 words of memory out of 5000000
+ 116820 words of memory out of 5000000
  6639 multiletter control sequences out of 15000+600000
  12515 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,832b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,43p,832b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -372,10 +368,10 @@ m/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
 mr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 10.pfb>
-Output written on srs.pdf (14 pages, 126526 bytes).
+Output written on srs.pdf (13 pages, 125413 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
