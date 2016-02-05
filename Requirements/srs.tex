@@ -7,6 +7,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{enumerate}
+%\usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
@@ -24,6 +25,11 @@
 \renewcommand\headrulewidth{0.4pt}                                      
 \renewcommand\footrulewidth{0.4pt}                                    
 %------------------------------------------------------------------------------
+% Other Stuff
+\newcounter{req}
+\setcounter{req}{0}
+%------------------------------------------------------------------------------
+
 
 % Title Details
 %------------------------------------------------------------------------------
@@ -442,8 +448,10 @@
 		
 		
 		\subsection{Look and Feel Requirements}
+		\setcounter{req}{0}
 		\label{sub:look_and_feel_requirements}
-		\begin{enumerate}
+		\begin{enumerate}[{LF}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall be usable on the first use by any user over the age of ten.
 			\item
@@ -452,16 +460,19 @@
 			The system shall show a graphical view of locations and \textbf{AOI}s.
 			\item
 			The system shall include a tutorial to teach new users correct usage of the application.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		
 		\subsubsection{Appearance Requirements}
 		\label{ssub:appearance_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{LF}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The game will appear in a pleasant manner suitable for all demographics.
 			\item
 			The system shall use modern graphical user interface libraries and techniques.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -469,18 +480,21 @@
 		\label{ssub:style_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{LF}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The style of the game's GUI will not distract from the essence of the game.
 			\item
 			The game will be playable by people affected by colour vision deficiencies.
 			\item
 			The game will be playable by people affected by hearing deficiencies.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		
 		\subsection{Usability and Humanity Requirements}
+		\setcounter{req}{0}
 		\label{sub:usability_and_humanity_requirements}
 		
 		
@@ -488,10 +502,12 @@
 		\label{ssub:ease_of_use_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{UH}1.]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall provide questions that are easy to understand.
 			\item
 			The system shall be easy to navigate and understand the layout.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -499,8 +515,10 @@
 		\label{ssub:personalization_and_internationalization_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{UH}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall be able to set fonts and colours to the users preference.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -508,8 +526,10 @@
 		\label{ssub:learning_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{UH}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system will provide a set of instructions describing the game's rules and objectives.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -517,10 +537,12 @@
 		\label{ssub:understandability_and_politeness_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{UH}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The questions asked in the game will be simple and focus on one specific point. %% Research lawsuits about language used in referendums for more details to add to this.
 			\item
 			The questions asked in the game will not include offensive, insensitive or immature remarks.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -528,29 +550,34 @@
 		\label{ssub:accessibility_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{UH}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The game will be playable for people affected by colour vision deficiencies.
 			\item
 			The game will be playable for people affected by hearing deficiencies.
 			\item
 			The system will be able to read questions aloud to the user.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		
 		\subsection{Performance Requirements}
+		\setcounter{req}{0}
 		\label{sub:performance_requirements}
 		
 		
 		\subsubsection{Speed and Latency Requirements}
 		\label{ssub:speed_and_latency_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{PR}1.]
+		\setcounter{enumi}{\value{req}}
 			\item
 			Any operation that does not require use of the internet will respond within 2 seconds.
 			\item
 			Any operation that does require use of the internet will respond within 30 seconds.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -563,13 +590,15 @@
 		\subsubsection{Precision or Accuracy Requirements}
 		\label{ssub:precision_or_accuracy_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{PR}1.]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall predict the correct location with 75\% accuracy.
 			\item
 			The system shall predict the user's environment 90\% of the time.
 			\item
 			The system shall predict landmarks 80\% of the time.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -577,8 +606,10 @@
 		\label{ssub:reliability_and_availability_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The game requires internet access to play.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -586,8 +617,10 @@
 		\label{ssub:robustness_or_fault_tolerance_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall include a wide variety of locations and monuments.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -595,17 +628,21 @@
 		\label{ssub:capacity_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system should be able to respond to at least 20 client queries at a time.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		\subsubsection{Scalability or Extensibility Requirements}
 		\label{ssub:scalability_or_extensibility_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{PR}1.]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system should be able to add new \textbf{AOI}s easily.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -613,19 +650,24 @@
 		\label{ssub:longevity_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{PR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item There are no longevity requirements for this application.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		
 		\subsection{Operational and Environmental Requirements}
+		\setcounter{req}{0}
 		\label{sub:operational_and_environmental_requirements}
-		\begin{enumerate}
+		\begin{enumerate}[{OE}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall check to ensure that there is a sufficient internet connection.
 			\item
 			The system shall ensure that any servers are up for 80\% of the time.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		
 		\subsubsection{Expected Physical Environment}
@@ -638,8 +680,10 @@
 		\label{ssub:requirements_for_interfacing_with_adjacent_systems}
 		% Begin SubSubSection
 		\begin{enumerate}[{OE}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system should provide an interface to connect with adjacent systems.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -647,7 +691,9 @@
 		\label{ssub:productization_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{OE}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item There are no productization requirements for this application.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -655,65 +701,79 @@
 		\label{ssub:release_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{OE}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item The system shall be fully functional and have been tested for security flaws before release.
 			\item The system shall be available to download in the \textit{Google Play Store}.
 			\item The system will be available for direct download.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		
 		\subsection{Maintainability and Support Requirements}
+		\setcounter{req}{0}
 		\label{sub:maintainability_and_support_requirements}
 		% Begin SubSection
 		\subsubsection{Maintenance Requirements}
 		\label{ssub:maintenance_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{MS}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall be easy to update.
 			\item
 			The system shall be able to easily swap out modules.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		\subsubsection{Supportability Requirements}
 		\label{ssub:supportability_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{MS}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall be able to run on at least 90\% of Android devices.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		\subsubsection{Adaptability Requirements}
 		\label{ssub:adaptability_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{MS}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system can easily be implemented on new operating systems with little change.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		
 		\subsection{Security Requirements}
+		\setcounter{req}{0}
 		\label{sub:security_requirements}
-		\begin{enumerate}
+		\begin{enumerate}[{SR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			Any information that enters or exits the system shall be encrypted.
 			\item
 			The system will not store or transmit information related to the user's location.
 			\item
 			The system will not store usernames or passwords.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		
 		\subsubsection{Access Requirements}
 		\label{ssub:access_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system should be able to operate anywhere that a data or wifi connection is available.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -721,8 +781,10 @@
 		\label{ssub:integrity_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall not allow any data to be modified by any algorithms.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -730,12 +792,14 @@
 		\label{ssub:privacy_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall not store any user's location data.
 			\item
 			The system shall not store any user passwords.
 			\item
 			The system shall not release information to outside parties about a specific business.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -743,8 +807,10 @@
 		\label{ssub:audit_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			Following a security audit at least 80\% of the changes necessary shall be implemented.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -752,16 +818,19 @@
 		\label{ssub:immunity_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{SR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall not lend itself vulnerable to attacks or intruders.
 			\item
 			The system shall only allow those with proper clearances to modify the data.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		
 		\subsection{Cultural and Political Requirements}
+		\setcounter{req}{0}
 		\label{sub:cultural_and_political_requirements}
 		% Begin SubSection
 		
@@ -769,35 +838,42 @@
 		\subsubsection{Cultural Requirements}
 		\label{ssub:cultural_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{CP}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall ensure that culturally significant \textbf{AOI}s are presented in a respectful manner.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		\subsubsection{Political Requirements}
 		\label{ssub:political_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}
+		\begin{enumerate}[{CP}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall show no bias towards any political party or related organization.
 			\item
 			The system will not endorse or associate with any political group or government.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
 		% End SubSection
 		\subsection{Legal Requirements}
+		\setcounter{req}{0}
 		\label{sub:legal_requirements}
 		
 		\subsubsection{Compliance Requirements}
 		\label{ssub:compliance_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{LR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall operate within the laws set by Canada and the United States of America.
 			\item
 			The system shall comply with any libraries offered by Google Maps.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
@@ -805,10 +881,12 @@
 		\label{ssub:standards_requirements}
 		% Begin SubSubSection
 		\begin{enumerate}[{LR}1. ]
+		\setcounter{enumi}{\value{req}}
 			\item
 			The system shall meet the standards set by Management (Professor and TAs).
 			\item
 			The system shall meet the standards set by ISO/IEC 12207.
+		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
 		
