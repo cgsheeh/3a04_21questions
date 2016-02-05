@@ -86,13 +86,14 @@
 		% Begin SubSection
 		Throughout  the document the following abbreviations and words will be used:
 		\begin{itemize}
-			\item \textbf{Area of Interest} - The phenomenon initially unknown to the system but known to the user.
 			\item \textbf{API} - Short form for application programming interface.
+			\item \textbf{Area of Interest} - The phenomenon initially unknown to the system but known to the user.
+			\item
+			\textbf{Google Play Store} - Google's digital distribution platform, as well as the official 'app store' for the Android Operating System.
 			\item \textbf{IT} - Short form for information technology.
-			\item \textbf{SRS} - Short form for Software Requirements Specification, refers to this document.
 			\item \textbf{Query} - A set of carefully selected words used in order to describe or pin point a location on a map.
 			\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
-			
+			\item \textbf{SRS} - Short form for Software Requirements Specification, refers to this document.
 		\end{itemize}
 		% End SubSection
 		
@@ -109,10 +110,7 @@
 		\subsection{Overview}
 		\label{sub:overview}
 		% Begin SubSection
-		\begin{enumerate}[a)]
-			\item Describe what the rest of the SRS contains.
-			\item Explain how the SRS is organized.
-		\end{enumerate}
+		The remainder of this document contains specific 
 		% End SubSection
 		
 		% End Section
@@ -649,11 +647,7 @@
 		\subsubsection{Longevity Requirements}
 		\label{ssub:longevity_requirements}
 		% Begin SubSubSection
-		\begin{enumerate}[{PR}1. ]
-		\setcounter{enumi}{\value{req}}
-			\item There are no longevity requirements for this application.
-		\setcounter{req}{\theenumi}
-		\end{enumerate}
+		There are no longevity requirements for this application.
 		% End SubSubSection
 		
 		% End SubSection
@@ -673,7 +667,12 @@
 		\subsubsection{Expected Physical Environment}
 		\label{ssub:expected_physical_environment}
 		% Begin SubSubSection
-		The application's expected physical environment will be anywhere that a mobile phone can operate. Typically users will not interact with the system in an emergency or other circumstantial event.
+		\begin{enumerate}[{OE}1. ]
+		\setcounter{enumi}{\value{req}}
+			\item
+			The application should run in any physical environment in which a mobile phone can operate.
+		\setcounter{req}{\theenumi}
+		\end{enumerate}
 		% End SubSubSection
 		
 		\subsubsection{Requirements for Interfacing with Adjacent Systems}
@@ -822,7 +821,7 @@
 			\item 
 			The system shall not lend itself vulnerable to attacks or intruders.
 			\item
-			The system shall only allow those with proper clearances to modify the data.
+			The system shall only allow users with proper clearances to modify or access data.
 		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
@@ -870,7 +869,7 @@
 		\begin{enumerate}[{LR}1. ]
 		\setcounter{enumi}{\value{req}}
 			\item
-			The system shall operate within the laws set by Canada and the United States of America.
+			The system shall operate within the jurisdiction of Canada and the United States of America.
 			\item
 			The system shall comply with any libraries offered by Google Maps.
 		\setcounter{req}{\theenumi}
@@ -913,12 +912,24 @@
 			\hline
 			Alexandra Rahman & Generated and refined business events, view points, functional and non-functional requirements as well as edited the final document. Assigned each business event and viewpoint a functional requirement if applicable.\\
 			\hline
-			Connor Sheehan & Please enter your stuff\\
+			Connor Sheehan & Generated and edited non-functional requirements. Added some definitions. Edited styling.\\
 			\hline
 			
 			\caption{Division of Labour}
 		\end{longtable}
 		
+	\noindent\begin{tabular}{ll}\\
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Gabriel Lopez de Leon & Date\\[8ex]% adds space between the two sets of signatures
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Curtis Milo & Date\\[8ex]
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Max Moore & Date\\[8ex]
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Alex Rahman & Date\\[8ex]
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Connor Sheehan & Date\\
+	\end{tabular}
 		
 		
 		

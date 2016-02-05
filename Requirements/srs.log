@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.4)  5 FEB 2016 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.4)  5 FEB 2016 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,12 +340,12 @@ Missing character: There is no ï in font cmr10!
 Missing character: There is no ¿ in font cmr10!
 Missing character: There is no ½ in font cmr10!
  [7] [8] [9] [10] [11] [12]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 904--920
+Overfull \hbox (23.99998pt too wide) in alignment at lines 903--919
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 920
+Underfull \vbox (badness 10000) detected at line 919
  []
 
 [13
@@ -366,7 +366,7 @@ nts/cm/cmr10.pfb></home/connor/texlive/2015/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb></home/connor/texlive/2015/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb></home/connor/texlive/2015/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti10.pfb>
-Output written on srs.pdf (14 pages, 114546 bytes).
+Output written on srs.pdf (14 pages, 115014 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream
