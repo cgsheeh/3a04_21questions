@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[titlepage]{article}
 
 % Imported Packages
 %------------------------------------------------------------------------------
@@ -10,22 +10,25 @@
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
-\usepackage{extarrows}
+%\usepackage{extrarrows}
 \usepackage{setspace}
 %------------------------------------------------------------------------------
 
 % Header and Footer
 %------------------------------------------------------------------------------
-\pagestyle{plain}  
+\pagestyle{fancy}
+\lhead{Group 2}
+\chead{SFWR 3A04}
+\rhead{High-Level Architectural Design} 
 \renewcommand\headrulewidth{0.4pt}                                      
 \renewcommand\footrulewidth{0.4pt}                                    
 %------------------------------------------------------------------------------
 
 % Title Details
 %------------------------------------------------------------------------------
-\title{Deliverable \#2 Template}
-\author{SE 3A04: Software Design II -- Large System Design}
-\date{}                               
+\title{\textbf{High-Level Architectural Design\\21 Questions}}
+\author{Gabriel Lopez de Leon - lopezdg - 1310514\\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
+\date{March 7\textsuperscript{th}, 2016}                               
 %------------------------------------------------------------------------------
 
 % Document
@@ -33,6 +36,7 @@
 \begin{document}
 
 \maketitle	
+
 
 \section{Introduction}
 \label{sec:introduction}
@@ -133,14 +137,34 @@ This section should contain all of your CRC cards.
 	
 \end{enumerate}
 % End Section
+\newpage
 
 \appendix
 \section{Division of Labour}
 \label{sec:division_of_labour}
 % Begin Section
 Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
+
+
+
+\noindent\begin{tabular}{ll}\\
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Gabriel Lopez de Leon & Date\\[8ex]% adds space between the two sets of signatures
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Curtis Milo & Date\\[8ex]
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Max Moore & Date\\[8ex]
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Alex Rahman & Date\\[8ex]
+	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
+	Connor Sheehan & Date\\
+	\end{tabular}
+
 % End Section
 
+
+% Important notes - commented out
+\iffalse
 \newpage
 \section*{IMPORTANT NOTES}
 \begin{itemize}
@@ -160,7 +184,7 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 	\end{itemize}
 	\item If you do \underline{NOT} have a Division of Labour sheet, your deliverable will \underline{NOT} be marked
 \end{itemize}
-
+\fi
 
 \end{document}
 %------------------------------------------------------------------------------
