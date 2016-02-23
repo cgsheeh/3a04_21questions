@@ -72,9 +72,77 @@ This section should provide an brief overview of the entire document.
 \label{sec:use_case_diagram}
 % Begin Section
 This section should provide a use case diagram for your application. 
-\begin{enumerate}[a)]
-	\item Each use case appearing in the diagram should be accompanied by a text description. 
+
+% Business Event 1
+\subsection{BE1: User starts application.}
+\label{sub: BE1: User starts application.}
+\begin{enumerate}[{BE1}.1]
+		\item	The user presses the start button on the start screen.		\item The system will respond by bringing them to the question screen and asking them a question.		\item The user will answer yes, no or undecided to the question.		\item The system will system will ask the user another question.		\item The user will answer yes, no or undecided to the question.		\item After 21 questions, the system will respond by displaying a map to the user.		\item The user will hit done.		\item The system will ask if this was the location they were thinking of.		\item The user will answer yes it was or no it was not.
 \end{enumerate}
+%%%% ADD DIAGRAM!!!!
+
+
+% Business Event 2
+\subsection{BE2: An establishment or business wants to be added to the game.}
+\label{sub: BE2:  An establishment or business wants to be added to the game.}
+\begin{enumerate}[{BE2}.1]
+	\item A new business opens or a business opens a new location.
+	\item The business or establishment contacts the company to inform them they wish to be added to the system.
+	\item The IT specialists will send them a form for the business to fill out.
+	\item The business owner will supply all the necessary information.
+	\item The business will return the form to the company.
+	\item The IT will verify that the information is valid and add it to the system.
+	\item The business is added.
+\end{enumerate}
+%%%% ADD DIAGRAM!!!!
+
+
+% Business Event 3
+\subsection{BE3: Updates or maintenance of the app is required.}
+\label{sub: BE3:  Updates or maintenance of the app is required.}
+\begin{enumerate}[{BE3}.1]
+	\item Internal management states an issue and requests an update/ maintenance.
+	\item Update/ maintenance is given a priority.
+	\item The IT specialist notifies the users that the system will update and be shut down for a certain period of time, if necessary.
+	\item The system will disconnect.
+	\item The ?problem? will be fixed.
+	\item The system will go back online.
+	\item The user will be notified if they need to update the application version.
+\end{enumerate}
+%%%% ADD DIAGRAM!!!!
+
+
+% Business Event 4
+\subsection{BE4: Adding/ Removing Functionality.}
+\label{sub: BE4:  Adding/ Removing Functionality.}
+\begin{enumerate}[{BE4}.1]
+	\item  Internal management states a function needs to be changed (added/ removed).
+	\item The change is given a priority.
+	\item Function will be added or removed
+	\item A small focus group is selected 
+	\item A survey is created
+	\item Update is released to focus group
+	\item Survey is sent to focus group.
+	\item The update will be released depending on the results of the survey.
+	\item If the survey results are not favourable, the function will be under review and released again to the focus group (repeat step 5-9). Otherwise the update is released to the general public and the user is notified that they need to update the app version. 
+\end{enumerate}
+%%%% ADD DIAGRAM!!!!
+
+
+% Business Event 5
+\subsection{BE5: Inappropriate search.}
+\label{sub: BE5: Inappropriate search.}
+\begin{enumerate}[{BE5}.1]
+	\item A business, user or internal management recognizes that the content is inappropriate. 
+	\item The ?object? shall automatically be hidden from other users
+	\item The object is given a priority
+	\item The object is put into a priority queue.
+	\item An IT will review the ?object? and make appropriate changes (remove if necessary)
+	\item Notification is sent to instigator saying the object has been reviewed and wether the changes were accepted.
+\end{enumerate}
+%%%% ADD DIAGRAM!!!!
+
+
 % End Section
 
 \section{Analysis Class Diagram}
