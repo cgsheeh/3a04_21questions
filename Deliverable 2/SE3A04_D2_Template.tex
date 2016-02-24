@@ -12,6 +12,7 @@
 \usepackage{graphicx}
 %\usepackage{extrarrows}
 \usepackage{setspace}
+\usepackage{longtable}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -34,9 +35,10 @@
 % Document
 %------------------------------------------------------------------------------
 \begin{document}
-
 \maketitle	
 
+\tableofcontents
+\newpage
 
 \section{Introduction}
 \label{sec:introduction}
@@ -64,10 +66,13 @@ This section should provide an brief overview of the entire document.
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
+\iffalse
 \begin{enumerate}[a)]
 	\item Describe what the rest of the document contains 
 	\item Explain how the document is organised
 \end{enumerate}
+\fi
+This document will outline the design of the \textit{21 Questions} application from an architectural perspective. The document will begin from a use case outlook, outlining application functionality from a practical point of view and taking different actors and stakeholders into consideration. Next, an analysis class diagram and associated interpretation details is outlined, to specify application behaviours and resources in a modularized form. Following this section is a detailed architectural design as well as a set of class responsibility collaboration cards. These sections specify modules in greater detail, including interfaces to be implemented in the future. The order of these sections reflects a systematic progression from requirements to a more easily constructed application.
 % End SubSection
 
 % End Section
@@ -143,7 +148,27 @@ This section should contain all of your CRC cards.
 \section{Division of Labour}
 \label{sec:division_of_labour}
 % Begin Section
-Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
+\begin{longtable}{| p{.30\textwidth} | p{.70\textwidth} |}
+			\hline
+			\textbf {Team Member} & \textbf{Contributions}\\ 
+			\hline
+			Gabriel Lopez de Leon &  %Gabriel contributions here
+			\\
+			\hline
+			Maxwell Moore & %Max contritubtions here
+			\\
+			\hline
+			Curtis Milo & %Curtis contributions here
+			\\ 
+			\hline
+			Alexandra Rahman & % Alex contritubions here
+			\\
+			\hline
+			Connor Sheehan & Created use case diagram for BE3. Added overview section. Added styling.\\
+			\hline
+			
+			\caption{Division of Labour}
+		\end{longtable}
 
 
 
