@@ -87,12 +87,6 @@
 		Throughout  the document the following abbreviations and words will be used:
 		\begin{itemize}
 			\item \textbf{API} - Short form for application programming interface.
-			\item \textbf{Area of Interest} - The phenomenon initially unknown to the system but known to the user.
-			\item
-			\textbf{Google Play Store} - Google's digital distribution platform, as well as the official 'app store' for the Android Operating System.
-			\item \textbf{IT} - Short form for information technology.
-			\item \textbf{Query} - A set of carefully selected words used in order to describe or pin point a location on a map.
-			\item \textbf{Questions} - The method by which each expert receives information for analysis. These \textit{questions} will be answered primarily with yes or no answers.
 			\item \textbf{SRS} - Short form for Software Requirements Specification, refers to this document.
 		\end{itemize}
 		% End SubSection
@@ -171,15 +165,9 @@
 		The following constraints are to limit the design of the software to be:
 		
 		\begin{enumerate}[a)]
-			\item The system must have three experts modules in which will determine an aspect about the location to identify.
-			\item The systems software experts are not able to communicate between each other.
-			\item The system should use the Google Maps API.
-			\item The should must be designed so that one could swap out any expert for another.
 			\item The system must have access to the Internet.
-			\item The system must encrypt all transmitted messages.
 			\item The system must abide to all the Canadian laws.
 			\item The system must abide to all terms and conditions set by the Google Maps API.
-			
 		\end{enumerate}
 		% End SubSection
 		
@@ -224,13 +212,13 @@
 		\begin{enumerate}[{BE1}]
 			
 			% Business Event 1
-			\item User enters new search.
+			\item User wants to enter new search.
 			\begin{enumerate}[{VP1.1}]
 				
 				% Viewpoint 1
 				\item Users
 				\begin{enumerate}
-					\item The system shall be able to display the resulting locations on a map.
+					\item The system should use the Google Maps API.
 					\item The system shall be able to ask the user questions.
 					\item The system shall allow the user to answer yes or no to questions.
 					\item The system shall determine the closest locations, environment and place.
@@ -246,7 +234,7 @@
 				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
-					\item Not Applicable
+					\item The system must have three experts modules in which will determine an aspect about the location to identify.
 				\end{enumerate}
 				
 				%Viewpoint 4
@@ -256,15 +244,11 @@
 				\end{enumerate}
 				
 				%Viewpoint 5
-				\item Front End Developers
+				\item Developers
 				\begin{enumerate}
-					\item Not Applicable
-				\end{enumerate}
-				
-				%Viewpoint 6
-				\item Back End Developers
-				\begin{enumerate}
-					\item Not Applicable
+					\item The system must encrypt all transmitted messages.
+					\item The system should use the Google Maps API.
+					\item The system must have three experts modules in which will determine an aspect about the location to identify.
 				\end{enumerate}
 			\end{enumerate}
 			
@@ -298,15 +282,11 @@
 				\end{enumerate}
 				
 				%Viewpoint 6
-				\item Front End Developers
+				\item Developers
 				\begin{enumerate}
-					\item The system shall be able to display the resulting locations on a map.				\end{enumerate}
-				
-				%Viewpoint 7
-				\item Back End Developers
-				\begin{enumerate}
-					\item The system shall allow developers to easily add or remove questions and locations.
-				\end{enumerate}
+					\item The system shall be able to display the resulting locations on a map.			
+					\item The system shall allow developers to easily add or remove questions and locations.	
+					\end{enumerate}
 			\end{enumerate}
 			
 			%Business Event 3
@@ -338,21 +318,17 @@
 				\end{enumerate}
 				
 				%Viewpoint 5
-				\item Front End Developers
+				\item Developers
 				\begin{enumerate}
 					\item The system shall developers to easily add or remove questions and locations.
 					\item The system shall have 3 experts that will be able to be easily swapped out.
-				\end{enumerate}
-				
-				%Viewpoint 6
-				\item Back End Developers
-				\begin{enumerate}
 					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
+				
 			\end{enumerate}
 			
 			%Business Event 4
-			\item Adding and Removing Functionality
+			\item Management requests implementation or change of experts.
 			\begin{enumerate}[{VP4.1}]
 				
 				%Viewpoint 1
@@ -370,29 +346,22 @@
 				%Viewpoint 3
 				\item TA/Prof (Management role)
 				\begin{enumerate}
-					\item Not Applicable
+					\item The system shall have 3 experts that will be able to be easily swapped out.
 				\end{enumerate}
 				
 				%Viewpoint 4
 				\item IT Maintenance
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove questions and locations.
-					\item The system shall not effect the integrity of the existing information.
+					\item Swapping experts shall not effect the integrity of the existing information.
 				\end{enumerate}
 				
 				%Viewpoint 5
-				\item Front End Developers
+				\item Developers
 				\begin{enumerate}
-					\item The system shall developers to easily add or remove questions and locations.
-					\item The system shall not effect the integrity of the existing information.
+					\item The system shall have 3 experts that will be able to be easily swapped out.
+					\item Swapping experts shall not effect the integrity of the existing information.
 				\end{enumerate}
 				
-				%Viewpoint 6
-				\item Back End Developers
-				\begin{enumerate}
-					\item The system shall developers to easily add or remove questions and locations.
-					\item The system shall not effect the integrity of the existing information.
-				\end{enumerate}
 			\end{enumerate}
 			
 			%Business Event 5
@@ -424,13 +393,7 @@
 				\end{enumerate}
 				
 				%Viewpoint 5
-				\item Front End Developers
-				\begin{enumerate}
-					\item The system shall developers to easily add or remove questions and locations.
-				\end{enumerate}
-				
-				%Viewpoint 6
-				\item Back End Developers
+				\item Developers
 				\begin{enumerate}
 					\item The system shall developers to easily add or remove questions and locations.
 				\end{enumerate}
@@ -479,10 +442,6 @@
 		\setcounter{enumi}{\value{req}}
 			\item 
 			The style of the game's GUI will not distract from the essence of the game.
-			\item
-			The game will be playable by people affected by colour vision deficiencies.
-			\item
-			The game will be playable by people affected by hearing deficiencies.
 		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
@@ -718,9 +677,7 @@
 		\begin{enumerate}[{MS}1. ]
 		\setcounter{enumi}{\value{req}}
 			\item 
-			The system shall be easy to update.
-			\item
-			The system shall be able to easily swap out modules.
+			The system shall be down for no longer than two hours during an update period.
 		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
@@ -742,7 +699,7 @@
 		\begin{enumerate}[{MS}1. ]
 		\setcounter{enumi}{\value{req}}
 			\item
-			The system can easily be implemented on new operating systems with little change.
+			The system can be implemented on new operating systems with little change.
 		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
@@ -781,6 +738,10 @@
 		\setcounter{enumi}{\value{req}}
 			\item 
 			The system shall not allow any data to be modified by any algorithms.
+			\item
+			New additions to the system shall be previewed for validity and correctness.
+			\item
+			System users shall be able to specify an incorrect response from the system.
 		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
@@ -849,9 +810,7 @@
 		\begin{enumerate}[{CP}1. ]
 		\setcounter{enumi}{\value{req}}
 			\item
-			The system shall show no bias towards any political party or related organization.
-			\item
-			The system will not endorse or associate with any political group or government.
+			The system shall meet the standards set by Management (Professor and TAs).
 		\setcounter{req}{\theenumi}
 		\end{enumerate}
 		% End SubSubSection
@@ -879,8 +838,6 @@
 		% Begin SubSubSection
 		\begin{enumerate}[{LR}1. ]
 		\setcounter{enumi}{\value{req}}
-			\item
-			The system shall meet the standards set by Management (Professor and TAs).
 			\item
 			The system shall meet the standards set by ISO/IEC 12207.
 		\setcounter{req}{\theenumi}
