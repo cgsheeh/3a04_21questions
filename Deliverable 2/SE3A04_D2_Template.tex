@@ -13,6 +13,8 @@
 %\usepackage{extrarrows}
 \usepackage{setspace}
 \usepackage{longtable}
+\usepackage{float}
+\floatplacement{figure}{H}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -82,8 +84,52 @@ This document will outline the design of the \textit{21 Questions} application f
 % Begin Section
 This section should provide a use case diagram for your application. 
 \begin{enumerate}[a)]
-	\item Each use case appearing in the diagram should be accompanied by a text description. 
-\end{enumerate}
+	\item User wants to enter new search.
+	
+	\begin{center}
+		\begin{figure}[H]
+			\includegraphics[scale=0.6]{BE1}
+			\caption{BE1}
+		\end{figure}
+	\end{center}
+
+\item An unlisted establishment requests to be included in the application.
+	
+	\begin{center}
+		\begin{figure}[H]
+			\includegraphics[scale=0.6]{BE2}
+			\caption{BE2}
+		\end{figure}
+	\end{center}
+
+\item Updates or maintenance of the application is required.
+	
+	%\begin{center}
+		\begin{figure}[H]
+			\includegraphics[scale=0.6]{BE3}
+			\caption{BE3}
+		\end{figure}
+	%\end{center}
+
+\item Management requests implementation or change of experts.
+	
+	\begin{center}
+		\begin{figure}[h!]
+			\includegraphics[scale=0.6]{BE4}
+			\caption{BE4}
+		\end{figure}
+	\end{center}
+
+\item User flags an incorrect or inappropriate search or result.
+	
+	\begin{center}
+		\begin{figure}[H]
+			\includegraphics[scale=0.6]{BE5}
+			\caption{BE5}
+		\end{figure}
+	\end{center}
+	
+	\end{enumerate}
 % End Section
 
 \section{Analysis Class Diagram}
@@ -101,13 +147,15 @@ This section should provide an overview of the overall architectural design of y
 \subsection{System Architecture}
 \label{sub:system_architecture}
 % Begin SubSection
-\begin{enumerate}[a)]
-	\item Identify and explain the overall architecture of your system
-	\item Be sure to clearly state the name of the architecture
-	\item Provide the reasoning and justification of the choice
-	\item Provide a structural architecture diagram showing the relationship among the subsystems (if appropriate)
-\end{enumerate}
-% End SubSection
+	\begin{center}
+		\begin{figure}[h!]
+			\includegraphics[scale=0.6]{analysis_class_diagram}
+			\caption{The analysis class diagram}
+		\end{figure}
+	\end{center}
+
+The diagram is designed to have minimal communications between the the 3 separated units. The system is design is a client server model where the client side will be a in a model view controller. The system will have two controllers, one for handling the pages of the system and the other for controlling which expert can ask questions. The information of what questions to ask be communicated from the server and stored in the clients side in an ADT. The client server style of architecture gives a very useful way of ensuring that all users will have the same information available to them without having a large amount of mobile updates. The model view controller is useful for being able to organize the structure of the clients side.
+
 
 \subsection{Subsystems}
 \label{sub:subsystems}
