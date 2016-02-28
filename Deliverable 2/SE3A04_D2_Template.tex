@@ -29,8 +29,8 @@
 
 % Title Details
 %------------------------------------------------------------------------------
-\title{\textbf{High-Level Architectural Design\\21 Questions}}
-\author{Gabriel Lopez de Leon - lopezdg - 1310514\\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
+\title{\Huge{\textbf{High-Level Architectural Design\\21 Questions}}\vspace{9cm}}
+\author{\textit{Gabriel Lopez de Leon} - lopezdg - 1310514\\\textit{Curtis Milo} - milocj - 1305877\\\textit{Max Moore} - moorem8 - 1320009\\\textit{Alex Rahman} - rahmaa25 - 1305735\\\textit{Connor Sheehan} - sheehacg - 1330964}
 \date{March 7\textsuperscript{th}, 2016}                               
 %------------------------------------------------------------------------------
 
@@ -80,50 +80,49 @@ This document will outline the design of the \textit{21 Questions} application f
 \section{Use Case Diagram}
 \label{sec:use_case_diagram}
 % Begin Section
-This section should provide a use case diagram for your application. 
 \begin{enumerate}[a)]
-	\item User wants to enter new search.
+	\item User wants to enter new search (figure \ref{usecase:search}).
 	
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE1}
-			\caption{BE1}
+			\caption{BE1}\label{usecase:search}
 		\end{figure}
 	\end{center}
 
-\item An unlisted establishment requests to be included in the application.
+\item An unlisted establishment requests to be included in the application (figure \ref{usecase:new_esta}).
 	
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE2}
-			\caption{BE2}
+			\caption{BE2}\label{usecase:new_esta}
 		\end{figure}
 	\end{center}
 
-\item Updates or maintenance of the application is required.
+\item Updates or maintenance of the application is required (figure \ref{usecase:updates}).
 	
 	%\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE3}
-			\caption{BE3}
+			\caption{BE3}\label{usecase:updates}
 		\end{figure}
 	%\end{center}
 
-\item Management requests implementation or change of experts.
+\item Management requests implementation or change of experts (figure \ref{usecase:change_expert}).
 	
 	\begin{center}
 		\begin{figure}[h!]
 			\includegraphics[scale=0.6]{BE4}
-			\caption{BE4}
+			\caption{BE4}\label{usecase:change_expert}
 		\end{figure}
 	\end{center}
 
-\item User flags an incorrect or inappropriate search or result.
+\item User flags an incorrect or inappropriate search or result (figure \ref{usecase:badsearch}).
 	
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE5}
-			\caption{BE5}
+			\caption{BE5}\label{usecase:badsearch}
 		\end{figure}
 	\end{center}
 	
@@ -148,11 +147,11 @@ This section should provide an overview of the overall architectural design of y
 	\begin{center}
 		\begin{figure}[h!]
 			\includegraphics[scale=0.6]{analysis_class_diagram}
-			\caption{The analysis class diagram}
+			\caption{The analysis class diagram}\label{diagram:analysisclass}
 		\end{figure}
 	\end{center}
 
-The diagram is designed to have minimal communications between the the 3 separated units. The system is design is a client server model where the client side will be a in a model view controller. The system will have two controllers, one for handling the pages of the system and the other for controlling which expert can ask questions. The information of what questions to ask be communicated from the server and stored in the clients side in an ADT. The client server style of architecture gives a very useful way of ensuring that all users will have the same information available to them without having a large amount of mobile updates. The model view controller is useful for being able to organize the structure of the clients side.
+Figure \ref{diagram:analysisclass} contains the analysis class diagram. The diagram is designed to have minimal communications between the the 3 separated units. The system design is a client server model, with the client side utilizing the model-view-controller architectural pattern. The system will have two controllers, one for handling the pages of the system and the other for controlling which expert can ask questions. The information of what questions to ask is communicated from the server and stored in the clients side in an ADT. The client server style of architecture gives a very useful way of ensuring that all users will have the same information available to them without having a large amount of mobile updates. The model view controller is useful for being able to organize the structure of the clients side.
 
 
 \subsection{Subsystems}
