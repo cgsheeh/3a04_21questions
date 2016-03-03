@@ -48,7 +48,7 @@
 \label{sec:introduction}
 % Begin Section
 
-This document is called the High-Level Architectural Design document and it will be giving the stakeholders a large overview of what the organization of the project "21 questions" will look like.  This large overview will include such things as how  the primary business events will take place, the design insofar as how the classes will be communicating with each other, though few details about the classes themselves, and diagrams including which classes will be controllers, slaves, or simply data storage classes.
+This document is called the High-Level Architectural Design document and it will be giving the stakeholders a broad overview of how the project 21 Questions is designed and will be organized. 
 
 \subsection{Purpose}
 \label{sub:purpose}
@@ -59,18 +59,12 @@ The High-Level Architectural Design document outlines the functionality of the s
 \subsection{System Description}
 \label{sub:system_description}
 % Begin SubSection
-21 Questions is an android application that can be used as a location identifier whose intended use is for any user above the age 10. The application requires minimal training, experience or technical expertise to use, and can be easily picked up and used by anyone. 21 Questions is a simple games that asks the user a series of twenty-one polar or binary questions to try to identify their area of interest. In this game the area of interest is limited to an establishment, building, place, or effigy with a focus on locations only with an end goal of displaying the result through Google Maps.
+21 Questions is an android application that can be used as a location identifier whose intended use is for any user above the age of ten. The application requires minimal training, experience or technical expertise to use, and can be easily picked up and used by anyone. 21 Questions is a simple games that asks the user a series of twenty-one polar or binary questions to try to identify their area of interest. In this game the area of interest is limited to an establishment, building, place, or effigy with a focus on locations only with an end goal of displaying the result through Google Maps.
 % End SubSection
 
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
-\iffalse
-\begin{enumerate}[a)]
-	\item Describe what the rest of the document contains 
-	\item Explain how the document is organised
-\end{enumerate}
-\fi
 This document will outline the design of the \textit{21 Questions} application from an architectural perspective. The document will begin from a use case outlook, outlining application functionality from a practical point of view and taking different actors and stakeholders into consideration. Next, an analysis class diagram and associated interpretation details is outlined, to specify application behaviours and resources in a modularized form. Following this section is a detailed architectural design as well as a set of class responsibility collaboration cards. These sections specify modules in greater detail, including interfaces to be implemented in the future. The order of these sections reflects a systematic progression from requirements to a more easily constructed application.
 % End SubSection
 % End Section
@@ -164,6 +158,7 @@ This document will outline the design of the \textit{21 Questions} application f
 		\end{figure}
 	\end{center}
 
+\newpage
 	%Business Event 5
 	\item User flags an incorrect or inappropriate search or result (Figure \ref{usecase:badsearch}).
 		%Scenario
@@ -185,6 +180,8 @@ This document will outline the design of the \textit{21 Questions} application f
 	\end{enumerate}
 % End Section
 
+\newpage
+
 \section{Analysis Class Diagram}
 \label{sec:analysis_class_diagram}
 % Begin Section
@@ -194,7 +191,7 @@ This section should provide an analysis class diagram for your application.
 % Begin SubSection
 	\begin{center}
 		\begin{figure}[H]
-			\includegraphics[scale=0.6]{analysis_class_diagram}
+			\includegraphics[scale=0.5]{analysis_class_diagram}
 			\caption{Analysis Class Diagram}\label{diagram:analysisclass}
 		\end{figure}
 	\end{center}
@@ -222,6 +219,7 @@ Finally we have our GUI controller, which takes information from the user and co
 
 % End Section
 	
+\newpage	
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
@@ -278,6 +276,7 @@ This section should contain all of your CRC cards.
 		\caption{CRC for Question Controller}
 	\end{longtable}
 	
+\newpage	
 	%CRC for GUI Controller 
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
@@ -426,6 +425,7 @@ This section should contain all of your CRC cards.
 		\caption{CRC for Environment Data}
 	\end{longtable}
 	
+\newpage
 	%CRC for Establishment Data
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
@@ -489,6 +489,7 @@ This section should contain all of your CRC cards.
 		\caption{CRC for Environment Database}
 	\end{longtable}
 	
+\newpage
 	%CRC for Establishment Database
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
@@ -519,7 +520,7 @@ This section should contain all of your CRC cards.
 \section{Division of Labour}
 \label{sec:division_of_labour}
 % Begin Section
-\begin{longtable}{| p{.30\textwidth} | p{.70\textwidth} |}
+\begin{longtable}{| p{.25\textwidth} | p{.70\textwidth} |}
 			\hline
 			\textbf {Team Member} & \textbf{Contributions}\\ 
 			\hline
@@ -532,7 +533,7 @@ This section should contain all of your CRC cards.
 			Curtis Milo & %Curtis contributions here
 			\\ 
 			\hline
-			Alexandra Rahman & Wrote the system description and scenarios as well as created the use case diagram for BE4. Collaborated on the CRC cards and the analysis class diagram.
+			Alexandra Rahman & Wrote the system description and helped come up with the scenarios and use cases. Created the use case diagram for BE4. Collaborated on the CRC cards and the analysis class diagram. Helped input the class collaboration cards into the document. Finally, helped edit and format the document.
 			\\
 			\hline
 			Connor Sheehan & Created use case diagram for BE3. Added overview section. Added styling.\\
