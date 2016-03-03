@@ -307,17 +307,56 @@ This section should contain all of your CRC cards.
 		\caption{CRC for Graphics User Interface Controller}
 	\end{longtable}
 	
-	%CRC for Question Page
+	%CRC for Start Screen
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Question Page}} \\
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Start Screen}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Provide an interface that the user can interact with
+					\item Send information to the GUI Controller
+				\end{itemize} & 
+				\begin{itemize}
+					\item GUI Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Start Screen}
+	\end{longtable}
+	
+	%CRC for Settings Screen
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Settings Screen}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Display a variety of settings to the user
+					\item Allow the user to verify the changes to the current settings
+					\item Allow the user to go back to previous screens
+				\end{itemize} & 
+				\begin{itemize}
+					\item GUI Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Settings Screen}
+	\end{longtable}
+	
+	%CRC for Question Screen
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Question Screen}} \\
 			\hline
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
 					\item Receives information from the GUI Controller
 					\item Takes user input from the users response for the question
-					\item Sends the answer of the question to the GUI controller
+					\item Sends the answer of the question to the GUI Controller
 					\item Allows user to quit the current game
 				\end{itemize} & 
 				\begin{itemize}
@@ -325,8 +364,157 @@ This section should contain all of your CRC cards.
 				\end{itemize} 
 				\\
 			\hline
-		\caption{CRC for Question Page Boundary Class}
+		\caption{CRC for Question Screen}
+	\end{longtable}	
+	
+	%CRC for Map Screen
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Map Screen}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Informs the user of the guesses on a map
+					\item Informs the user of the guesses as an address
+					\item Receives and passes information from the GUI Controller
+					\item Requests the user feedback on the correctness of the guess
+				\end{itemize} & 
+				\begin{itemize}
+					\item GUI Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Map Screen}
 	\end{longtable}
+	
+	%CRC for Location Data
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Location Data}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Holds the question that have been asked and their associated answers
+					\item Holds the number of questions the expert himself has asked
+					\item Holds most viable current guesses
+					\item Provides a probability in which the guess is correct
+				\end{itemize} & 
+				\begin{itemize}
+					\item Question Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Location Data}
+	\end{longtable}
+	
+	%CRC for Environment Data
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Environment Data}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Holds the question that have been asked and their associated answers
+					\item Holds the number of questions the expert himself has asked
+					\item Holds most viable current guesses
+					\item Provides a probability in which the guess is correct
+				\end{itemize} & 
+				\begin{itemize}
+					\item Question Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Environment Data}
+	\end{longtable}
+	
+	%CRC for Establishment Data
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Establishment Data}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Holds the question that have been asked and their associated answers
+					\item Holds the number of questions the expert himself has asked
+					\item Holds most viable current guesses
+					\item Provides a probability in which the guess is correct
+				\end{itemize} & 
+				\begin{itemize}
+					\item Question Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Establishment Data}
+	\end{longtable}
+	
+	%CRC for Location Database
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Location Database}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item  Allows for the addition of an location
+					\item Allows for the removal of an location
+					\item Holds a set of questions that correspond to certain location
+					\item Search for location based on question results
+				\end{itemize} & 
+				\begin{itemize}
+					\item Expert Controller 
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Location Database}
+	\end{longtable}
+	
+	%CRC for Environment Database
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Environment Database}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item  Allows for the addition of an environment
+					\item Allows for the removal of an environment
+					\item Holds a set of questions that correspond to certain environment
+					\item Search for environment based on question results
+				\end{itemize} & 
+				\begin{itemize}
+					\item Expert Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Environment Database}
+	\end{longtable}
+	
+	%CRC for Establishment Database
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Establishment Database}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Allows for the addition of an establishment
+					\item Allows for the removal of an establishment
+					\item Holds a set of questions that correspond to certain establishments
+					\item Search for establishment based on question results
+				\end{itemize} & 
+				\begin{itemize}
+					\item Expert Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Establishment Database}
+	\end{longtable}
+	
+	
 	
 % End Section
 \newpage
@@ -348,7 +536,7 @@ This section should contain all of your CRC cards.
 			Curtis Milo & %Curtis contributions here
 			\\ 
 			\hline
-			Alexandra Rahman & Wrote the system description and creates the use case diagram for BE4. Collaborated on the CRC cards and the analysis class diagram.
+			Alexandra Rahman & Wrote the system description and scenarios as well as created the use case diagram for BE4. Collaborated on the CRC cards and the analysis class diagram.
 			\\
 			\hline
 			Connor Sheehan & Created use case diagram for BE3. Added overview section. Added styling.\\
