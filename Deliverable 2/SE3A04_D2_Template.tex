@@ -205,23 +205,19 @@ This section should provide an analysis class diagram for your application.
 \section{Architectural Design}
 \label{sec:architectural_design}
 % Begin Section
-\textit{This section should provide an overview of the overall architectural design of your application. You overall architecture should show the division of the system into subsystems with high cohesion and low coupling.}\\
-We used a Blackboard architecture because.....
-
-
-
+We used the blackboard architecture because of the way that the experts we have designed are supposed to be interact. The three will be giving very similar information so it makes sense to have them all compile it in one module and have that module given the information make an informed decision as to the query that we can. This also lends itself well to the principle of being opened to addition but closed to modification, because it will be easy to add more experts but difficult to change the nature of the experts them self. Meaning to change the nature or precision of the query we could simply add more specialized expert classes.
 
 \subsection{System Architecture}
 
-Figure \ref{diagram:analysisclass} contains the analysis class diagram. The diagram is designed to have minimal communications between the the 3 separated units. The system design is a client server model, with the client side utilizing the model-view-controller architectural pattern. The system will have two controllers, one for handling the pages of the system and the other for controlling which expert can ask questions. The information of what questions to ask is communicated from the server and stored in the clients side in an ADT. The client server style of architecture gives a very useful way of ensuring that all users will have the same information available to them without having a large amount of mobile updates. The model view controller is useful for being able to organize the structure of the clients side.
+Figure \ref{diagram:analysisclass} contains the analysis class diagram. The diagram is designed to have minimal communications between the the 3 separated units. The system design is a black board model, with the experts all being of the same type, and communicating to our "blackboard" the question controller class. The system will have two controllers, one for handling the pages of the system and the other for controlling which expert can ask questions. The controller will give an expert a start signal, the expert will ask his questions, and then write his best guess as to the answer on the "blackboard" or more formally will pass his guess as a parameter back to the question controller. The Black board style of architecture gives a very useful way of ensuring that Any expert can be removed, or more experts can be added given very little effort by the design team as far as overhead is concerned.
 
 
 \subsection{Subsystems}
 \label{sub:subsystems}
 % Begin SubSection
-\begin{enumerate}[a)]
-	\item Provide a brief description of each subsystem. Be sure to document its purpose and relationship to other subsystems.
-\end{enumerate}
+The database controller will be our lowest level of design, the user will never see this module. It will be used to access the location, establishment, and output files, which will all essentially be their own databases containing questions that pertain to the subject, and their own method for attaining a guess.\\ \\
+Next their is the question controlling module, which will be used for communication with the database and the user, information will be passed from the GUI to be used by the question controller. The only database contained within the question module is called the Facts Database, and contains information about how many question an expert has asked and if applicable what solution he proposes and how certain they are of the solution. \\ \\
+Finally we have our GUI controller, which takes information from the user and contains 4 boundary classes which will be passing information to it about clicks, choices and the like. These include the start screen, which is the initial menu a user will be viewing, which can begin a set of questions or change to the settings screen. The question screen is what is being shown during the process of running the app, which will display questions and receive user feedback, finally it will provide an option to terminate early and return to the start screen. If the setting screen is accessed it will provide a sub-menu which would allow a user to change things like accessibility, font colors and sizes, preferences and the like. finally the map screen GUI will be where we provide them with google maps, given our specific query as to where they are searching .
 % End SubSection
 
 % End Section
@@ -553,9 +549,9 @@ This section should contain all of your CRC cards.
 	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
 	Curtis Milo & Date\\[8ex]
 	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
-	Max Moore & Date\\[8ex]
+	Maxwell Moore & Date\\[8ex]
 	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
-	Alex Rahman & Date\\[8ex]
+	Alexandra Rahman & Date\\[8ex]
 	\makebox[2.5in]{\hrulefill} & \makebox[2.5in]			{\hrulefill}\\
 	Connor Sheehan & Date\\
 	\end{tabular}

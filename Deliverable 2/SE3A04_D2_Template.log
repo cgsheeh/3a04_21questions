@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 MAR 2016 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 MAR 2016 16:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -388,149 +388,157 @@ Overfull \vbox (37.80132pt too high) has occurred while \output is active []
 
 
 [8 <./analysis_class_diagram.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 242.
+Underfull \hbox (badness 10000) in paragraph at lines 218--222
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--222
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 238.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 242.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 238.
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 235--257
+Overfull \hbox (23.99998pt too wide) in alignment at lines 231--253
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 257
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 261--283
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 283
+Underfull \vbox (badness 10000) detected at line 253
  []
 
 [9]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 286--308
+Overfull \hbox (23.99998pt too wide) in alignment at lines 257--279
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 308
+Underfull \vbox (badness 10000) detected at line 279
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 311--327
+Overfull \hbox (23.99998pt too wide) in alignment at lines 282--304
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 327
+Underfull \vbox (badness 10000) detected at line 304
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 330--347
+Overfull \hbox (23.99998pt too wide) in alignment at lines 307--323
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 347
+Underfull \vbox (badness 10000) detected at line 323
  []
 
 [10]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 350--368
+Overfull \hbox (23.99998pt too wide) in alignment at lines 326--343
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 368
+Underfull \vbox (badness 10000) detected at line 343
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 371--389
+Overfull \hbox (23.99998pt too wide) in alignment at lines 346--364
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 389
+Underfull \vbox (badness 10000) detected at line 364
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 392--410
+Overfull \hbox (23.99998pt too wide) in alignment at lines 367--385
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 410
+Underfull \vbox (badness 10000) detected at line 385
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 413--431
+Overfull \hbox (23.99998pt too wide) in alignment at lines 388--406
  [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 406
  []
 
 [11]
-Underfull \vbox (badness 10000) detected at line 431
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 434--452
+Overfull \hbox (23.99998pt too wide) in alignment at lines 409--427
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 452
+Underfull \vbox (badness 10000) detected at line 427
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 455--473
+Overfull \hbox (23.99998pt too wide) in alignment at lines 430--448
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 473
+Underfull \vbox (badness 10000) detected at line 448
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 476--494
+Overfull \hbox (23.99998pt too wide) in alignment at lines 451--469
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 494
+Underfull \vbox (badness 10000) detected at line 469
  []
 
 [12]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 497--515
+Overfull \hbox (23.99998pt too wide) in alignment at lines 472--490
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 515
+Underfull \vbox (badness 10000) detected at line 490
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 493--511
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 511
  []
 
 [13]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 526--546
+Overfull \hbox (23.99998pt too wide) in alignment at lines 522--542
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 546
+Underfull \vbox (badness 10000) detected at line 542
  []
 
 [14] (./SE3A04_D2_Template.aux) ) 
 Here is how much of TeX's memory you used:
  3346 strings out of 493089
  44937 string characters out of 6134842
- 121622 words of memory out of 5000000
+ 123622 words of memory out of 5000000
  6752 multiletter control sequences out of 15000+600000
  12802 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,877b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,43p,957b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
@@ -540,7 +548,7 @@ ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on SE3A04_D2_Template.pdf (15 pages, 364945 bytes).
+Output written on SE3A04_D2_Template.pdf (15 pages, 362165 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
