@@ -30,7 +30,7 @@
 % Title Details
 %------------------------------------------------------------------------------
 \title{\Huge{\textbf{High-Level Architectural Design\\21 Questions}}\vspace{9cm}}
-\author{\textit{Gabriel Lopez de Leon} - lopezdg - 1310514\\\textit{Curtis Milo} - milocj - 1305877\\\textit{Max Moore} - moorem8 - 1320009\\\textit{Alexandra Rahman} - rahmaa25 - 1305735\\\textit{Connor Sheehan} - sheehacg - 1330964}
+\author{\textit{Gabriel Lopez de Leon} - lopezdg - 1310514\\\textit{Curtis Milo} - milocj - 1305877\\\textit{Maxwell Moore} - moorem8 - 1320009\\\textit{Alexandra Rahman} - rahmaa25 - 1305735\\\textit{Connor Sheehan} - sheehacg - 1330964}
 \date{March 7\textsuperscript{th}, 2016}                               
 %------------------------------------------------------------------------------
 
@@ -40,6 +40,8 @@
 \maketitle	
 
 \tableofcontents
+\listoffigures
+\listoftables
 \newpage
 
 \section{Introduction}
@@ -80,48 +82,103 @@ This document will outline the design of the \textit{21 Questions} application f
 \label{sec:use_case_diagram}
 % Begin Section
 \begin{enumerate}[a)]
+	%Business Event 1
 	\item User wants to enter new search (Figure \ref{usecase:search}).
-	
+		%Scenario
+		\begin{enumerate}[{BE1}.1]
+			\item The user presses the start button on the start screen.
+			\item The system will respond by bringing them to the question screen and asking them a question.
+			\item The user will answer yes, no or undecided to the question.
+			\item The system will ask the user another question.
+			\item After 21 questions, the system will respond by displaying a map to the user.
+			\item The user will hit done.
+			\item The system will ask if this was the location the user had in mind.
+			\item The user will answer yes it was or no it was not.
+		\end{enumerate}
+	%UC1
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE1}
-			\caption{BE1}\label{usecase:search}
+			\caption{Use Case for BE1}\label{usecase:search}
 		\end{figure}
 	\end{center}
 
-\item An unlisted establishment requests to be included in the application (Figure \ref{usecase:new_esta}).
-	
+	%Business Event 2
+	\item An unlisted establishment requests to be included in the application (Figure \ref{usecase:new_esta}).
+		%Scenario
+		\begin{enumerate}[{BE2}.1]
+			\item A new business opens or a business opens a new location.
+			\item The business or establishment contacts the company to inform them they wish to be added to the system.
+			\item The IT specialists will send them a form for the business to fill out.
+			\item The business will return the form to the company.
+			\item The IT will verify that the information is valid and add it to the system.
+			\item The business is added.
+		\end{enumerate}
+	%UC2	
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE2}
-			\caption{BE2}\label{usecase:new_esta}
+			\caption{Use Case for BE2}\label{usecase:new_esta}
 		\end{figure}
 	\end{center}
 
-\item Updates or maintenance of the application is required (Figure \ref{usecase:updates}).
-	
-	%\begin{center}
+
+	%Business Event 3
+	\item Updates or maintenance of the application is required (Figure \ref{usecase:updates}).
+		%Scenario
+		\begin{enumerate}[{BE3}.1]
+			\item Internal management states an issue and requests an update/ maintenance.
+			\item Update/ maintenance is given a priority.
+			\item The IT specialist notifies the users that the system will update and be shut down for a certain period of time, if necessary.
+			\item The system will disconnect.
+			\item The necessary changes shall be made by the IT specialists.
+			\item The user will be notified if they need to update the application version.
+		\end{enumerate}
+	%UC3
+	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE3}
-			\caption{BE3}\label{usecase:updates}
+			\caption{Use Case for BE3}\label{usecase:updates}
 		\end{figure}
-	%\end{center}
-
-\item Management requests implementation or change of experts (Figure \ref{usecase:change_expert}).
+	\end{center}
 	
+	%Business Event 4
+	\item Management requests implementation or change of experts (Figure \ref{usecase:change_expert}).
+		%Scenario
+		\begin{enumerate}[{BE4}.1]
+			\item Internal management states a function needs to be changed(added or removed).
+			\item The change is given a priority.
+			\item Function will be added or removed.
+			\item A small focus group is selected.
+			\item A survey is created.
+			\item Update is released to focus group.
+			\item Survey is sent to focus group.
+			\item The update will be released depending on the results of the survey.
+			\item If the survey results are not favourable, the function will be under review and released again to the focus group (repeat steps 5-9). Otherwise the update is released to the general public and the user is notified that they need to update app version.
+		\end{enumerate}
+	%UC4
 	\begin{center}
 		\begin{figure}[h!]
 			\includegraphics[scale=0.6]{BE4}
-			\caption{BE4}\label{usecase:change_expert}
+			\caption{Use Case for BE4}\label{usecase:change_expert}
 		\end{figure}
 	\end{center}
 
-\item User flags an incorrect or inappropriate search or result (Figure \ref{usecase:badsearch}).
-	
+	%Business Event 5
+	\item User flags an incorrect or inappropriate search or result (Figure \ref{usecase:badsearch}).
+		%Scenario
+		\begin{enumerate}[{BE5}.1]
+			\item A business, user or internal management recognizes that the content is inappropriate.
+			\item The content shall automatically be hidden from other users.
+			\item The content is given a priority.
+			\item The content is put into a priority queue.
+			\item An IT will review the content and make appropriate changes (remove if necessary).
+		\end{enumerate}
+	%UC5
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{BE5}
-			\caption{BE5}\label{usecase:badsearch}
+			\caption{Use Case for BE5}\label{usecase:badsearch}
 		\end{figure}
 	\end{center}
 	
@@ -138,7 +195,7 @@ This section should provide an analysis class diagram for your application.
 	\begin{center}
 		\begin{figure}[H]
 			\includegraphics[scale=0.6]{analysis_class_diagram}
-			\caption{The analysis class diagram}\label{diagram:analysisclass}
+			\caption{Analysis Class Diagram}\label{diagram:analysisclass}
 		\end{figure}
 	\end{center}
 	
@@ -173,24 +230,104 @@ Figure \ref{diagram:analysisclass} contains the analysis class diagram. The diag
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
 This section should contain all of your CRC cards.
-
-\begin{enumerate}[a)]
-	\item Provide a CRC Card for each identified class
-	\item Please use the format outlined in tutorial, i.e., 
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
-		\hline
-		\textbf{Responsibility:} & \textbf{Collaborators:} \\
-		\hline
-		\vspace{1in} & \\
-		\hline
-		\end{tabular}
-	\end{table}
 	
-\end{enumerate}
+	%CRC for Expert Controller 
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Expert Controller}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Deals with messages passed from the Question Controller
+					\item Passes desired questions to the Question Controller
+					\item Creates and deletes tables that relate to experts
+					\item Accesses the information by performing a query on the tables
+					\item Adds information to tables
+					\item Modifies information in the tables
+				\end{itemize} & 
+				\begin{itemize}
+					\item Establishment Table
+					\item Environment Table
+					\item Location Table
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Expert Controller}
+	\end{longtable}
+	
+	
+	%CRC for Question Controller 
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Question Controller}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Requests questions from the Expert Controller based on the expert's needs
+					\item Accesses questions that have already been asked as well as the answers to said questions
+					\item Keeps track of the overall state of the game. This includes the number of questions total that have been asked
+					\item Provides a solution based on the experts' best guesses
+					\item Process answers from the GUI Controller
+					\item Provides the next question for the GUI Controller to display
+				\end{itemize} & 
+				\begin{itemize}
+					\item Expert Controller
+					\item Facts Data
+					\item GUI Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Question Controller}
+	\end{longtable}
+	
+	%CRC for GUI Controller 
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Graphics User Interface Controller}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Controls which boundary class the user can interact with
+					\item Processes and verifies information to send to the Question Controller
+					\item Receives information from the Question Controller to display information or direct to answer
+					\item Tracks the current and past state
+				\end{itemize} & 
+				\begin{itemize}
+					\item Question Controller
+					\item Map Screen
+					\item Start Screen
+					\item Question Screen
+					\item Setting Screen
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Graphics User Interface Controller}
+	\end{longtable}
+	
+	%CRC for Question Page
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Question Page}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Receives information from the GUI Controller
+					\item Takes user input from the users response for the question
+					\item Sends the answer of the question to the GUI controller
+					\item Allows user to quit the current game
+				\end{itemize} & 
+				\begin{itemize}
+					\item GUI Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Question Page Boundary Class}
+	\end{longtable}
+	
 % End Section
 \newpage
 
@@ -205,7 +342,7 @@ This section should contain all of your CRC cards.
 			Gabriel Lopez de Leon &  %Gabriel contributions here
 			\\
 			\hline
-			Maxwell Moore & %Max contritubtions here
+			Maxwell Moore & %Max contributions here
 			\\
 			\hline
 			Curtis Milo & %Curtis contributions here
