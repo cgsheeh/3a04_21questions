@@ -48,18 +48,18 @@
 \label{sec:introduction}
 % Begin Section
 
-This document is called the High-Level Architectural Design document and it will be giving the stakeholders a broad overview of how the project 21 Questions is designed and will be organized. 
+This document is called the High-Level Architectural Design document and it will be giving the stakeholders a broad overview of how the project \textit{21 Questions} is designed and will be organized. 
 
 \subsection{Purpose}
 \label{sub:purpose}
 % Begin SubSection
-The High-Level Architectural Design document outlines the functionality of the system through Use Case diagrams, and details the key classes of the system and how they relate via the use of an Analysis Class Diagram. The main purpose of this document is to explain in detail the software system to be developed, which in this case is the application, 21 Questions. Through the use of the various diagrams mentioned before, the main components of the product and their relationships with each other are shown. The main target audience for this document is the software developers as they need to see, in greater detail, how the system and its modules interact and how they are designed to work in relation to each other.
+The High-Level Architectural Design document outlines the functionality of the system through Use Case diagrams, and details the key classes of the system and how they relate via the use of an Analysis Class Diagram. The main purpose of this document is to explain in detail the software system to be developed, which in this case is the application, \textit{21 Questions}. Through the use of the various diagrams mentioned before, the main components of the product and their relationships with each other are shown. The main target audience for this document is the software developers as they need to see, in greater detail, how the system and its modules interact and how they are designed to work in relation to each other.
 % End SubSection
 
 \subsection{System Description}
 \label{sub:system_description}
 % Begin SubSection
-21 Questions is an android application that can be used as a location identifier whose intended use is for any user above the age of ten. The application requires minimal training, experience or technical expertise to use, and can be easily picked up and used by anyone. 21 Questions is a simple games that asks the user a series of twenty-one polar or binary questions to try to identify their area of interest. In this game the area of interest is limited to an establishment, building, place, or effigy with a focus on locations only with an end goal of displaying the result through Google Maps.
+\textit{21 Questions} is an android application that can be used as a location identifier whose intended use is for any user above the age of ten. The application requires minimal training, experience or technical expertise to use, and can be easily picked up and used by anyone. 21 Questions is a simple game that asks the user a series of twenty-one polar or binary questions to try to identify their area of interest. In this game the area of interest is limited to an establishment, building, place, or effigy with a focus on locations only with an end goal of displaying the result through Google Maps.
 % End SubSection
 
 \subsection{Overview}
@@ -102,11 +102,11 @@ This document will outline the design of the \textit{21 Questions} application f
 		%Scenario
 		\begin{enumerate}[{BE2}.1]
 			\item A new business opens or a business opens a new location.
-			\item The business or establishment contacts the company to inform them they wish to be added to the system.
-			\item The IT specialists will send them a form for the business to fill out.
-			\item The business will return the form to the company.
-			\item The IT will verify that the information is valid and add it to the system.
-			\item The business is added.
+			\item The business or establishment contacts the development team to inform them they wish to be added to the system.
+			\item The IT specialists will release a form for the business to fill out.
+			\item The business will return the form to the developers.
+			\item The IT specialists will verify that the information is valid and add it to the system.
+			\item The business is added to the system database for use in the application.
 		\end{enumerate}
 	%UC2	
 	\begin{center}
@@ -121,8 +121,8 @@ This document will outline the design of the \textit{21 Questions} application f
 	\item Updates or maintenance of the application is required (Figure \ref{usecase:updates}).
 		%Scenario
 		\begin{enumerate}[{BE3}.1]
-			\item Internal management states an issue and requests an update/ maintenance.
-			\item Update/ maintenance is given a priority.
+			\item Internal management states an issue and requests an update/maintenance.
+			\item Update/maintenance is given a priority.
 			\item The IT specialist notifies the users that the system will update and be shut down for a certain period of time, if necessary.
 			\item The system will disconnect.
 			\item The necessary changes shall be made by the IT specialists.
@@ -140,9 +140,9 @@ This document will outline the design of the \textit{21 Questions} application f
 	\item Management requests implementation or change of experts (Figure \ref{usecase:change_expert}).
 		%Scenario
 		\begin{enumerate}[{BE4}.1]
-			\item Internal management states a function needs to be changed(added or removed).
+			\item Internal management states a functionality needs to be changed (added or removed).
 			\item The change is given a priority.
-			\item Function will be added or removed.
+			\item The function will be added or removed.
 			\item A small focus group is selected.
 			\item A survey is created.
 			\item Update is released to focus group.
@@ -185,7 +185,7 @@ This document will outline the design of the \textit{21 Questions} application f
 \section{Analysis Class Diagram}
 \label{sec:analysis_class_diagram}
 % Begin Section
-This section should provide an analysis class diagram for your application.
+Figure \ref{diagram:analysisclass} is an \textit{analysis class diagram} for the \textit{21 Questions} application.
 
 \label{sub:system_architecture}
 % Begin SubSection
@@ -202,18 +202,21 @@ This section should provide an analysis class diagram for your application.
 \section{Architectural Design}
 \label{sec:architectural_design}
 % Begin Section
-The desired system architecture for solving this issue is the blackboard architecture because of experts are able to identify different aspects of the area of interest, these module can be swapped out if needed to give a more accurate result. Each expert will be there own ADT on the front end of the application so that it will be easy to provide an interface for experts so that we increase the modularity of the design. Each expert will be able to communicate to there own database, the database is essential to ensure that multiple clients will have access to the same information without having to preform updates.
+The desired architecture for this system is the blackboard architecture pattern. The blackboard pattern involves a \textit{blackboard} global memory space, a set of specialized knowledge modules and a set of controllers to synchronize interaction between the modules. The system will use three experts as the knowledge modules. Each expert will expose its own interface to be interacted with by controllers. Each expert will be able to communicate with a globally shared database. The database is essential to ensure that multiple clients will have access to the same information without having to perform updates.
 
 \subsection{System Architecture}
 
-Figure \ref{diagram:analysisclass} contains the analysis class diagram. The diagram is designed so that way each entity or boundary class will communication there controller and the controllers will communication between each other.The design is set up into three separate units of: interface, logic and data. The system design is a black board model with a data store, with the experts all using the same interface so that they can properly communicate to the question controller class. The system will have two controllers, one for handling the pages of the system and the other for controlling which expert can ask questions. Each expert will create a guess of what they might think is the item in which the user is thinking of. The controller will ask one expert at a time to provide a question to ask the user, based on the users response will either prove that is not the thing we are looking for or that it still might be. The experts will then provide there best guess to the controller, the controller will then compile these answers into a search in which will be displayed on a map for the user. In this way our system will not rely on any one expert, making it easy to add and remove experts in order to provide a better result.
+Figure \ref{diagram:analysisclass} contains the analysis class diagram. The diagram is designed so that each entity or boundary class will communicate with their corresponding subsystem controller, and the subsystem controllers will handle communication between each subsystem. The design is separated into three logical units: interface, logic and data. The system design is a black board model with a data store, with the experts all using the same interface so that they can properly communicate to the question controller class. The system will have several controllers, one for handling the pages of the system and another for controlling which expert can ask questions. Each expert will create a guess of what they think is the item in which the user is thinking of. The controller will ask one expert at a time to provide a question to ask the user, the users response will bring the system closer to the correct result. The experts will then provide their best guess to the controller, the controller will then compile these answers into a result which will be displayed on a map for the user. In this way our system will not rely on a single expert, making it easy to add and remove experts in order to provide a better result.
 
 \subsection{Subsystems}
 \label{sub:subsystems}
 % Begin SubSection
-The database controller will deal with different clients asking for unique information. This entitles that it will process any information, run the query that is needed, and send the information that is related to the problem. \\ \\
-The next tier to the system is the logical layer. This layer is responsible for the control flow of the game, ensuring that each expert entity will properly get to ask there respective questions. The controller will deal with receiving the information that is passed in from the GUI controller and dealing with incoming information from the Data layer. Using the guesses form each of the experts to create a final solution to the problem.\\ \\
-Finally the GUI controller, will with ensuring the proper screen is shown. The controller receive, process and send information from the screens to the question controller. The receive information from the logic controller to use in the questions or map boundary class. The start screen, which will show the initial menu a user will be viewing, this module will take user input to start a game or change the setting of the game. The question controller will display the questions for the user to answer and will pass off this information the the GUI controller. The setting screen will provide a sub-menu which would allow a user to change the functionality of the system in regards to: accessibility, font colors, sizes, and preferences. finally the map screen will be where we provide the user with a map of what the final result is and will take feedback from the user if it is correct or incorrect.
+
+The database controller will deal with different clients asking for unique information. This entitles that it will process any information, run the query that is needed, and return the information that is related to the problem. 
+\\ \\
+The next tier to the system is the logical layer. This layer is responsible for the control flow of the game, ensuring that each expert entity will properly get to ask their respective questions. The controller will deal with receiving the information that is passed in from the GUI controller and dealing with incoming information from the data layer. Using the guesses form each of the experts, the controller will finally create a best guess solution to the problem.
+\\ \\
+Finally the GUI controller, which is responsible for ensuring the proper screen is shown. This controller receives, process and sends information from the view screens to the question controller. The GUI controller uses information from the logic controller in the questions or map boundary class. The start screen, which will show the initial menu a user will be viewing,  takes user input to start a game or change the setting of the game. The question controller will display the questions for the user to answer and will pass off this information to the GUI controller. The setting screen will provide a sub-menu which would allow a user to change the functionality of the system in regards to accessibility, font colors/sizes and preferences. Finally the map screen will be where the user is provided with a map of what the final result is and will take feedback from the user on the correctness of the result.
 % End SubSection
 
 % End Section
@@ -222,8 +225,7 @@ Finally the GUI controller, will with ensuring the proper screen is shown. The c
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
-This section should contain all of your CRC cards.
-	
+
 	%CRC for Expert Controller 
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
@@ -309,8 +311,8 @@ This section should contain all of your CRC cards.
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
-					\item Provide an interface that the user can interact with
-					\item Send information to the GUI Controller
+					\item Provides an interface that the user can interact with
+					\item Sends information to the GUI Controller
 				\end{itemize} & 
 				\begin{itemize}
 					\item GUI Controller
@@ -328,9 +330,9 @@ This section should contain all of your CRC cards.
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
-					\item Display a variety of settings to the user
-					\item Allow the user to verify the changes to the current settings
-					\item Allow the user to go back to previous screens
+					\item Displays a variety of settings to the user
+					\item Allows the user to verify the changes to the current settings
+					\item Allows the user to go back to previous screens
 				\end{itemize} & 
 				\begin{itemize}
 					\item GUI Controller
@@ -454,10 +456,10 @@ This section should contain all of your CRC cards.
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
-					\item  Allows for the addition of an location
-					\item Allows for the removal of an location
-					\item Holds a set of questions that correspond to certain location
-					\item Search for location based on question results
+					\item Allows for the addition of a location
+					\item Allows for the removal of a location
+					\item Holds a set of questions that correspond to a certain location
+					\item Searches for location based on question results
 				\end{itemize} & 
 				\begin{itemize}
 					\item Expert Controller 
@@ -475,10 +477,10 @@ This section should contain all of your CRC cards.
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
-					\item  Allows for the addition of an environment
+					\item Allows for the addition of an environment
 					\item Allows for the removal of an environment
 					\item Holds a set of questions that correspond to certain environment
-					\item Search for environment based on question results
+					\item Searches for an environment based on question results
 				\end{itemize} & 
 				\begin{itemize}
 					\item Expert Controller
@@ -500,7 +502,7 @@ This section should contain all of your CRC cards.
 					\item Allows for the addition of an establishment
 					\item Allows for the removal of an establishment
 					\item Holds a set of questions that correspond to certain establishments
-					\item Search for establishment based on question results
+					\item Searches for an establishment based on question results
 				\end{itemize} & 
 				\begin{itemize}
 					\item Expert Controller
@@ -535,7 +537,7 @@ This section should contain all of your CRC cards.
 			Alexandra Rahman & Wrote the system description and helped come up with the scenarios and use cases. Created the use case diagram for BE4. Collaborated on the CRC cards and the analysis class diagram. Refined the CRC cards and the analysis class diagram. Helped input the class responsibility collaboration cards into the document. Finally, helped edit and format the document.
 			\\
 			\hline
-			Connor Sheehan & Created use case diagram for BE3. Added overview section. Added styling.\\
+			Connor Sheehan & Created use case diagram for BE3. Added overview section. Added styling. Proofread final submission and clarified language.\\
 			\hline
 			
 			\caption{Division of Labour}
