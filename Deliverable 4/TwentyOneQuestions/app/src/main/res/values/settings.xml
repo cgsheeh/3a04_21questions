@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="font_size"> 14</integer>
+    <bool name="read_text">false</bool>
+    <bool name="voice_answer">false</bool>
+</resources>
