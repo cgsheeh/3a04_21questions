@@ -43,15 +43,12 @@ public class QuestionController extends Thread {
 
                     }
                     addAnswer();
-                }else{
-                    checkGuesses();
                 }
-
                 if (isFinished()) {
                     current_question = null;
                     break;
                 } else {
-                    getNextQuestion();
+                    current_question = experts.get(experts_turn).getQuestion();
                 }
 
                 channel.setQuestion("Question " + this.questions_asked + ": " + this.current_question);
@@ -72,61 +69,6 @@ public class QuestionController extends Thread {
 
     }
 
-    /**
-     * Gives the next question to ask the user
-     * @return the next question for the user to answer
-     */
-    private void getNextQuestion(){
-
-        String table = experts.get(experts_turn).getQuestionTable();
-        String query = experts.get(experts_turn).getQueryForQuestion();
-        this.current_question = excuteQuery(table,query);
-
-    }
-
-
-    /**
-     * prepairs and send the information to the database connector
-     * @param table the table to preform the query on
-     * @param query the query to preform
-     */
-    private String excuteQuery(String table, String query) {
-        DatabaseConnector dbConnector = new DatabaseConnector();
-        dbConnector.execute(new String[]{table,query});
-        int reps = 0;
-        while(dbConnector.getResult().equals("") && reps <200){
-            try {
-                Thread.sleep(100);
-            }catch(InterruptedException e){};
-            reps++;
-        }
-
-        return dbConnector.getResult();
-    }
-
-    /**
-     * sets the answer and updates the expert count
-     */
-    private void addAnswer(){
-        experts.get(experts_turn).add(current_question,channel.getAnswer());
-        checkGuesses();
-        experts_turn = (experts_turn+1)%experts.size();
-    }
-
-
-    /**
-     * Checks all of the experts guesses to ensure that they are valid
-     */
-    private void checkGuesses() {
-        for (int i = 0; i < experts.get(experts_turn).amountofGuesses() ; i++) {
-            if(!experts.get(experts_turn).isValidGuess(i)){
-                String table = experts.get(experts_turn).getGuessTable();
-                String query = experts.get(experts_turn).getQueryForGuess();
-                String newGuess = this.excuteQuery(table,query);
-                experts.get(experts_turn).setNewGuess(i,newGuess);
-            }
-        }
-    }
 
     /**
      * returns the answer based on each  expert
@@ -135,10 +77,17 @@ public class QuestionController extends Thread {
     public String getAnswer() {
         String answer= "";
         for (int i = 0; i < experts.size() ; i++) {
-            answer += experts.get(i).getBestGuess();
+            answer += experts.get(i).getGuess();
         }
         return answer;
     }
 
 
+    /**
+     * sets the answer and updates the expert count
+     */
+    private void addAnswer(){
+        experts.get(experts_turn).add(current_question,channel.getAnswer());
+        experts_turn = (experts_turn+1)%experts.size();
+    }
 }
