@@ -1,0 +1,76 @@
+    GUI Controller
+- btStart: Button
+- btSetting: Button
+- btYes: Button
+- btNo: Button
+- btMaybe: Button
+- btCorrect: Button
+- btIncorrect: Button
+- lblQuestionAsked: TextView
+- txtAnswerMap: EditText
+- question_controller: QuestionController
+- channel: MessageChannel
+- overallanswer: String
+- screen: Screen
+
++ void onClick(View v)
++ void onBackPressed()
+* void onCreate(savedInstanceState: Bundle)
+- void setScreen()
+- void setListeners()
+- void nextQuestionRequest(answer: String)
+- void waitForQuestion()
+- void displayMap()
+
+Message Channel
+
+- answer: String
+- question: String
+- canGo: Turn
+
++ MessageChannel()
++ void setAnswer(answer: String)
++ void setQuestion(question: String)
++ boolean canGetQuestion()
++ boolean canGetAnswer()
++ String getQuestion()
++ String getAnswer()
+
+
+Question controller
+
+ - MAX_QUESTIONS: int
+ - experts: ArrayList<Expert>
+ - questions_asked: int
+ - experts_turn: int
+ - channel: MessageChannel
+ - current_question: String
+
+ + QuestionController(channel: MessageChannel)
+ + void run()
+ + boolean isFinished()
+ + String getAnswer()
+ - String addAnswer() 
+
+
+Expert
+ 
+ - questions: ArrayList<String>
+ - answers: ArrayList<String>
+ - position: int
+
+ + Expert()
+ + void add(qustion: String, answer: String)
+ + String getQuestion()
+ + String getGuess()
+ * excuteQuery(table: String, query: String)
+
+ DB controller
+
+ - url: String
+ - result: String
+ - dataRetrieved: boolean
+
+ + String getResult()
+ * String doInBackground(urls: String)
+ * void onPostExecute(serverData: String)

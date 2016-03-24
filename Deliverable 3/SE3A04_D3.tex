@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[titlepage]{article}
 
 % Imported Packages
 %------------------------------------------------------------------------------
@@ -17,16 +17,19 @@
 
 % Header and Footer
 %------------------------------------------------------------------------------
-\pagestyle{plain}  
+\pagestyle{fancy}  
+\lhead{Group 2}
+\chead{SFWR 3A04}
+\rhead{Detailed Architectural Design} 
 \renewcommand\headrulewidth{0.4pt}                                      
 \renewcommand\footrulewidth{0.4pt}                                    
 %------------------------------------------------------------------------------
 
 % Title Details
 %------------------------------------------------------------------------------
-\title{Deliverable \#3 Template}
-\author{SE 3A04: Software Design II -- Large System Design}
-\date{}                               
+\title{\Huge{\textbf{Detailed Architectural Design\\21 Questions}}\vspace{9cm}}
+\author{\textit{Gabriel Lopez de Leon} - lopezdg - 1310514\\\textit{Curtis Milo} - milocj - 1305877\\\textit{Maxwell Moore} - moorem8 - 1320009\\\textit{Alexandra Rahman} - rahmaa25 - 1305735\\\textit{Connor Sheehan} - sheehacg - 1330964}
+\date{Monday, March 28\textsuperscript{th}, 2016}                               
 %------------------------------------------------------------------------------
 
 % Document
@@ -39,14 +42,14 @@
 \label{sec:introduction}
 % Begin Section
 
-This document is called the Large System Design document and it will be giving the stakeholders an in depth look at how the project, \textit{21 Questions}, is designed. More precisely, the details concerning each class as well as how each class interacts with other classes. 
+This document is called the detailed architectural design document and it will be giving the stakeholders an in depth look at how the project, \textit{21 Questions}, is designed. More precisely, this document outlines the details concerning each class as well as how classes interact with one another.
 
 \subsection{Purpose}
 \label{sub:purpose}
 
 % Begin SubSection
 
-The Large System Design document outlines the functionality of the system through the State Chart diagrams, and focuses on the detail of each class through the Detailed Class diagrams. The interactions among the classes, more specifically the messages passed between classes, will be defined in the Sequence diagrams.  The main purpose of this document is to explain in detail the software system to be developed, which in this case is the application, \textit{21 Questions}. Through the use of the various diagrams mentioned before, all components of the product and their relationships with each other are revealed in more detail. The main target audience for this document is the software developers as they need to see, in greater detail, how the system and its modules interact and how they are designed to work in relation to each other.
+The detailed architectural design document outlines the functionality of the system through the State Chart diagrams, and focuses on the detail of each class through the Detailed Class diagrams. The interactions among the classes, more specifically the messages passed between classes, will be defined in the Sequence diagrams.  The main purpose of this document is to explain in detail the software system to be developed, which in this case is the application, \textit{21 Questions}. Through the use of the various diagrams mentioned before, all components of the product and their relationships with each other are revealed in more detail. The main target audience for this document is the software developers as they need to see, in greater detail, how the system and its modules interact and how they are designed to work in relation to each other.
 
 % End SubSection
 
@@ -74,13 +77,29 @@ illustrated in the Detailed Class diagram. These sections highlight the classes 
 \section{State Charts for Controller Classes}
 \label{sec:state_charts_for_controller_classes}
 % Begin Section
-This section should provide a state chart for each controller class for your application.
+The following section contains state charts for the controller classes in the \textit{21 Questions} application. Figures \ref{sc:gui} and \ref{sc:question} are the state charts for the GUI and Question Controller classes, respectively.
+
+\begin{figure}
+\includegraphics[scale=0.8]{sd_guicontroller}
+\caption{State chart for the GUI Controller class.}\label{sc:gui}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.8]{sd_questioncontroller}
+\caption{State chart for the Question Controller class.}\label{sc:question}
+\end{figure}
 % End Section
 
 \section{Sequence Diagrams}
 \label{sec:sequence_diagrams}
 % Begin Section
-This section should provide a sequence diagram for each use case of your application.
+%This section should provide a sequence diagram for each use case of your application. *** NOTE: MAKE MORE OF THESE -cs ***
+Figure \ref{sd:main} contains a sequence diagram for the primary use case of the application.
+
+\begin{figure}
+\includegraphics[scale=0.5]{Sequence_Diagram}
+\caption{Sequence diagram for the primary use case.}\label{sd:main}
+\end{figure}
 % End Section
 
 \section{Detailed Class Diagram}
@@ -111,7 +130,7 @@ This section should provide a detailed class diagram for your application.
 			Alexandra Rahman & Insert your contribution here.
 			\\
 			\hline
-			Connor Sheehan & Insert your contribution here.
+			Connor Sheehan & Collaborated on design of architecture. Generated state charts.
 			\\
 			\hline
 			
@@ -136,7 +155,7 @@ This section should provide a detailed class diagram for your application.
 
 
 % End Section
-
+\iffalse
 \newpage
 \section*{IMPORTANT NOTES}
 \begin{itemize}
@@ -156,7 +175,7 @@ This section should provide a detailed class diagram for your application.
 	\end{itemize}
 	\item If you do \underline{NOT} have a Division of Labour sheet, your deliverable will \underline{NOT} be marked
 \end{itemize}
-
+\fi
 
 \end{document}
 %------------------------------------------------------------------------------
