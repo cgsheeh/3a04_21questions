@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 MAR 2016 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAR 2016 10:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -339,203 +339,198 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lot=\write5
 \openout5 = `SE3A04_D2_Template.lot'.
 
- [1] [2] <BE1.png, id=19, 705.63625pt x 264.99pt>
+ [1] [2] <BE1.png, id=19, 668.4975pt x 404.51125pt>
 File: BE1.png Graphic file (type png)
  <use BE1.png>
-Package pdftex.def Info: BE1.png used on input line 95.
-(pdftex.def)             Requested size: 423.38501pt x 158.99522pt.
+Package pdftex.def Info: BE1.png used on input line 96.
+(pdftex.def)             Requested size: 401.1016pt x 242.70862pt.
 
-<BE2.png, id=21, 694.595pt x 344.28625pt>
+<BE2.png, id=21, 691.58376pt x 344.28625pt>
 File: BE2.png Graphic file (type png)
  <use BE2.png>
-Package pdftex.def Info: BE2.png used on input line 114.
-(pdftex.def)             Requested size: 416.76022pt x 206.57333pt.
+Package pdftex.def Info: BE2.png used on input line 115.
+(pdftex.def)             Requested size: 414.95345pt x 206.57333pt.
  [3 <./BE1.png>]
-<BE3.png, id=26, 745.78625pt x 475.7775pt>
+<BE3.png, id=26, 745.78625pt x 374.39874pt>
 File: BE3.png Graphic file (type png)
  <use BE3.png>
-Package pdftex.def Info: BE3.png used on input line 134.
-(pdftex.def)             Requested size: 447.4752pt x 285.46869pt.
- [4 <./BE2.png>]
-<BE4.png, id=31, 690.58pt x 575.14874pt>
+Package pdftex.def Info: BE3.png used on input line 135.
+(pdftex.def)             Requested size: 447.4752pt x 224.64098pt.
+ [4 <./BE2.png> <./BE3.png>] <BE4.png, id=32, 690.58pt x 373.395pt>
 File: BE4.png Graphic file (type png)
  <use BE4.png>
-Package pdftex.def Info: BE4.png used on input line 156.
-(pdftex.def)             Requested size: 414.3512pt x 345.0919pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5 <./BE3.png>] <BE5.png, id=36, 821.0675pt x 474.77374pt>
+Package pdftex.def Info: BE4.png used on input line 157.
+(pdftex.def)             Requested size: 414.3512pt x 224.03873pt.
+ [5 <./BE4.png>]
+<BE5.png, id=37, 790.955pt x 399.4925pt>
 File: BE5.png Graphic file (type png)
  <use BE5.png>
-Package pdftex.def Info: BE5.png used on input line 175.
-(pdftex.def)             Requested size: 492.6443pt x 284.86644pt.
+Package pdftex.def Info: BE5.png used on input line 176.
+(pdftex.def)             Requested size: 474.57666pt x 239.69734pt.
 
-Overfull \hbox (22.88928pt too wide) in paragraph at lines 175--176
+Overfull \hbox (4.82164pt too wide) in paragraph at lines 176--177
 [][] 
  []
 
-[6 <./BE4.png>] [7 <./BE5.png>]
-<analysis_class_diagram.png, id=46, 755.82375pt x 1107.13625pt>
+[6 <./BE5.png>] <analysis_class_diagram.png, id=43, 755.82375pt x 795.97375pt>
 File: analysis_class_diagram.png Graphic file (type png)
 
 <use analysis_class_diagram.png>
-Package pdftex.def Info: analysis_class_diagram.png used on input line 194.
-(pdftex.def)             Requested size: 377.91095pt x 553.56677pt.
- [8 <./analysis_class_diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 215--221
+Package pdftex.def Info: analysis_class_diagram.png used on input line 196.
+(pdftex.def)             Requested size: 377.91095pt x 397.9859pt.
+ [7 <./analysis_class_diagram.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 217--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--221
+Underfull \hbox (badness 10000) in paragraph at lines 217--223
 
  []
 
-[9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 237.
+[8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 239.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 237.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 239.
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 230--252
+Overfull \hbox (23.99998pt too wide) in alignment at lines 232--254
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 252
+Underfull \vbox (badness 10000) detected at line 254
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 256--278
+Overfull \hbox (23.99998pt too wide) in alignment at lines 258--280
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 278
+Underfull \vbox (badness 10000) detected at line 280
+ []
+
+[9]
+Overfull \hbox (23.99998pt too wide) in alignment at lines 284--306
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 306
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 309--325
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 325
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 328--345
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 345
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 348--366
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 366
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 369--387
+ [] [] 
  []
 
 [10]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 282--304
+Underfull \vbox (badness 10000) detected at line 387
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 390--408
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 304
+Underfull \vbox (badness 10000) detected at line 408
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 307--323
+Overfull \hbox (23.99998pt too wide) in alignment at lines 411--429
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 323
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 326--343
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 343
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 346--364
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 364
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 367--385
- [] [] 
+Underfull \vbox (badness 10000) detected at line 429
  []
 
 [11]
-Underfull \vbox (badness 10000) detected at line 385
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 388--406
+Overfull \hbox (23.99998pt too wide) in alignment at lines 433--451
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 406
+Underfull \vbox (badness 10000) detected at line 451
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 409--427
+Overfull \hbox (23.99998pt too wide) in alignment at lines 454--472
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 427
+Underfull \vbox (badness 10000) detected at line 472
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 475--493
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 493
  []
 
 [12]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 431--449
+Overfull \hbox (23.99998pt too wide) in alignment at lines 497--515
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 449
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 452--470
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 470
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 473--491
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 491
+Underfull \vbox (badness 10000) detected at line 515
  []
 
 [13]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 495--513
+Overfull \hbox (0.5108pt too wide) in alignment at lines 526--546
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 513
+Underfull \vbox (badness 10000) detected at line 546
  []
 
-[14]
-Overfull \hbox (0.5108pt too wide) in alignment at lines 524--544
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 544
- []
-
-[15] (./SE3A04_D2_Template.aux) ) 
+[14] (./SE3A04_D2_Template.aux) ) 
 Here is how much of TeX's memory you used:
  3346 strings out of 493089
  44937 string characters out of 6134842
- 122623 words of memory out of 5000000
+ 122622 words of memory out of 5000000
  6752 multiletter control sequences out of 15000+600000
  12802 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,1285b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,43p,1285b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
@@ -545,10 +540,10 @@ ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on SE3A04_D2_Template.pdf (16 pages, 365972 bytes).
+Output written on SE3A04_D2_Template.pdf (15 pages, 341801 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
