@@ -124,8 +124,6 @@ This document will outline the design of the \textit{21 Questions} application f
 		\begin{enumerate}[{BE3}.1]
 			\item Internal management states an issue and requests an update/maintenance.
 			\item Update/maintenance is given a priority.
-			\item The IT specialist notifies the users that the system will update and be shut down for a certain period of time, if necessary.
-			\item The system will disconnect.
 			\item The necessary changes shall be made by the IT specialists.
 			\item The user will be notified if they need to update the application version.
 		\end{enumerate}
@@ -142,14 +140,10 @@ This document will outline the design of the \textit{21 Questions} application f
 		%Scenario
 		\begin{enumerate}[{BE4}.1]
 			\item Internal management states a functionality needs to be changed (added or removed).
-			\item The change is given a priority.
 			\item The function will be added or removed.
-			\item A small focus group is selected.
 			\item A survey is created.
-			\item Update is released to focus group.
-			\item Survey is sent to focus group.
+			\item Survey is filled out by servers before update is released.
 			\item The update will be released depending on the results of the survey.
-			\item If the survey results are not favourable, the function will be under review and released again to the focus group (repeat steps 5-9). Otherwise the update is released to the general public and the user is notified that they need to update app version.
 		\end{enumerate}
 	%UC4
 	\begin{center}
@@ -165,10 +159,9 @@ This document will outline the design of the \textit{21 Questions} application f
 		%Scenario
 		\begin{enumerate}[{BE5}.1]
 			\item A business, user or internal management recognizes that the content is inappropriate.
-			\item The content shall automatically be hidden from other users.
-			\item The content is given a priority.
-			\item The content is put into a priority queue.
-			\item An IT will review the content and make appropriate changes (remove if necessary).
+			\item The content is blocked from all users.
+			\item The content will be changed or removed.
+			\item The content will become visible to all users.
 		\end{enumerate}
 	%UC5
 	\begin{center}

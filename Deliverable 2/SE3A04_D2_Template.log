@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAR 2016 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAR 2016 11:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -354,21 +354,21 @@ Package pdftex.def Info: BE2.png used on input line 115.
 <BE3.png, id=26, 745.78625pt x 374.39874pt>
 File: BE3.png Graphic file (type png)
  <use BE3.png>
-Package pdftex.def Info: BE3.png used on input line 135.
+Package pdftex.def Info: BE3.png used on input line 133.
 (pdftex.def)             Requested size: 447.4752pt x 224.64098pt.
  [4 <./BE2.png> <./BE3.png>] <BE4.png, id=32, 690.58pt x 373.395pt>
 File: BE4.png Graphic file (type png)
  <use BE4.png>
-Package pdftex.def Info: BE4.png used on input line 157.
+Package pdftex.def Info: BE4.png used on input line 151.
 (pdftex.def)             Requested size: 414.3512pt x 224.03873pt.
  [5 <./BE4.png>]
 <BE5.png, id=37, 790.955pt x 399.4925pt>
 File: BE5.png Graphic file (type png)
  <use BE5.png>
-Package pdftex.def Info: BE5.png used on input line 176.
+Package pdftex.def Info: BE5.png used on input line 169.
 (pdftex.def)             Requested size: 474.57666pt x 239.69734pt.
 
-Overfull \hbox (4.82164pt too wide) in paragraph at lines 176--177
+Overfull \hbox (4.82164pt too wide) in paragraph at lines 169--170
 [][] 
  []
 
@@ -376,150 +376,150 @@ Overfull \hbox (4.82164pt too wide) in paragraph at lines 176--177
 File: analysis_class_diagram.png Graphic file (type png)
 
 <use analysis_class_diagram.png>
-Package pdftex.def Info: analysis_class_diagram.png used on input line 196.
+Package pdftex.def Info: analysis_class_diagram.png used on input line 189.
 (pdftex.def)             Requested size: 377.91095pt x 397.9859pt.
  [7 <./analysis_class_diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 217--223
+Underfull \hbox (badness 10000) in paragraph at lines 210--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--223
+Underfull \hbox (badness 10000) in paragraph at lines 210--216
 
  []
 
 [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 239.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 232.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 239.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 232.
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 232--254
+Overfull \hbox (23.99998pt too wide) in alignment at lines 225--247
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 254
+Underfull \vbox (badness 10000) detected at line 247
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 258--280
+Overfull \hbox (23.99998pt too wide) in alignment at lines 251--273
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 280
+Underfull \vbox (badness 10000) detected at line 273
  []
 
 [9]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 284--306
+Overfull \hbox (23.99998pt too wide) in alignment at lines 277--299
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 306
+Underfull \vbox (badness 10000) detected at line 299
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 309--325
+Overfull \hbox (23.99998pt too wide) in alignment at lines 302--318
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 325
+Underfull \vbox (badness 10000) detected at line 318
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 328--345
+Overfull \hbox (23.99998pt too wide) in alignment at lines 321--338
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 345
+Underfull \vbox (badness 10000) detected at line 338
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 348--366
+Overfull \hbox (23.99998pt too wide) in alignment at lines 341--359
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 366
+Underfull \vbox (badness 10000) detected at line 359
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 369--387
+Overfull \hbox (23.99998pt too wide) in alignment at lines 362--380
  [] [] 
  []
 
 [10]
-Underfull \vbox (badness 10000) detected at line 387
+Underfull \vbox (badness 10000) detected at line 380
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 390--408
+Overfull \hbox (23.99998pt too wide) in alignment at lines 383--401
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 408
+Underfull \vbox (badness 10000) detected at line 401
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 411--429
+Overfull \hbox (23.99998pt too wide) in alignment at lines 404--422
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 429
+Underfull \vbox (badness 10000) detected at line 422
  []
 
 [11]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 433--451
+Overfull \hbox (23.99998pt too wide) in alignment at lines 426--444
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 451
+Underfull \vbox (badness 10000) detected at line 444
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 454--472
+Overfull \hbox (23.99998pt too wide) in alignment at lines 447--465
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 472
+Underfull \vbox (badness 10000) detected at line 465
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 475--493
+Overfull \hbox (23.99998pt too wide) in alignment at lines 468--486
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 493
+Underfull \vbox (badness 10000) detected at line 486
  []
 
 [12]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 497--515
+Overfull \hbox (23.99998pt too wide) in alignment at lines 490--508
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 515
+Underfull \vbox (badness 10000) detected at line 508
  []
 
 [13]
-Overfull \hbox (0.5108pt too wide) in alignment at lines 526--546
+Overfull \hbox (0.5108pt too wide) in alignment at lines 519--539
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 546
+Underfull \vbox (badness 10000) detected at line 539
  []
 
 [14] (./SE3A04_D2_Template.aux) ) 
@@ -540,7 +540,7 @@ ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on SE3A04_D2_Template.pdf (15 pages, 341801 bytes).
+Output written on SE3A04_D2_Template.pdf (15 pages, 341312 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
