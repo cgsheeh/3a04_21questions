@@ -8,4 +8,4 @@
 \contentsline {subsection}{\numberline {4.1}System Architecture}{8}
 \contentsline {subsection}{\numberline {4.2}Subsystems}{8}
 \contentsline {section}{\numberline {5}Class Responsibility Collaboration (CRC) Cards}{9}
-\contentsline {section}{\numberline {A}Division of Labour}{14}
+\contentsline {section}{\numberline {A}Division of Labour}{13}

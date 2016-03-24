@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAR 2016 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 MAR 2016 11:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -397,137 +397,148 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 232.
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 225--247
+Overfull \hbox (23.99998pt too wide) in alignment at lines 225--245
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 247
+Underfull \vbox (badness 10000) detected at line 245
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 251--273
+Overfull \hbox (23.99998pt too wide) in alignment at lines 249--270
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 273
+Underfull \vbox (badness 10000) detected at line 270
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 274--295
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 295
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+[]\OT1/cmr/m/n/10 Establishment Ex-pert
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+[]\OT1/cmr/m/n/10 Location Ex-pert Con-
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 299--320
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 320
  []
 
 [9]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 277--299
+Overfull \hbox (23.99998pt too wide) in alignment at lines 324--346
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 299
+Underfull \vbox (badness 10000) detected at line 346
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 302--318
+Overfull \hbox (23.99998pt too wide) in alignment at lines 349--365
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 318
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 321--338
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 338
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 341--359
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 359
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 362--380
- [] [] 
+Underfull \vbox (badness 10000) detected at line 365
  []
 
 [10]
-Underfull \vbox (badness 10000) detected at line 380
- []
-
-
-Overfull \hbox (23.99998pt too wide) in alignment at lines 383--401
+Overfull \hbox (23.99998pt too wide) in alignment at lines 370--387
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 401
+Underfull \vbox (badness 10000) detected at line 387
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 404--422
+Overfull \hbox (23.99998pt too wide) in alignment at lines 390--408
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 422
+Underfull \vbox (badness 10000) detected at line 408
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 411--429
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 429
  []
 
 [11]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 426--444
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
+[]\OT1/cmr/m/n/10 Establishment Ex-pert
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 434--452
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 444
+Underfull \vbox (badness 10000) detected at line 452
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 447--465
+Overfull \hbox (23.99998pt too wide) in alignment at lines 455--473
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 473
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 468--486
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+[]\OT1/cmr/m/n/10 Location Ex-pert Con-
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 477--495
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 486
+Underfull \vbox (badness 10000) detected at line 495
  []
 
 [12]
-Overfull \hbox (23.99998pt too wide) in alignment at lines 490--508
+Overfull \hbox (0.5108pt too wide) in alignment at lines 506--526
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 508
+Underfull \vbox (badness 10000) detected at line 526
  []
 
-[13]
-Overfull \hbox (0.5108pt too wide) in alignment at lines 519--539
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 539
- []
-
-[14] (./SE3A04_D2_Template.aux) ) 
+[13] (./SE3A04_D2_Template.aux) ) 
 Here is how much of TeX's memory you used:
- 3346 strings out of 493089
- 44937 string characters out of 6134842
- 122622 words of memory out of 5000000
- 6752 multiletter control sequences out of 15000+600000
+ 3345 strings out of 493089
+ 44931 string characters out of 6134842
+ 123586 words of memory out of 5000000
+ 6751 multiletter control sequences out of 15000+600000
  12802 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,43p,1285b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -540,10 +551,10 @@ ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on SE3A04_D2_Template.pdf (15 pages, 341312 bytes).
+Output written on SE3A04_D2_Template.pdf (14 pages, 340383 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

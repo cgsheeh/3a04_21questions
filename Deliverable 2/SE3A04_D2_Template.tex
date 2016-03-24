@@ -221,10 +221,34 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
 
-	%CRC for Expert Controller 
+	%CRC for Establishment Expert Controller 
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Expert Controller}} \\
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Establishment Expert Controller}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Deals with messages passed from the Question Controller
+					\item Passes desired questions to the Question Controller
+					\item Accesses the information by performing a query on the tables
+					\item Adds information to tables
+					\item Modifies information in the tables
+				\end{itemize} & 
+				\begin{itemize}
+					\item Question Controller
+					\item Establishment Database
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Establishment Expert Controller}
+	\end{longtable}
+	
+	
+	%CRC for Environment Expert Controller 
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Environment Expert Controller}} \\
 			\hline
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
@@ -237,13 +261,37 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 					\item Modifies information in the tables
 				\end{itemize} & 
 				\begin{itemize}
-					\item Establishment Table
-					\item Environment Table
-					\item Location Table
+					\item Question Controller
+					\item Environment Database
 				\end{itemize} 
 				\\
 			\hline
-		\caption{CRC for Expert Controller}
+		\caption{CRC for Environment Expert Controller}
+	\end{longtable}
+	
+	
+	%CRC for Location Expert Controller 
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Location Expert Controller}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Deals with messages passed from the Question Controller
+					\item Passes desired questions to the Question Controller
+					\item Creates and deletes tables that relate to experts
+					\item Accesses the information by performing a query on the tables
+					\item Adds information to tables
+					\item Modifies information in the tables
+				\end{itemize} & 
+				\begin{itemize}
+					\item Question Controller
+					\item Location Database
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Location Expert Controller}
 	\end{longtable}
 	
 	
@@ -255,16 +303,15 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
-					\item Requests questions from the Expert Controller based on the expert's needs
+					\item Requests questions from the expert controllers based on the expert's needs
 					\item Accesses questions that have already been asked as well as the answers to said questions
-					\item Keeps track of the overall state of the game. This includes the number of questions total that have been asked
-					\item Provides a solution based on the experts' best guesses
-					\item Process answers from the GUI Controller
+					\item Keeps track of the number of questions that have been asked in total
 					\item Provides the next question for the GUI Controller to display
 				\end{itemize} & 
 				\begin{itemize}
-					\item Expert Controller
-					\item Facts Data
+					\item Establishment Expert Controller
+					\item Environment Expert Controller
+					\item Location Expert Controller
 					\item GUI Controller
 				\end{itemize} 
 				\\
@@ -272,7 +319,7 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 		\caption{CRC for Question Controller}
 	\end{longtable}
 	
-\newpage	
+
 	%CRC for GUI Controller 
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
@@ -317,6 +364,8 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 		\caption{CRC for Start Screen}
 	\end{longtable}
 	
+	
+\newpage
 	%CRC for Settings Screen
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
@@ -337,10 +386,10 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 		\caption{CRC for Settings Screen}
 	\end{longtable}
 	
-	%CRC for Question Screen
+	%CRC for Question Page
 	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
 			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Question Screen}} \\
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Question Page}} \\
 			\hline
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
@@ -379,111 +428,6 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 		\caption{CRC for Map Screen}
 	\end{longtable}
 	
-	%CRC for Location Data
-	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
-			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Location Data}} \\
-			\hline
-			\textbf{Responsibility:} & \textbf{Collaborators:} \\
-			\hline
-				\begin{itemize}
-					\item Holds the question that have been asked and their associated answers
-					\item Holds the number of questions the expert himself has asked
-					\item Holds most viable current guesses
-					\item Provides a probability in which the guess is correct
-				\end{itemize} & 
-				\begin{itemize}
-					\item Question Controller
-				\end{itemize} 
-				\\
-			\hline
-		\caption{CRC for Location Data}
-	\end{longtable}
-	
-	%CRC for Environment Data
-	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
-			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Environment Data}} \\
-			\hline
-			\textbf{Responsibility:} & \textbf{Collaborators:} \\
-			\hline
-				\begin{itemize}
-					\item Holds the question that have been asked and their associated answers
-					\item Holds the number of questions the expert himself has asked
-					\item Holds most viable current guesses
-					\item Provides a probability in which the guess is correct
-				\end{itemize} & 
-				\begin{itemize}
-					\item Question Controller
-				\end{itemize} 
-				\\
-			\hline
-		\caption{CRC for Environment Data}
-	\end{longtable}
-	
-\newpage
-	%CRC for Establishment Data
-	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
-			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Establishment Data}} \\
-			\hline
-			\textbf{Responsibility:} & \textbf{Collaborators:} \\
-			\hline
-				\begin{itemize}
-					\item Holds the question that have been asked and their associated answers
-					\item Holds the number of questions the expert himself has asked
-					\item Holds most viable current guesses
-					\item Provides a probability in which the guess is correct
-				\end{itemize} & 
-				\begin{itemize}
-					\item Question Controller
-				\end{itemize} 
-				\\
-			\hline
-		\caption{CRC for Establishment Data}
-	\end{longtable}
-	
-	%CRC for Location Database
-	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
-			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Location Database}} \\
-			\hline
-			\textbf{Responsibility:} & \textbf{Collaborators:} \\
-			\hline
-				\begin{itemize}
-					\item Allows for the addition of a location
-					\item Allows for the removal of a location
-					\item Holds a set of questions that correspond to a certain location
-					\item Searches for location based on question results
-				\end{itemize} & 
-				\begin{itemize}
-					\item Expert Controller 
-				\end{itemize} 
-				\\
-			\hline
-		\caption{CRC for Location Database}
-	\end{longtable}
-	
-	%CRC for Environment Database
-	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
-			\hline
-			 \multicolumn{2}{|l|}{\textbf{Class Name: Environment Database}} \\
-			\hline
-			\textbf{Responsibility:} & \textbf{Collaborators:} \\
-			\hline
-				\begin{itemize}
-					\item Allows for the addition of an environment
-					\item Allows for the removal of an environment
-					\item Holds a set of questions that correspond to certain environment
-					\item Searches for an environment based on question results
-				\end{itemize} & 
-				\begin{itemize}
-					\item Expert Controller
-				\end{itemize} 
-				\\
-			\hline
-		\caption{CRC for Environment Database}
-	\end{longtable}
 	
 \newpage
 	%CRC for Establishment Database
@@ -494,17 +438,60 @@ Finally the GUI controller, which is responsible for ensuring the proper screen 
 			\textbf{Responsibility:} & \textbf{Collaborators:} \\
 			\hline
 				\begin{itemize}
-					\item Allows for the addition of an establishment
-					\item Allows for the removal of an establishment
-					\item Holds a set of questions that correspond to certain establishments
-					\item Searches for an establishment based on question results
+					\item Holds the question that have been asked and their associated answers
+					\item Holds the number of questions the expert himself has asked
+					\item Holds most viable current guesses
+					\item Provides a probability in which the guess is correct
 				\end{itemize} & 
 				\begin{itemize}
-					\item Expert Controller
+					\item Establishment Expert Controller
 				\end{itemize} 
 				\\
 			\hline
 		\caption{CRC for Establishment Database}
+	\end{longtable}
+	
+	%CRC for Environment Database
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Environment Database}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Holds the question that have been asked and their associated answers
+					\item Holds the number of questions the expert himself has asked
+					\item Holds most viable current guesses
+					\item Provides a probability in which the guess is correct
+				\end{itemize} & 
+				\begin{itemize}
+					\item Environment Expert Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Environment Database}
+	\end{longtable}
+	
+
+	%CRC for Location Database
+	\begin{longtable}{| p{.70\textwidth} | p{.30\textwidth} |}
+			\hline
+			 \multicolumn{2}{|l|}{\textbf{Class Name: Location Database}} \\
+			\hline
+			\textbf{Responsibility:} & \textbf{Collaborators:} \\
+			\hline
+				\begin{itemize}
+					\item Holds the question that have been asked and their associated answers
+					\item Holds the number of questions the expert himself has asked
+					\item Holds most viable current guesses
+					\item Provides a probability in which the guess is correct
+				\end{itemize} & 
+				\begin{itemize}
+					\item Location Expert Controller
+				\end{itemize} 
+				\\
+			\hline
+		\caption{CRC for Location Database}
 	\end{longtable}
 	
 	
