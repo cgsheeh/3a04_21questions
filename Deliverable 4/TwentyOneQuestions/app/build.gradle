@@ -3,10 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.twentyonequestions.se3a04.twentyonequestions"
-        minSdkVersion 15
+        applicationId "se3a04.twentyonequestions"
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -18,13 +19,11 @@ android {
         }
     }
 }
-android {
-    useLibrary 'org.apache.http.legacy'
-}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
+    compile 'com.google.android.gms:play-services:8.4.0'
 }

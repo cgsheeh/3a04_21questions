@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:padding="10dip">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Maybe"
-            android:id="@+id/btMaybe"
-            android:layout_gravity="left|center_vertical" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No"
-            android:id="@+id/btNo"
-            android:layout_gravity="right|center_vertical" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes"
-            android:id="@+id/btYes"
-            android:layout_gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +15,49 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/lblQuestion"
             android:layout_gravity="center_horizontal|top"
-            android:text="21Questions" />
-    </FrameLayout>
+            android:text="21Questions"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:id="@+id/btNo"
+            android:layout_gravity="right|bottom"
+            android:layout_below="@+id/questions_map_frag"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:id="@+id/btYes"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_below="@+id/questions_map_frag"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maybe"
+            android:id="@+id/btMaybe"
+            android:layout_gravity="left|bottom"
+            android:layout_below="@+id/questions_map_frag"
+            android:layout_centerHorizontal="true" />
+
+        <fragment
+            android:layout_width="359dp"
+            android:layout_height="299dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/questions_map_frag"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            tools:layout="@layout/maps"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
 
 </LinearLayout>
