@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
+\usepackage{float}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{extarrows}
@@ -79,29 +80,69 @@ illustrated in the Detailed Class diagram. These sections highlight the classes 
 % Begin Section
 The following section contains state charts for the controller classes in the \textit{21 Questions} application. Figures \ref{sc:gui} and \ref{sc:question} are the state charts for the GUI and Question Controller classes, respectively.
 
-\begin{figure}
-\includegraphics[scale=0.8]{sd_guicontroller}
+\subsection{Graphic User Interface Controller}
+\begin{figure}[H]
+\includegraphics[scale=0.6]{diagrams/sd_guicontroller}
 \caption{State chart for the GUI Controller class.}\label{sc:gui}
 \end{figure}
 
-\begin{figure}
-\includegraphics[scale=0.8]{sd_questioncontroller}
+\subsection{Question Controller}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{diagrams/sd_questioncontroller}
 \caption{State chart for the Question Controller class.}\label{sc:question}
+\end{figure}
+
+\subsection{Expert Controller}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{diagrams/sd_questioncontroller}
+\caption{State chart for each Expert Subclass.}\label{sc:Experts}
 \end{figure}
 % End Section
 
 \section{Sequence Diagrams}
 \label{sec:sequence_diagrams}
-% Begin Section
-%This section should provide a sequence diagram for each use case of your application. *** NOTE: MAKE MORE OF THESE -cs ***
-Figure \ref{sd:main} contains a sequence diagram for the primary use case of the application.
 
-\begin{figure}
-\includegraphics[scale=0.5]{Sequence_Diagram}
-\caption{Sequence diagram for the primary use case.}\label{sd:main}
+\subsection{User wants to enter new search}
+
+\begin{figure}[H]
+\includegraphics[scale=0.7]{diagrams/User_Side_Game}
+\caption{Sequence diagram for the user interaction of a new game/search.}\label{sd:front_main}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[scale=0.7]{diagrams/Back_End_Sequence}
+\caption{Sequence diagram for the application to provide the user with a question.}\label{sd:back_main}
 \end{figure}
 % End Section
 
+\subsection{An unlisted establishment requests to be included in the application.}
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{diagrams/sd_requestadd}
+\caption{Sequence Diagram for when a new establishment requests to be added}\label{sd:request_add}
+\end{figure}
+
+
+\subsection{Updates or maintenance of the application is required.}
+\begin{figure}[H]
+\includegraphics[scale=0.75]{diagrams/maintenance_of_code}
+\caption{Sequence Diagram for when maintenance or updates must be preformed.}\label{sd:maintenance_of_code}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[scale=0.75]{diagrams/useCase4SeqDiag2}
+\caption{Sequence Diagram for when maintenance or updates requires a beta testing group.}\label{sd:survey_of_experts}
+\end{figure}
+\subsection{Management requests implementation or change of experts.}
+\begin{figure}[H]
+\includegraphics[scale=0.75]{diagrams/Addition_of_Expert}
+\caption{Sequence Diagram for when a new expert must be added.}\label{sd:addition_of_expert}
+\end{figure}
+\subsection{User flags an incorrect or inappropriate search or result}
+\begin{figure}[H]
+\includegraphics[scale=0.75]{diagrams/sd_badcontent}
+\caption{Sequence Diagram for thew user wishes to flag something as inappropriate.}\label{sd:bad_content}
+\end{figure}
 \section{Detailed Class Diagram}
 \label{sec:detailed_class_diagram}
 % Begin Section
