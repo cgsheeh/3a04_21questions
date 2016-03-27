@@ -14,6 +14,9 @@
 \usepackage{extarrows}
 \usepackage{setspace}
 \usepackage{longtable}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{epstopdf}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -143,10 +146,24 @@ The following section contains state charts for the controller classes in the \t
 \includegraphics[scale=0.75]{diagrams/sd_badcontent}
 \caption{Sequence Diagram for thew user wishes to flag something as inappropriate.}\label{sd:bad_content}
 \end{figure}
+\newpage
 \section{Detailed Class Diagram}
 \label{sec:detailed_class_diagram}
 % Begin Section
 This section should provide a detailed class diagram for your application.
+
+\subsection{Front End Application}
+Please see the 11 inch by 17 inch page attached.
+
+\begin{sidewaysfigure}[H]
+\includegraphics[scale=0.1]{diagrams/Class_Diagram}
+\caption{Detailed Class diagram of the android application.}\label{sd:android_application}
+\end{sidewaysfigure}
+\subsection{Back End Application}
+\begin{figure}[H]
+\includegraphics[scale=0.8]{diagrams/BackEndDetailedClass}
+\caption{Detailed Class diagram of the web back end of the application.}\label{sd:web_application}
+\end{figure}
 % End Section
 
 \pagebreak
@@ -165,7 +182,7 @@ This section should provide a detailed class diagram for your application.
 			Maxwell Moore & Insert your contribution here.
 			\\
 			\hline
-			Curtis Milo & Insert your contribution here.
+			Curtis Milo & Generated the sequence diagrams for BE 1, Created Expert and question controller. Created detail class diagram for both the front end and the back end of the application. Edited other sequence diagrams and controllers to maintain consistency.
 			\\ 
 			\hline
 			Alexandra Rahman & Completed Section 1; introduction. Contributed to a few sequence diagrams, the detailed class diagram, and all state chart diagrams. Made all necessary changes to Deliverable 2. In this case, changed the analysis class diagram, changed the use case diagrams and the scenarios related to them. Finally, changed the class responsibility collaboration cards to match the updated analysis class diagram.

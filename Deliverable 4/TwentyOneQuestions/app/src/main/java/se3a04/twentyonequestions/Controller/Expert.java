@@ -1,17 +1,22 @@
 package se3a04.twentyonequestions.Controller;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
+import java.util.concurrent.TimeoutException;
 
 import se3a04.twentyonequestions.Controller.Database.DatabaseConnector;
+import se3a04.twentyonequestions.MessagePassing.MapLocation;
+import se3a04.twentyonequestions.MessagePassing.QuestionType;
 
 /**
  * Created by curtis on 12/03/16.
  */
 public abstract class Expert {
 
-    private ArrayList<String> questions;
-    private ArrayList<String> answers;
-    private int position = 1;
+    protected ArrayList<String> questions;
+    protected ArrayList<String> answers;
+    protected QuestionType type = QuestionType.REGULAR;
 
     public Expert(){
         questions = new ArrayList<String>();
@@ -28,30 +33,50 @@ public abstract class Expert {
     }
 
     /**
+     * Gives the type of expert it is
+     * @return the type of questions the expert will ask
+     */
+    public QuestionType getType(){
+        return type;
+    }
+
+    /**
      * Gives the question to ask the user
      * @return the address of the question table
      */
-    public abstract String getQuestion();
+    public abstract String getQuestion() throws TimeoutException;
 
+    /**
+     * Gives the map of asociated with the question
+     */
+    public abstract MapLocation getMap();
 
+    /**
+     * Gives the question associated with the question
+     */
+    public abstract Bitmap getImage();
 
+    /**
+     * Determines if the expert still has questions to ask.
+     * @return if there are still more questions from the expert
+     */
+    public abstract boolean hasMoreQuestions();
 
 
     /**
      * Gives the best guess of the expert
      * @return the guess given by the expert
      */
-    public abstract String getGuess();
+    public abstract String getGuess() throws TimeoutException;
 
 
     /**
      * prepairs and send the information to the database connector
-     * @param table the table to preform the query on
      * @param query the query to preform
      */
-    protected String excuteQuery(String table, String query) {
+    protected String excuteQuery( String query) throws TimeoutException {
         DatabaseConnector dbConnector = new DatabaseConnector();
-        dbConnector.execute(new String[]{table,query});
+        dbConnector.execute(new String[]{query});
         int reps = 0;
         while(dbConnector.getResult().equals("") && reps <200){
             try {
@@ -60,7 +85,12 @@ public abstract class Expert {
             reps++;
         }
 
+        if(dbConnector.getResult().equals("")){
+            throw new TimeoutException("We could not reach  the server");
+        }
         return dbConnector.getResult();
     }
+
+
 
 }

@@ -18,6 +18,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import se3a04.twentyonequestions.MessagePassing.MapLocation;
 import se3a04.twentyonequestions.MessagePassing.MessageChannel;
 import se3a04.twentyonequestions.Controller.QuestionController;
 import se3a04.twentyonequestions.MessagePassing.QuestionType;
@@ -49,9 +50,6 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
     //Google maps thing
     private GoogleMap mMap;
     private SupportMapFragment map_fragment;
-    private int latitude = 0;
-    private int longitude = 0;
-    private int zoom = 30;
     private boolean displayMap = false;
 
     /**
@@ -253,11 +251,23 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
         if(screen == Screen.QUESTION_SCREEN) {
             this.lblQuestionAsked.setText(channel.getQuestion());
             if(this.channel.getType() == QuestionType.MAP){
-                //TODO set map up for questions
+                (findViewById(R.id.questions_map_frag)).setVisibility(View.VISIBLE);
+                this.displayMap = true;
+                setUpMaps(R.id.questions_map_frag);
             }else{
+                this.displayMap = false;
                 (findViewById(R.id.questions_map_frag)).setVisibility(View.INVISIBLE);
             }
-        }else{}
+
+
+            if(this.channel.getType() == QuestionType.IMAGE){
+                //TODO future releases if expert needs to show an image
+            }else{
+                //TODO future releases if expert needs to show an image
+            }
+        }else{
+
+        }
     }
 
 
@@ -276,24 +286,22 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
     /**
      * Displays a map at the location specified
      *
-     * @param latitude  the latitude of the location
-     * @param longitude the longitude of the location
-     * @param zoom      the desired zoom
+     * @param mapLocation- the location too display
      */
-    private void displayMap(int latitude, int longitude, int zoom) {
+    private void displayMap(MapLocation mapLocation) {
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(new LatLng(latitude, longitude)).zoom(10).build();
+                .target(new LatLng(mapLocation.getLatitude(), mapLocation.getLongitude())).zoom(mapLocation.getZoom()).build();
         mMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
 
         // create marker
         MarkerOptions marker = new MarkerOptions().position(new LatLng(
-                latitude, longitude));
+                mapLocation.getLatitude(), mapLocation.getLongitude()));
         // ROSE color icon
         marker.icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
@@ -312,9 +320,11 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        if (this.displayMap) {
-            this.displayMap(this.latitude, this.longitude, this.zoom);
+        if (this.displayMap && this.screen == Screen.MAP_SCREEN) {
+            this.displayMap(this.question_controller.getMapAnswer());
 
+        }else if(this.displayMap && this.screen == Screen.QUESTION_SCREEN){
+            this.displayMap((MapLocation) this.channel.getExtra());
         }
 
     }

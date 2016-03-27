@@ -26,6 +26,8 @@ Message Channel
 
 - answer: String
 - question: String
+- extra: Object
+- type: QuestionType
 - canGo: Turn
 
 + MessageChannel()
@@ -35,16 +37,19 @@ Message Channel
 + boolean canGetAnswer()
 + String getQuestion()
 + String getAnswer()
-
++ QuestionType getType()
++ void setType(type: QuestionType)
++ Object getExtra()
++ void setExtra(extra: Object)
 
 Question controller
 
- - MAX_QUESTIONS: int
- - experts: ArrayList<Expert>
- - questions_asked: int
- - experts_turn: int
- - channel: MessageChannel
- - current_question: String
+- experts: ArrayList<Expert> 
+- questions_asked: int
+- int experts_turn: int
+- channel: MessageChannel
+- current_question: String
+- timeoutError: boolean
 
  + QuestionController(channel: MessageChannel)
  + void run()
@@ -55,15 +60,40 @@ Question controller
 
 Expert
  
- - questions: ArrayList<String>
- - answers: ArrayList<String>
- - position: int
+ * questions: ArrayList<String>
+ * answers: ArrayList<String>
+ * type: QuestionType 
 
  + Expert()
  + void add(qustion: String, answer: String)
- + String getQuestion()
- + String getGuess()
- * excuteQuery(table: String, query: String)
+ + QuestionType getType()
+ + MapLocation getMap()
+ + Bitmap getImage()
+ + boolean hasMoreQuestions()
+ + String getQuestion() throws TimeoutException
+ + String getGuess() throws TimeoutException
+ * excuteQuery(query: String)
+
+Establishment Expert
+ 
+ * questions: ArrayList<String>
+ * answers: ArrayList<String>
+ * type: QuestionType 
+ - TABLE: String
+ - children: String[]
+ - current: String
+
+ + EnviromentExpert()
+ + void add(qustion: String, answer: String)
+ + QuestionType getType()
+ + MapLocation getMap()
+ + Bitmap getImage()
+ + boolean hasMoreQuestions()
+ + String getQuestion() throws TimeoutException
+ + String getGuess() throws TimeoutException
+ * excuteQuery(query: String)
+ - String getQuery(attribute: String,condition: String)
+ - boolean isDone()
 
  DB controller
 
@@ -72,5 +102,17 @@ Expert
  - dataRetrieved: boolean
 
  + String getResult()
- * String doInBackground(urls: String)
+ * String excuteQuery(urls: String)
  * void onPostExecute(serverData: String)
+
+ MapLocation
+
+- latitude: int
+- longitude: int
+- zoom: int
+
++ MapLocation(latitude: int, longitude: int, zoom: int)
++ int getLongitude()
++ int getLatitude()
++ int getZoom()
+
