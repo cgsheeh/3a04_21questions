@@ -95,9 +95,6 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
                 break;
             case R.id.btNo:
                 nextQuestionRequest("no");
-                break;
-            case R.id.btMaybe:
-                nextQuestionRequest("maybe");
 
                 break;
             case R.id.btCorrect:
@@ -176,12 +173,10 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
 
                 this.btYes = (Button) findViewById(R.id.btYes);
                 this.btNo = (Button) findViewById(R.id.btNo);
-                this.btMaybe = (Button) findViewById(R.id.btMaybe);
                 this.lblQuestionAsked = (TextView) findViewById(R.id.lblQuestion);
 
                 this.btYes.setOnClickListener(this);
                 this.btNo.setOnClickListener(this);
-                this.btMaybe.setOnClickListener(this);
                 setUpMaps(R.id.questions_map_frag);
                 break;
             case MAP_SCREEN:

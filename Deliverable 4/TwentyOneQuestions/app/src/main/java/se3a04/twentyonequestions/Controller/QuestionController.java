@@ -19,7 +19,7 @@ public class QuestionController extends Thread {
 
     private ArrayList<Expert>  experts =  new ArrayList<Expert>();//list of experts
 
-    private int questions_asked =1;
+    private int questions_asked =0;
     private int experts_turn = 0;
     private MessageChannel channel;
     private String current_question;
@@ -83,7 +83,6 @@ public class QuestionController extends Thread {
             return true;
         }
         for(int i =0; i< this.experts.size(); i++){
-            Log.e("Do i break here", "hyyyy");
             if(this.experts.get(i).hasMoreQuestions()){
 
                 return false;
@@ -120,12 +119,12 @@ public class QuestionController extends Thread {
         experts.get(experts_turn).add(current_question,channel.getAnswer());
         int nextC= 0;
         while(nextC < this.experts.size()) {
-            experts_turn = (experts_turn + 1);
+            experts_turn = (experts_turn + 1)  % experts.size();
             if(this.experts.get(experts_turn).hasMoreQuestions()){
                 break;
             }
+            nextC++;
         }
-        experts_turn = (experts_turn) % experts.size();
     }
 
     public MapLocation getMapAnswer(){
