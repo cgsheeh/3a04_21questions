@@ -33,7 +33,6 @@ import java.util.ArrayList;
 public class DatabaseConnector extends AsyncTask<String, Void, String> {
 
 final String url="http://ugweb.cas.mcmaster.ca/~milocj/3A04/database_controller.php";
-
 private static String result="";
 private boolean dataRetrieved=false;
 
@@ -59,8 +58,8 @@ protected String doInBackground(String...urls){
         HttpClient httpclient=new DefaultHttpClient();// connect to the database using the first item of the string
         HttpPost httppost=new HttpPost(url);
         ArrayList<NameValuePair>nameValuePairs=new ArrayList<NameValuePair>();//create an arraylist of required data
-        nameValuePairs.add(new BasicNameValuePair("table",urls[0]));//add the table
-        nameValuePairs.add(new BasicNameValuePair("query",urls[1]));//add the query
+        nameValuePairs.add(new BasicNameValuePair("query",urls[0]));//add the table
+        //nameValuePairs.add(new BasicNameValuePair("query",urls[1]));//add the query
         httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         HttpResponse response=httpclient.execute(httppost);//execute the php script
 

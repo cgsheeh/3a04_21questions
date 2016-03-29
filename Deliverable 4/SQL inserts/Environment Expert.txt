@@ -1,0 +1,7 @@
+Insert Into EnvironmentExpertTable values (1,2,3,"Is it an Urban City?", "Urban City");
+Insert Into EnvironmentExpertTable values (2,4,5,"Is it near the Coast?", "Beach");
+Insert Into EnvironmentExpertTable values (3,6,7,"Is it a big tourist area?", "Tourist Area");
+Insert Into EnvironmentExpertTable values (4,8,9,"Is it Mountainous?", "Mountainous");
+Insert Into EnvironmentExpertTable values (5,10,11,"Is it tropical?", "Tropical Beach");
+Insert Into EnvironmentExpertTable values (6,12,13,"Does it have alot of factories?", "Industrial City");
+Insert Into EnvironmentExpertTable values (7,14,15,"Does it have alot of businesses?", "Times Square");

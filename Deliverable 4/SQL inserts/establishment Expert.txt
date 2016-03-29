@@ -1,0 +1,7 @@
+Insert Into EstablishmentExpertTable values (1,2,3,"Is it primarily a store?","Store");
+Insert Into EstablishmentExpertTable values (2,4,5,"Is it Historical?", "Monument");
+Insert Into EstablishmentExpertTable values (3,6,7,"Does it sell food?","Food Vendor");
+Insert Into EstablishmentExpertTable values (4,8,9,"Is it a business?", "Business");
+Insert Into EstablishmentExpertTable values (5,10,11,"Is it a Museum?", "Museum");
+Insert Into EstablishmentExpertTable values (6,12,13,"Is it a General Consumer Store?", "Walmart");
+Insert Into EstablishmentExpertTable values (7,14,15,"Is it a Fast Food Resturant?", "Fast Food Resturant");

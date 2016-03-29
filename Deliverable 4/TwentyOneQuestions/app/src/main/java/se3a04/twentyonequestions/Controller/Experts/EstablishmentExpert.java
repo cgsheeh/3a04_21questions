@@ -1,6 +1,7 @@
 package se3a04.twentyonequestions.Controller.Experts;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
@@ -13,8 +14,8 @@ import se3a04.twentyonequestions.MessagePassing.MapLocation;
  */
 public class EstablishmentExpert extends Expert {
     private final String TABLE ="Establishment_Table";
-    private String[] children = {"0"};
-    private String current = "0";
+    private String[] children = {"1"};
+    private String current = "1";
     /**
      * Addes the question and answer pair to the expert
      */
@@ -45,10 +46,12 @@ public class EstablishmentExpert extends Expert {
             throw new NoSuchElementException("there is no more elements to get questions from");
         }
 
-        String[] raw = this.excuteQuery(getQuery("Question,Left,Right", nextChild)).split(",");
-        this.children = new String[]{raw[1],raw[2]};
+        String raw = this.excuteQuery(getQuery("Question,LeftChild,RightChild", nextChild));
+        Log.e("DATA", raw);
+        String[] raw_parsed = raw.split(",");
+        this.children = new String[]{raw_parsed[1],raw_parsed[2]};
         current = nextChild;
-        return raw[0];
+        return raw_parsed[0];
     }
 
     @Override
@@ -106,9 +109,7 @@ public class EstablishmentExpert extends Expert {
          * else we have to check what they have answered for the last questiont to see
          * if we went to a null node.
          */
-        if(this.children.length==1){
-            return false;
-        }else if(this.children.length==2){
+        if (this.children.length==2){
             if(this.children[0] ==null && this.children[1] ==null){
                 return true;
 
@@ -128,8 +129,9 @@ public class EstablishmentExpert extends Expert {
                     return false;
                 }
             }
-        }else{
-            return true;
         }
+        return false;
+
+
     }
 }

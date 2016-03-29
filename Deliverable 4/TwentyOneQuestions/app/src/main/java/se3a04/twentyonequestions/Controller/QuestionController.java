@@ -1,5 +1,7 @@
 package se3a04.twentyonequestions.Controller;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeoutException;
 
@@ -31,6 +33,7 @@ public class QuestionController extends Thread {
         experts.add(new LocationExpert());
         this.channel = channel;
 
+
     }
 
     @Override
@@ -45,6 +48,7 @@ public class QuestionController extends Thread {
                     }
                     addAnswer();
                 }
+
                 if (isFinished()) {
                     current_question = null;
                     break;
@@ -79,11 +83,13 @@ public class QuestionController extends Thread {
             return true;
         }
         for(int i =0; i< this.experts.size(); i++){
+            Log.e("Do i break here", "hyyyy");
             if(this.experts.get(i).hasMoreQuestions()){
-                return true;
+
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 
@@ -114,11 +120,12 @@ public class QuestionController extends Thread {
         experts.get(experts_turn).add(current_question,channel.getAnswer());
         int nextC= 0;
         while(nextC < this.experts.size()) {
-            experts_turn = (experts_turn + 1) % experts.size();
+            experts_turn = (experts_turn + 1);
             if(this.experts.get(experts_turn).hasMoreQuestions()){
                 break;
             }
         }
+        experts_turn = (experts_turn) % experts.size();
     }
 
     public MapLocation getMapAnswer(){
