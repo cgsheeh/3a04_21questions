@@ -13,7 +13,7 @@ import se3a04.twentyonequestions.MessagePassing.MapLocation;
  * Created by curtis on 12/03/16.
  */
 public class EnviromentExpert extends Expert {
-    private final String TABLE ="Enviroment_Table";
+    private final String TABLE ="EnvironmentExpertTable";
     private String[] children = {"1"};
     private String current = "1";
     /**

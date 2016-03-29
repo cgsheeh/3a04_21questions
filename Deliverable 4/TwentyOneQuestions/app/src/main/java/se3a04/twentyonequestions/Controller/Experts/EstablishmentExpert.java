@@ -13,7 +13,7 @@ import se3a04.twentyonequestions.MessagePassing.MapLocation;
  * Created by curtis on 12/03/16.
  */
 public class EstablishmentExpert extends Expert {
-    private final String TABLE ="Establishment_Table";
+    private final String TABLE ="EstablishmentExpertTable";
     private String[] children = {"1"};
     private String current = "1";
     /**
