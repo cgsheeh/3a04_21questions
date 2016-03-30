@@ -3,6 +3,7 @@ package se3a04.twentyonequestions.Interface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,6 +80,7 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
                 screen = Screen.QUESTION_SCREEN;
                 this.displayMap=false;
                 channel = new MessageChannel();
+
                 question_controller = new QuestionController(channel);
                 question_controller.start();
                 setScreen();
@@ -99,6 +101,7 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
                 break;
             case R.id.btCorrect:
             case R.id.btIncorrect:
+                this.question_controller = null;
                 screen = Screen.START_SCREEN;
                 setScreen();
                 break;
@@ -130,6 +133,7 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
                 break;
             case MAP_SCREEN:
                 screen = Screen.START_SCREEN;
+                this.question_controller = null;
                 setScreen();
                 break;
         }
@@ -206,18 +210,9 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
      * @param answer the answer that was given by the user
      */
     private void nextQuestionRequest(String answer) {
-        if (question_controller.isFinished()) {
+        channel.setAnswer(answer);
+        waitForQuestion();
 
-            this.overallanswer = question_controller.getAnswer();
-            this.screen = Screen.MAP_SCREEN;
-            this.question_controller = null;
-            this.channel = null;
-            this.displayMap= true;
-            setScreen();
-        } else {
-            channel.setAnswer(answer);
-            waitForQuestion();
-        }
     }
 
     /**
@@ -225,7 +220,7 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
      * Then displats the question
      */
     private void waitForQuestion() {
-        while (!channel.canGetQuestion()) {
+        while (!channel.canGetQuestion() && !question_controller.isFinished()) {
          //wait for answer
             try {
                 Thread.sleep(100);
@@ -234,7 +229,15 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
             }
 
         }
-        setQuestion();
+        if(!question_controller.isFinished()) {
+            setQuestion();
+        }else{
+            this.overallanswer = question_controller.getAnswer();
+            this.screen = Screen.MAP_SCREEN;
+            this.channel = null;
+            this.displayMap= true;
+            setScreen();
+        }
     }
 
 

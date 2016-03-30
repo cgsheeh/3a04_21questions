@@ -16,6 +16,7 @@ public class EnviromentExpert extends Expert {
     private final String TABLE ="EnvironmentExpertTable";
     private String[] children = {"1"};
     private String current = "1";
+    private boolean done = false;
     /**
      * Addes the question and answer pair to the expert
      */
@@ -57,12 +58,16 @@ public class EnviromentExpert extends Expert {
         }
 
         String query = getQuery("Question,LeftChild,RightChild", "ID=" +"'" +nextChild+"'");
-        String raw = this.excuteQuery(query);
-        Log.e("DATA", raw);
-        String[] raw_parsed = raw.split(",");
-        this.children = new String[]{raw_parsed[1],raw_parsed[2]};
-        current = nextChild;
-        return raw_parsed[0];
+        String raw = this.excuteQuery(query).trim().replace("\n", "");
+        if(!raw.equals("null")) {
+            String[] raw_parsed = raw.split(",");
+            this.children = new String[]{raw_parsed[1], raw_parsed[2]};
+            current = nextChild;
+            return raw_parsed[0];
+        }else{
+            done = true;
+            return null;
+        }
     }
 
 
@@ -73,7 +78,7 @@ public class EnviromentExpert extends Expert {
      */
     @Override
     public boolean hasMoreQuestions() {
-        return !(isDone());
+        return !(done);
     }
 
     /**
@@ -83,7 +88,7 @@ public class EnviromentExpert extends Expert {
      */
     @Override
     public String getGuess() throws TimeoutException {
-        return excuteQuery(this.getQuery("Answer", current));
+        return excuteQuery(this.getQuery("Guess", "ID=" +"'" +current+"'"));
     }
 
     /**
@@ -99,40 +104,4 @@ public class EnviromentExpert extends Expert {
         return query;
     }
 
-    /**
-     * Determines if there the expert is finished asking questions
-     * @return if the expert is done asking questions
-     */
-    private boolean isDone() {
-        /**
-         * Logic is that if is one child then return that were done
-         * if there are two children we have to check the nodes
-         * if there are children on both nodes then we are not done
-         * if there are children on no nodes then were done
-         * else we have to check what they have answered for the last questiont to see
-         * if we went to a null node.
-         */
-        if (this.children.length==2){
-            if(this.children[0] ==null && this.children[1] ==null){
-                return true;
-
-            }else if (this.children[0] !=null && this.children[1] !=null){
-                return false;
-
-            }else if (this.children[0] ==null && this.children[1] !=null) {
-                if (this.answers.get(this.answers.size()-1).toLowerCase().equals("no")) {
-                    return true;
-                } else{
-                    return false;
-                }
-            }else{
-                if (this.answers.get(this.answers.size()-1).toLowerCase().equals("yes")) {
-                    return true;
-                } else{
-                    return false;
-                }
-            }
-        }
-        return false;
-    }
 }
