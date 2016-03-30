@@ -1,5 +1,7 @@
 package se3a04.twentyonequestions.Controller;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeoutException;
 
@@ -17,11 +19,12 @@ public class QuestionController extends Thread {
 
     private ArrayList<Expert>  experts =  new ArrayList<Expert>();//list of experts
 
-    private int questions_asked =1;
-    private int experts_turn = 0;
+    private int questions_asked =0;
+    private int experts_turn = -1;
     private MessageChannel channel;
     private String current_question;
     private boolean timeoutError = false;
+    private boolean finished = false;
 
     public QuestionController(MessageChannel channel){
         //adding of experts
@@ -31,12 +34,13 @@ public class QuestionController extends Thread {
         experts.add(new LocationExpert());
         this.channel = channel;
 
+
     }
 
     @Override
     public void run(){
         try {
-            while (true) {
+            while (!isFinished()) {
                 if(questions_asked !=0) {
                     while (!channel.canGetAnswer()) { //wait for answer
 
@@ -45,21 +49,36 @@ public class QuestionController extends Thread {
                     }
                     addAnswer();
                 }
-                if (isFinished()) {
-                    current_question = null;
-                    break;
-                } else {
-                    current_question = experts.get(experts_turn).getQuestion();
+
+                Log.e("Expert", "turn " +this.experts_turn);
+                int nextC= 0;
+                current_question = null;
+                while(nextC < this.experts.size()) {
+                    experts_turn = (experts_turn + 1)  % experts.size();
+                    if(this.experts.get(experts_turn).hasMoreQuestions()){
+                        current_question = experts.get(experts_turn).getQuestion();
+                    }
+
+                    if(current_question !=null){
+                        break;
+                    }
+                    nextC++;
                 }
 
-                channel.setQuestion("Question " + this.questions_asked + ": " + this.current_question);
-                channel.setType(experts.get(experts_turn).getType());
-                if(this.experts.get(experts_turn).getType() == QuestionType.MAP){
-                    channel.setExtra(experts.get(experts_turn).getMap());
-                }else if (this.experts.get(experts_turn).getType() == QuestionType.IMAGE){
-                    channel.setExtra(experts.get(experts_turn).getImage());
+
+                if(current_question !=null){
+                    channel.setQuestion("Question " + this.questions_asked + ": " + this.current_question);
+                    channel.setType(experts.get(experts_turn).getType());
+                    if(this.experts.get(experts_turn).getType() == QuestionType.MAP){
+                        channel.setExtra(experts.get(experts_turn).getMap());
+                    }else if (this.experts.get(experts_turn).getType() == QuestionType.IMAGE){
+                        channel.setExtra(experts.get(experts_turn).getImage());
+                    }
+                    questions_asked++;
+                }else{
+                    finished = true;
                 }
-                questions_asked++;
+
             }
         }catch (InterruptedException io){
 
@@ -75,15 +94,7 @@ public class QuestionController extends Thread {
      * @return if the game is over or not
      */
     public boolean isFinished(){
-        if(timeoutError){
-            return true;
-        }
-        for(int i =0; i< this.experts.size(); i++){
-            if(this.experts.get(i).hasMoreQuestions()){
-                return true;
-            }
-        }
-        return false;
+        return finished || timeoutError;
     }
 
 
@@ -112,13 +123,7 @@ public class QuestionController extends Thread {
      */
     private void addAnswer(){
         experts.get(experts_turn).add(current_question,channel.getAnswer());
-        int nextC= 0;
-        while(nextC < this.experts.size()) {
-            experts_turn = (experts_turn + 1) % experts.size();
-            if(this.experts.get(experts_turn).hasMoreQuestions()){
-                break;
-            }
-        }
+
     }
 
     public MapLocation getMapAnswer(){

@@ -1,6 +1,7 @@
 package se3a04.twentyonequestions.Controller.Experts;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
@@ -12,9 +13,10 @@ import se3a04.twentyonequestions.MessagePassing.MapLocation;
  * Created by curtis on 12/03/16.
  */
 public class EstablishmentExpert extends Expert {
-    private final String TABLE ="Establishment_Table";
-    private String[] children = {"0"};
-    private String current = "0";
+    private final String TABLE ="EstablishmentExpertTable";
+    private String[] children = {"1"};
+    private String current = "1";
+    private boolean done = false;
     /**
      * Addes the question and answer pair to the expert
      */
@@ -44,11 +46,17 @@ public class EstablishmentExpert extends Expert {
         }else{
             throw new NoSuchElementException("there is no more elements to get questions from");
         }
-
-        String[] raw = this.excuteQuery(getQuery("Question,Left,Right", nextChild)).split(",");
-        this.children = new String[]{raw[1],raw[2]};
-        current = nextChild;
-        return raw[0];
+        String query = getQuery("Question,LeftChild,RightChild", "ID=" + "'" + nextChild + "'");
+        String raw = this.excuteQuery(query).trim().replace("\n","");
+        if(!raw.equals("null")) {
+            String[] raw_parsed = raw.split(",");
+            this.children = new String[]{raw_parsed[1], raw_parsed[2]};
+            current = nextChild;
+            return raw_parsed[0];
+        }else{
+            done = true;
+            return null;
+        }
     }
 
     @Override
@@ -67,7 +75,7 @@ public class EstablishmentExpert extends Expert {
      */
     @Override
     public boolean hasMoreQuestions() {
-        return !(isDone());
+        return !(done);
     }
 
     /**
@@ -77,7 +85,7 @@ public class EstablishmentExpert extends Expert {
      */
     @Override
     public String getGuess() throws TimeoutException {
-        return excuteQuery(this.getQuery("Answer", current));
+        return excuteQuery(this.getQuery("Guess", "ID=" +"'" +current+"'"));
     }
 
     /**
@@ -93,43 +101,5 @@ public class EstablishmentExpert extends Expert {
         return query;
     }
 
-    /**
-     * Determines if there the expert is finished asking questions
-     * @return if the expert is done asking questions
-     */
-    private boolean isDone() {
-        /**
-         * Logic is that if is one child then return that were done
-         * if there are two children we have to check the nodes
-         * if there are children on both nodes then we are not done
-         * if there are children on no nodes then were done
-         * else we have to check what they have answered for the last questiont to see
-         * if we went to a null node.
-         */
-        if(this.children.length==1){
-            return false;
-        }else if(this.children.length==2){
-            if(this.children[0] ==null && this.children[1] ==null){
-                return true;
 
-            }else if (this.children[0] !=null && this.children[1] !=null){
-                return false;
-
-            }else if (this.children[0] ==null && this.children[1] !=null) {
-                if (this.answers.get(this.answers.size()-1).toLowerCase().equals("no")) {
-                    return true;
-                } else{
-                    return false;
-                }
-            }else{
-                if (this.answers.get(this.answers.size()-1).toLowerCase().equals("yes")) {
-                    return true;
-                } else{
-                    return false;
-                }
-            }
-        }else{
-            return true;
-        }
-    }
 }

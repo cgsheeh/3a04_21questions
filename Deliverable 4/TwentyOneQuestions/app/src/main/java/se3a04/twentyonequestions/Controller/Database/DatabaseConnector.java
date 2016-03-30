@@ -33,13 +33,20 @@ import java.util.ArrayList;
 public class DatabaseConnector extends AsyncTask<String, Void, String> {
 
 final String url="http://ugweb.cas.mcmaster.ca/~milocj/3A04/database_controller.php";
-
-private static String result="";
+private String result="";
 private boolean dataRetrieved=false;
 
 public DatabaseConnector(){
 
 
+        }
+
+        /**
+         * States if the result is ready
+         * @return if the result is ready to be read
+         */
+        public boolean isReady(){
+                return !result.equals("");
         }
 
 /**
@@ -53,15 +60,16 @@ public String getResult(){
 
 
 protected String doInBackground(String...urls){
-        result="";
+
         dataRetrieved=false;
         try{
         HttpClient httpclient=new DefaultHttpClient();// connect to the database using the first item of the string
         HttpPost httppost=new HttpPost(url);
         ArrayList<NameValuePair>nameValuePairs=new ArrayList<NameValuePair>();//create an arraylist of required data
-        nameValuePairs.add(new BasicNameValuePair("table",urls[0]));//add the table
-        nameValuePairs.add(new BasicNameValuePair("query",urls[1]));//add the query
+        nameValuePairs.add(new BasicNameValuePair("query",urls[0]));//add the table
+        //nameValuePairs.add(new BasicNameValuePair("query",urls[1]));//add the query
         httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+        result="";
         HttpResponse response=httpclient.execute(httppost);//execute the php script
 
         HttpEntity entity=response.getEntity();

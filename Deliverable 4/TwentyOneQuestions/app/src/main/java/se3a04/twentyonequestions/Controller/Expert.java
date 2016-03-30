@@ -1,6 +1,7 @@
 package se3a04.twentyonequestions.Controller;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeoutException;
@@ -78,7 +79,7 @@ public abstract class Expert {
         DatabaseConnector dbConnector = new DatabaseConnector();
         dbConnector.execute(new String[]{query});
         int reps = 0;
-        while(dbConnector.getResult().equals("") && reps <200){
+        while(!dbConnector.isReady() && reps <200){
             try {
                 Thread.sleep(100);
             }catch(InterruptedException e){};
