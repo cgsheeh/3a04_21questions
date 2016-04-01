@@ -48,11 +48,16 @@ public class EstablishmentExpert extends Expert {
         }
         String query = getQuery("Question,LeftChild,RightChild", "ID=" + "'" + nextChild + "'");
         String raw = this.excuteQuery(query).trim().replace("\n","");
-        Log.e("raw",raw);
-        if(!raw.equals("null")) {
+        if(!raw.equals("")) {
             String[] raw_parsed = raw.split(",");
-            this.children = new String[]{raw_parsed[1], raw_parsed[2]};
-            current = nextChild;
+            try {
+                current = nextChild;
+                this.children = new String[]{raw_parsed[1], raw_parsed[2]};
+
+            }catch (ArrayIndexOutOfBoundsException a){
+                this.children = new String[]{null,null};
+                done = true;
+            }
             return raw_parsed[0];
         }else{
             done = true;
