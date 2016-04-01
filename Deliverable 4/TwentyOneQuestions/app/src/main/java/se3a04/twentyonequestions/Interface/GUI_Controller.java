@@ -2,22 +2,20 @@ package se3a04.twentyonequestions.Interface;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.MapFragment;
 
 import se3a04.twentyonequestions.MessagePassing.MapLocation;
 import se3a04.twentyonequestions.MessagePassing.MessageChannel;
@@ -26,7 +24,7 @@ import se3a04.twentyonequestions.MessagePassing.QuestionType;
 import se3a04.twentyonequestions.R;
 
 
-public class GUI_Controller extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
+public class GUI_Controller extends FragmentActivity implements View.OnClickListener {
 
     //the buttons from the boundry activities
     private Button btStart;
@@ -49,9 +47,11 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
 
 
     //Google maps thing
-    private GoogleMap mMap;
-    private SupportMapFragment map_fragment;
+    // private GoogleMap mMap;
+    //private SupportMapFragment map_fragment;
+    private GoogleMapsFragment map ;
     private boolean displayMap = false;
+    private MapLocation location;
 
     /**
      * Constructor for creating the view of the start screen
@@ -61,7 +61,6 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setScreen();
 
 
@@ -100,7 +99,7 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
 
                 break;
             case R.id.btCorrect:
-            case R.id.btIncorrect:
+           case R.id.btIncorrect:
                 this.question_controller = null;
                 screen = Screen.START_SCREEN;
                 setScreen();
@@ -129,7 +128,9 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
                 question_controller.interrupt();
                 question_controller = null;
                 channel = null;
+                //this.map.onDestroyView();
                 setScreen();
+
                 break;
             case MAP_SCREEN:
                 screen = Screen.START_SCREEN;
@@ -157,6 +158,7 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
             default:
                 layout = R.layout.start_screen;
         }
+
         setContentView(layout);
         setListeners();
     }
@@ -181,13 +183,14 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
 
                 this.btYes.setOnClickListener(this);
                 this.btNo.setOnClickListener(this);
-                setUpMaps(R.id.questions_map_frag);
                 break;
             case MAP_SCREEN:
                 this.btCorrect = (Button) findViewById(R.id.btCorrect);
                 this.btIncorrect = (Button) findViewById(R.id.btIncorrect);
                 this.txtAnswerMap = (EditText) findViewById(R.id.txtAnswerMap);
-                setUpMaps(R.id.map_screen_frag);
+                location =(this.question_controller.getMapAnswer());
+                createMap(R.id.map_screen_map, location);
+
 
                 this.txtAnswerMap.setText(this.overallanswer);
                 this.btCorrect.setOnClickListener(this);
@@ -241,91 +244,50 @@ public class GUI_Controller extends FragmentActivity implements OnMapReadyCallba
     }
 
 
+
+
     /**
      * Sets the question and the items to go with that question
      *
      */
     private void setQuestion(){
         if(screen == Screen.QUESTION_SCREEN) {
-            this.lblQuestionAsked.setText(channel.getQuestion());
-            if(this.channel.getType() == QuestionType.MAP){
-                (findViewById(R.id.questions_map_frag)).setVisibility(View.VISIBLE);
-                this.displayMap = true;
-                setUpMaps(R.id.questions_map_frag);
+                this.lblQuestionAsked.setText(channel.getQuestion());
+                if (this.channel.getType() == QuestionType.MAP) {
+                    this.displayMap = true;
+                    location =((MapLocation)channel.getExtra());
+                    createMap(R.id.question_map_screen, location);
+                } else {
+                    this.displayMap = false;
+                    //createMap(R.layout.question_screen, R.id.question_map_screen, new MapLocation(200,200,20));
+                }
+
+
+                if (this.channel.getType() == QuestionType.IMAGE) {
+                    //TODO future releases if expert needs to show an image
+                } else {
+                    //TODO future releases if expert needs to show an image
+                }
+
             }else{
-                this.displayMap = false;
-                (findViewById(R.id.questions_map_frag)).setVisibility(View.INVISIBLE);
+
             }
 
-
-            if(this.channel.getType() == QuestionType.IMAGE){
-                //TODO future releases if expert needs to show an image
-            }else{
-                //TODO future releases if expert needs to show an image
-            }
-        }else{
-
-        }
     }
 
 
-    private void setUpMaps(int fragementview) {
+     private void createMap(int fragment, MapLocation mapLocation){
+         //createMap(R.layout.map_screen,R.id.map_screen_map, location);
+         this.map = new GoogleMapsFragment();
 
-        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-        map_fragment = (SupportMapFragment) fm.findFragmentById(fragementview);
-        if (map_fragment == null) {
-            map_fragment = SupportMapFragment.newInstance();
-            fm.beginTransaction().replace(fragementview, map_fragment)
-                    .commit();
-            map_fragment.getMapAsync(this);
-        }
-    }
+         this.map.setLocation(mapLocation);
 
-    /**
-     * Displays a map at the location specified
-     *
-     * @param mapLocation- the location too display
-     */
-    private void displayMap(MapLocation mapLocation) {
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.getUiSettings().setMyLocationButtonEnabled(true);
-        mMap.getUiSettings().setCompassEnabled(true);
-        mMap.getUiSettings().setRotateGesturesEnabled(true);
+         FragmentManager manager = getSupportFragmentManager();
+         FragmentTransaction transaction = manager.beginTransaction();
 
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(new LatLng(mapLocation.getLatitude(), mapLocation.getLongitude())).zoom(mapLocation.getZoom()).build();
-        mMap.animateCamera(CameraUpdateFactory
-                .newCameraPosition(cameraPosition));
-
-        // create marker
-        MarkerOptions marker = new MarkerOptions().position(new LatLng(
-                mapLocation.getLatitude(), mapLocation.getLongitude()));
-        // ROSE color icon
-        marker.icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
-        // adding marker
-        mMap.addMarker(marker);
-
-        // check if map is created successfully or not
-        if (mMap == null) {
-            Toast.makeText(getApplicationContext(),
-                    "Unable to show location", Toast.LENGTH_SHORT)
-                    .show();
-        }
-
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        if (this.displayMap && this.screen == Screen.MAP_SCREEN) {
-            this.displayMap(this.question_controller.getMapAnswer());
-
-        }else if(this.displayMap && this.screen == Screen.QUESTION_SCREEN){
-            this.displayMap((MapLocation) this.channel.getExtra());
-        }
-
-    }
+         transaction.add(fragment,map);
+         transaction.commit();
+     }
 
 
 }

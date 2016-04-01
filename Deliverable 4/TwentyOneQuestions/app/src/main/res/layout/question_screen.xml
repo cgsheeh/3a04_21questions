@@ -25,8 +25,9 @@
             android:text="No"
             android:id="@+id/btNo"
             android:layout_gravity="right|bottom"
-            android:layout_below="@+id/questions_map_frag"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="50dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -34,20 +35,26 @@
             android:text="Yes"
             android:id="@+id/btYes"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_below="@+id/questions_map_frag"
+            android:layout_alignTop="@+id/btNo"
             android:layout_alignParentStart="true" />
 
-        <fragment
-            android:layout_width="359dp"
-            android:layout_height="299dp"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:id="@+id/questions_map_frag"
-            android:visibility="invisible"
-            android:layout_gravity="center"
-            tools:layout="@layout/maps"
-            android:layout_centerVertical="true"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lblQuestion"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginTop="97dp"
+            android:layout_above="@+id/btNo"
+            android:id="@+id/linQuestionMap">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/question_map_screen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.google.android.gms.maps.SupportMapFragment" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

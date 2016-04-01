@@ -4,47 +4,65 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Your talking about somewhere around...."
-        android:textColor="#000"
-        android:id="@+id/lblTitleMap" />
-
-    <FrameLayout
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="wrap_content">
 
 
-        <EditText
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Your talking about somewhere around...."
+            android:textColor="#000"
+            android:id="@+id/lblTitleMap" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAnswerMap" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/linMapScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_screen_map"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            class="com.google.android.gms.maps.SupportMapFragment" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtAnswerMap"
-            android:layout_gravity="center_horizontal|top" />
-
+            android:layout_gravity="center_horizontal">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Correct"
-            android:id="@+id/btCorrect"
-            android:layout_gravity="left|bottom" />
+            android:id="@+id/btCorrect" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Incorrect"
             android:id="@+id/btIncorrect"
-            android:layout_gravity="right|bottom" />
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+        </RelativeLayout>
 
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="367dp"
-            android:name="com.google.android.gms.maps.MapFragment"
-            android:id="@+id/map_screen_frag"
-            android:layout_gravity="center"
-            tools:layout="@layout/maps" />
 
-    </FrameLayout>
+
+
+
 </LinearLayout>
