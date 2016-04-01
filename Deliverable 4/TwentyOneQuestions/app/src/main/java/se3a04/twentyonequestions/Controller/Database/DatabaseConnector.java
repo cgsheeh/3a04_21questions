@@ -26,7 +26,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+
+import se3a04.twentyonequestions.Controller.Database.Cryptography.MCrypt;
+
 /**
  * Created by curtis on 25/03/16.
  */
@@ -55,18 +59,31 @@ public DatabaseConnector(){
  * @return the result from excution
  */
 public String getResult(){
-        return result;
+        MCrypt mcrypt = new MCrypt();
+        try {
+                String s =   new String( mcrypt.decrypt( result ));
+                return s;
+                //return result;
+        } catch (Exception e) {
+                e.printStackTrace();
+                return e.toString();
         }
+}
 
 
 protected String doInBackground(String...urls){
 
         dataRetrieved=false;
+
+        MCrypt mcrypt = new MCrypt();
+
+
         try{
+        String encrypted = MCrypt.bytesToHex(mcrypt.encrypt(urls[0]));
         HttpClient httpclient=new DefaultHttpClient();// connect to the database using the first item of the string
         HttpPost httppost=new HttpPost(url);
         ArrayList<NameValuePair>nameValuePairs=new ArrayList<NameValuePair>();//create an arraylist of required data
-        nameValuePairs.add(new BasicNameValuePair("query",urls[0]));//add the table
+        nameValuePairs.add(new BasicNameValuePair("query",encrypted));//add the table
         //nameValuePairs.add(new BasicNameValuePair("query",urls[1]));//add the query
         httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         result="";

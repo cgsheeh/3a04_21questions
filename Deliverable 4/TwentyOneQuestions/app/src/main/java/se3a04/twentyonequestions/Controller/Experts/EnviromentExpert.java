@@ -60,6 +60,7 @@ public class EnviromentExpert extends Expert {
         String query = getQuery("Question,LeftChild,RightChild", "ID=" +"'" +nextChild+"'");
         String raw = this.excuteQuery(query).trim().replace("\n", "");
         if(!raw.equals("null")) {
+            Log.e("raw",raw);
             String[] raw_parsed = raw.split(",");
             this.children = new String[]{raw_parsed[1], raw_parsed[2]};
             current = nextChild;

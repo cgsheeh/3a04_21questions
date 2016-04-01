@@ -48,6 +48,7 @@ public class EstablishmentExpert extends Expert {
         }
         String query = getQuery("Question,LeftChild,RightChild", "ID=" + "'" + nextChild + "'");
         String raw = this.excuteQuery(query).trim().replace("\n","");
+        Log.e("raw",raw);
         if(!raw.equals("null")) {
             String[] raw_parsed = raw.split(",");
             this.children = new String[]{raw_parsed[1], raw_parsed[2]};

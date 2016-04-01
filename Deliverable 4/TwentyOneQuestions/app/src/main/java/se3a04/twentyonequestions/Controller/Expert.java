@@ -85,11 +85,11 @@ public abstract class Expert {
             }catch(InterruptedException e){};
             reps++;
         }
-
-        if(dbConnector.getResult().equals("")){
+        String data = dbConnector.getResult();
+        if(data.equals("")){
             throw new TimeoutException("We could not reach  the server");
         }
-        return dbConnector.getResult();
+        return data;
     }
 
 
