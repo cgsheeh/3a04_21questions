@@ -1,5 +1,9 @@
 package se3a04.twentyonequestions.Interface;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -7,6 +11,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.MapFragment;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import se3a04.twentyonequestions.MessagePassing.MapLocation;
 import se3a04.twentyonequestions.MessagePassing.MessageChannel;
@@ -99,11 +108,13 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
                 break;
             case R.id.btCorrect:
-           case R.id.btIncorrect:
                 this.question_controller = null;
                 screen = Screen.START_SCREEN;
                 setScreen();
                 break;
+            case R.id.btIncorrect:
+                this.makeDialog("Report Issue", "What was the answer you were thinking of?");
+            break;
         }
     }
 
@@ -288,6 +299,56 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
          transaction.add(fragment,map);
          transaction.commit();
      }
+
+
+    //http://stackoverflow.com/questions/10903754/input-text-dialog-android
+    //Acessed April 4th
+    private void makeDialog(String title,String message){
+        this.question_controller = null;
+
+        final EditText textbox = new EditText(this);
+
+        AlertDialog.Builder dialogBox = new AlertDialog.Builder(this)
+
+                .setTitle(title)
+                .setMessage(message)
+                .setView(textbox)
+                .setPositiveButton("Send", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        sendIssue(textbox.getText().toString());
+                        screen = Screen.START_SCREEN;
+                        setScreen();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        screen = Screen.START_SCREEN;
+                        setScreen();
+
+                    }
+                });
+        dialogBox.show();
+
+    }
+
+
+    //http://stackoverflow.com/questions/8284706/send-email-via-gmail
+    //Acessed April 4th
+    private void sendIssue(String body){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+
+        Intent send = new Intent(Intent.ACTION_SENDTO);
+        String uriText = "mailto:" + Uri.encode("milocj@mcmaster.ca") +
+                "?subject=" + Uri.encode("Software issue for 21 Questions on "+ dateFormat.format(new Date())) +
+                "&body=" + Uri.encode(body);
+        Uri uri = Uri.parse(uriText);
+
+        send.setData(uri);
+        startActivity(Intent.createChooser(send, "Send mail..."));
+    }
+
 
 
 }

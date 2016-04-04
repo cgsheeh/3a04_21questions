@@ -6,6 +6,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 //http://stackoverflow.com/questions/20929105/php-android-xml-encryption-decryption
+//Accessed April 1st
 public class MCrypt {
 
     private String iv = "afrosamuraicool1";

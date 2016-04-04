@@ -105,7 +105,7 @@ public class EnviromentExpert extends Expert {
             count++;
         }
 
-        return "no result found";
+        return "no result found\n";
 
 
     }
