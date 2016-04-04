@@ -94,7 +94,20 @@ public class EnviromentExpert extends Expert {
      */
     @Override
     public String getGuess() throws TimeoutException {
-        return excuteQuery(this.getQuery("Guess", "ID=" +"'" +current+"'"));
+
+        int count  = 1;
+
+        while (this.answers.size() - count >0){
+            if(this.answers.get(answers.size()-count).equals("yes")) {
+
+                return excuteQuery(this.getQuery("Guess", "Question=" + "'" + this.questions.get(questions.size() -count) + "'"));
+            }
+            count++;
+        }
+
+        return "no result found";
+
+
     }
 
     /**

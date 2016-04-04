@@ -8,12 +8,12 @@ import javax.crypto.spec.SecretKeySpec;
 //http://stackoverflow.com/questions/20929105/php-android-xml-encryption-decryption
 public class MCrypt {
 
-    private String iv = "fedcba9876543210";//Dummy iv (CHANGE IT!)
+    private String iv = "afrosamuraicool1";
     private IvParameterSpec ivspec;
     private SecretKeySpec keyspec;
     private Cipher cipher;
 
-    private String SecretKey = "0123456789abcdef";//Dummy secretKey (CHANGE IT!)
+    private String SecretKey = "diodebjtmosfet12";
 
     public MCrypt()
     {
