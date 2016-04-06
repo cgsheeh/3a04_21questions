@@ -1,0 +1,29 @@
+\documentclass[titlepage]{article}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1.25in, footskip=0.25in]{geometry}
+\usepackage{xcolor}
+
+\title{\textbf{SE 3A04 Deliverable 4}}
+\author
+{
+	Gabriel Lopez de Leon - lopezdg - 1310514\\Curtis Milo - milocj - 1305877\\Max Moore - moorem8 - 1320009\\Alex Rahman - rahmaa25 - 1305735\\Connor Sheehan - sheehacg - 1330964}
+
+\date{\textbf{\today}}
+
+\begin{document}
+\maketitle
+\section{How to use}
+\large
+The application will first open to a start screen before playing the game, pressing will start a game. Each expert will take turns asking questions that must be answered with yes or no questions. Please note these questions can either be answered by the buttons or by pressing the voice button and saying yes or no. Once all the experts have answered there questions the answer of the experts will be displayed for the user to see as long as a map that shows the location. If the game had an incorrect then the user can send an email to Curtis Milo explaining what the issue is.
+
+\section{Class Explanation}
+The android xml files are found under /res/layout// \\
+The actual code is found under /Java/com/se3a04/twentyonequestions/ \\
+
+The code is structured very similar to the class diagram for deliverable 3. The controller file folder holds the 3 experts, the abstract experts class and the question controller that controls when experts ask questions. This folder also holds things in regards to the database controller for preforming queries. The interface holds the GUI controller that controls the information that is shown to the user. The Google maps fragments is to allow the dynamic adding and removing of maps, The screen is an enumeration for what screen the user is on. Finally the Message passing folder holds the message passing class to allow the two controllers to communicate. Please note that this code will be commented.
+\end{document}
