@@ -17,13 +17,15 @@
 
 \begin{document}
 \maketitle
-\section{How to use}
+\section{Game Start Up}
 \large
-The application will first open to a start screen before playing the game, pressing will start a game. Each expert will take turns asking questions that must be answered with yes or no questions. Please note these questions can either be answered by the buttons or by pressing the voice button and saying yes or no. Once all the experts have answered there questions the answer of the experts will be displayed for the user to see as long as a map that shows the location. If the game had an incorrect then the user can send an email to Curtis Milo explaining what the issue is.
+%Please note these questions can either be answered by the buttons or by pressing the voice button and saying yes or no.
+
+The application will first open to a start screen before playing the game, pressing 'Start Game' will begin a new game. The user will be able to choose one of two modes before starting. This may be done in the settings, a small tool button at the bottom of the start screen. One of the modes allows the user to answer each question with a voice command rather than pressing a button. The default mode is the tactile mode, where the user is asked to press the buttons to answer each question. Once the game has begun, each expert will take turns asking questions that must be answered with either 'Yes' or 'No'. Once all the experts have received answers to their questions the experts' guess will be displayed for the user to see as long as a map that shows the location. If the game resulted an incorrect guess, then the user is able to send an email to Curtis Milo explaining what the issue is. This is done so by pressing the 'Incorrect' button and choosing to send an email.
 
 \section{Class Explanation}
 The android xml files are found under /res/layout// \\
 The actual code is found under /Java/com/se3a04/twentyonequestions/ \\
 
-The code is structured very similar to the class diagram for deliverable 3. The controller file folder holds the 3 experts, the abstract experts class and the question controller that controls when experts ask questions. This folder also holds things in regards to the database controller for preforming queries. The interface holds the GUI controller that controls the information that is shown to the user. The Google maps fragments is to allow the dynamic adding and removing of maps, The screen is an enumeration for what screen the user is on. Finally the Message passing folder holds the message passing class to allow the two controllers to communicate. Please note that this code will be commented.
+The code is structured very similar to the class diagram for Deliverable 3. The controller file folder holds the 3 experts, the abstract experts class and the question controller that controls when experts ask questions. This folder also holds things in regards to the database controller for preforming queries. The interface holds the GUI controller that controls the information that is shown to the user. The Google maps fragments is to allow the dynamic adding and removing of maps. The screen is setup as an enumeration for what screen the user is on. Finally, the message passing folder holds the message passing class to allow the two controllers to communicate. Please note that this code will be commented.
 \end{document}
