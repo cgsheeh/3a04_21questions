@@ -42,7 +42,7 @@ if (mysql_num_rows($result) > 0) {
 			$data .= ",";
 		}
 	}
-	$data .="</br>";
+	$data .="\n";
 
     }
      

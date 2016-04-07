@@ -56,6 +56,14 @@
 
         </LinearLayout>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice"
+            android:id="@+id/btVoice"
+            android:layout_below="@+id/linQuestionMap"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
 </LinearLayout>
