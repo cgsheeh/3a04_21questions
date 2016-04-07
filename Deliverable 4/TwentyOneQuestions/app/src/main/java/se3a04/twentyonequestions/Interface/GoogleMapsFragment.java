@@ -32,24 +32,33 @@ import se3a04.twentyonequestions.MessagePassing.MapLocation;
 import se3a04.twentyonequestions.R;
 
 /**
- * Created by curtis on 31/03/16.
+ * GoogleMapsFragment
+ *      Extends the fragment class to be able to
  */
 public class GoogleMapsFragment extends Fragment implements OnMapReadyCallback {
-    //MapView mMapView;
+    /**
+     * Fields:
+     *      mMap: Map of the location to display
+     *      mMapView: View object holding mMap
+     *      location: ADT holding the data about the location
+     */
     private GoogleMap mMap;
     MapView mMapView;
-
-
-    private int id =0;
-    private int fragment =0;
     private MapLocation location;
 
 
-
+    /**
+     * onCreateView
+     *      Method to be called when the view is created
+     * @param inflater: object to turn XML into view
+     * @param container: parent view holding child views
+     * @param savedInstanceState: mapping from strings to instance types
+     * @return: view to be put on the screen
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // inflat and return the layout
+        // inflate and return the layout
 
         View v = inflater.inflate(R.layout.blank, container,false);
         mMapView = (MapView) v.findViewById(R.id.map_frame);
@@ -69,7 +78,11 @@ public class GoogleMapsFragment extends Fragment implements OnMapReadyCallback {
     }
 
 
-
+    /**
+     * onMapReady
+     *      Method displays the map once it is rendered
+     * @param googleMap: Map to display
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -91,13 +104,19 @@ public class GoogleMapsFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
-
+    /**
+     * setLocation
+     *      sets the location to display on the screen
+     * @param location: location to display
+     */
     public void setLocation(MapLocation location){
         this.location = location;
     }
 
 
-
+    /**
+     * Methods to handle activity lifecycle
+     */
     @Override
     public void onResume() {
         super.onResume();

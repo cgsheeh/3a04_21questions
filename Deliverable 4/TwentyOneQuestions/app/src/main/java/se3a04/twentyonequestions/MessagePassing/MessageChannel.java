@@ -1,10 +1,21 @@
 package se3a04.twentyonequestions.MessagePassing;
 
 /**
- * Created by curtis on 12/03/16.
+ * MessageChannel
+ *      Pipeline allowing messages to be passed between the controller classes
+ *      Simplifies the problem of having two threads communicate with one another
  */
 public class MessageChannel {
 
+    /**
+     * Fields
+     *      answer: answer to be passed
+     *      question: question to be passed
+     *      extra: any extra objects that need to be passed between controllers (map, etc)
+     *      type: type of question to be passed
+     *      Turn: enumeration of the possible actors who can take turns using this channel
+     *      canGo: the controller class which can use the channel
+     */
     private String answer= "";
     private String question = "";
     private Object extra = null;
@@ -15,13 +26,12 @@ public class MessageChannel {
     private enum Turn {GUI, QUESTION};
     private Turn canGo = Turn.QUESTION;
 
-    public MessageChannel(){
-
-    }
+    public MessageChannel(){}
 
     /**
-     *Sets the answer given by the user
-     * @param answer yes,no or maybe from user
+     * setAnswer
+     *      Sets the answer given by the user
+     * @param answer: yes/no answer from the user
      */
     public synchronized void setAnswer(String answer){
         this.answer = answer;
@@ -29,7 +39,8 @@ public class MessageChannel {
     }
 
     /**
-     * Sets the question given by the controller
+     * setQuestion
+     *      Sets the question given by the controller
      * @param question the question given by the controller
      */
     public synchronized void setQuestion(String question){
@@ -38,7 +49,8 @@ public class MessageChannel {
     }
 
     /**
-     * states if the gui can get a question
+     * canGetQuestion
+     *      states if the gui can get a question
      * @return if a question is ready for the user interface
      */
     public synchronized boolean canGetQuestion(){
@@ -46,7 +58,8 @@ public class MessageChannel {
     }
 
     /**
-     * states if the answer is ready from the user
+     * canGetAnswer
+     *      states if the answer is ready from the user
      * @return if an answer is ready for the controller
      */
     public synchronized boolean canGetAnswer(){
@@ -54,7 +67,8 @@ public class MessageChannel {
     }
 
     /**
-     * gives the question from the controller
+     * getQuestion
+     *      gives the question from the controller
      * @return the question from the controller
      */
     public synchronized String getQuestion(){
@@ -62,7 +76,8 @@ public class MessageChannel {
     }
 
     /**
-     * give the answer from the user
+     * getAnswer
+     *      give the answer from the user
      * @return the answer from the user
      */
     public synchronized String getAnswer(){
@@ -71,7 +86,8 @@ public class MessageChannel {
 
 
     /**
-     * Returns the type of the question being asked
+     * getType
+     *      Returns the type of the question being asked
      * @return question type
      */
     public synchronized QuestionType getType() {
@@ -79,17 +95,28 @@ public class MessageChannel {
     }
 
     /**
-     * sets the type of the question
+     * setType
+     *      sets the type of the question
      * @param type the question type to ask
      */
     public synchronized void setType(QuestionType type) {
         this.type = type;
     }
 
+    /**
+     * getExtra
+     *      returns the extra object in the channel
+     * @return: extra object
+     */
     public Object getExtra() {
         return extra;
     }
 
+    /**
+     * setExtra
+     *      Sets the extra object in the channel
+     * @param extra: Extra object to put in the channel
+     */
     public void setExtra(Object extra) {
         this.extra = extra;
     }

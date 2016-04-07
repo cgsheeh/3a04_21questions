@@ -33,39 +33,58 @@ import se3a04.twentyonequestions.MessagePassing.QuestionType;
 import se3a04.twentyonequestions.R;
 
 
+/**
+ * GUI_Controller
+ *      Controller class handling gui states and control flow
+ *      Extends FragmentActivity as the view will be displaying Maps fragments
+ */
 public class GUI_Controller extends FragmentActivity implements View.OnClickListener {
 
-    //the buttons from the boundry activities
+    /**
+     * Fields
+     *      btStart: Start button
+     *      btSetting: Setting button
+     *      btYes: Yes button
+     *      btNo: No button
+     *      btCorrect: Correct button
+     *      btIncorrect: Incorrect button
+     *      lblQuestionAsked: View used to display the question string
+     *      txtAnswerMap: View used to display the answer
+     *      question_controller: Question controller instance
+     *      channel: MessageChannel instance
+     *      overallanswer: Final answer for the game
+     *      screen: variable indicating the state of the screen
+     *      map: Map fragment to display
+     *      displayMap: boolean indicating if the map should be displayed
+     *      location: MapLocation ADT instance holding location data for map fragment
+     *
+     */
     private Button btStart;
     private FloatingActionButton btSetting;
     private Button btYes;
     private Button btNo;
-    private Button btMaybe;
     private Button btCorrect;
     private Button btIncorrect;
 
-    //textview of screens
     private TextView lblQuestionAsked;
     private EditText txtAnswerMap;
 
     private QuestionController question_controller;
     private MessageChannel channel;
     private String overallanswer = "";
-    //private fields
+
     private Screen screen = Screen.START_SCREEN;
 
 
-    //Google maps thing
-    // private GoogleMap mMap;
-    //private SupportMapFragment map_fragment;
     private GoogleMapsFragment map ;
     private boolean displayMap = false;
     private MapLocation location;
 
     /**
-     * Constructor for creating the view of the start screen
+     * onCreate
+     *      Behaviour for creating the view of the start screen
      *
-     * @param savedInstanceState
+     * @param savedInstanceState:
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +96,9 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
 
     /**
-     * Logic for on click listeners
-     *
-     * @param v The view that was clicked
+     * onClick
+     *      Implements the logic for on click listeners
+     * @param v: The view that was clicked
      */
     @Override
     public void onClick(View v) {
@@ -120,7 +139,8 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
 
     /**
-     * Logic for when the back button is pressed
+     * onBackPressed
+     *      Implements logic for when the back button is pressed
      */
     @Override
     public void onBackPressed() {
@@ -152,7 +172,8 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
     }
 
     /**
-     * sets the content of the screen
+     * setScreen
+     *      Sets the content of the screen
      */
     private void setScreen() {
         int layout = 0;//the layout screen to set too
@@ -175,7 +196,8 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
     }
 
     /**
-     * Sets the listeners of the application based on the view
+     * setListeners
+     *      Sets the listeners of the application based on the view
      */
     private void setListeners() {
         /**
@@ -218,8 +240,9 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
 
     /**
-     * Logic for when a question is question, if it is finished then it will get the answer and
-     * display it on a map
+     * nextQuestionRequest
+     *      Logic for when a question is question, if it is finished then it will
+     *      get the answer and display it on a map
      *
      * @param answer the answer that was given by the user
      */
@@ -230,8 +253,8 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
     }
 
     /**
-     * Waits untill the question becomes avalible.
-     * Then displats the question
+     * waitForQuestion
+     *      Blocking method that waits until a question is available, then displays
      */
     private void waitForQuestion() {
         while (!channel.canGetQuestion() && !question_controller.isFinished()) {
@@ -258,8 +281,8 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
 
     /**
-     * Sets the question and the items to go with that question
-     *
+     * setQuestion
+     *      Sets the question and the items to go with that question
      */
     private void setQuestion(){
         if(screen == Screen.QUESTION_SCREEN) {
@@ -286,7 +309,10 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
     }
 
-
+    /**
+     * createMap
+     *      Creates the map fragment for display
+     */
      private void createMap(int fragment, MapLocation mapLocation){
          //createMap(R.layout.map_screen,R.id.map_screen_map, location);
          this.map = new GoogleMapsFragment();
@@ -303,7 +329,16 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
 
     //http://stackoverflow.com/questions/10903754/input-text-dialog-android
     //Acessed April 4th
-    private void makeDialog(String title,String message){
+
+    /**
+     * makeDialog
+     *      Creates pop-up dialog with title and message
+     *      Reference: http://stackoverflow.com/questions/10903754/input-text-dialog-android
+     *      Accessed April 4th, 2016
+     * @param title: Title of dialog box
+     * @param message: Message in dialog bo
+     */
+    private void makeDialog(String title, String message){
         this.question_controller = null;
 
         final EditText textbox = new EditText(this);
@@ -334,8 +369,13 @@ public class GUI_Controller extends FragmentActivity implements View.OnClickList
     }
 
 
-    //http://stackoverflow.com/questions/8284706/send-email-via-gmail
-    //Acessed April 4th
+    /**
+     * sendIssue
+     *      Sends an email to the developers (ie Curtis) indicating an issue in the game
+     *      Reference: http://stackoverflow.com/questions/8284706/send-email-via-gmail
+     *      Accessed April 4th, 2016
+     * @param body: body of the paragraph to send
+     */
     private void sendIssue(String body){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 

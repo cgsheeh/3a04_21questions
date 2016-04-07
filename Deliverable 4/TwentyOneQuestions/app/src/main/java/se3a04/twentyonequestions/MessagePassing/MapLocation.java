@@ -1,27 +1,26 @@
 package se3a04.twentyonequestions.MessagePassing;
 
 /**
- * Created by curtis on 25/03/16.
+ * MapLocation
+ *      ADT holding information about location to display on map
  */
 public class MapLocation {
-    private int latitude =0;
-    private int longitude= 0;
-    private int zoom =10;
+    private double latitude = 0;
+    private double longitude = 0;
+    private int zoom = 10;
 
-    public MapLocation(int latitude, int longitude, int zoom){
+    public MapLocation(double latitude, double longitude, int zoom){
         this.latitude = latitude;
         this.longitude = longitude;
-        this.zoom =zoom;
+        this.zoom = zoom;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
-
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
-
     public int getZoom() {
         return zoom;
     }

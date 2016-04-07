@@ -10,25 +10,37 @@ import se3a04.twentyonequestions.Controller.Expert;
 import se3a04.twentyonequestions.MessagePassing.MapLocation;
 
 /**
- * Created by curtis on 12/03/16.
+ * EstablishmentExpert
+ *      Expert that guesses based on types of establishments
  */
 public class EstablishmentExpert extends Expert {
-    private final String TABLE ="EstablishmentExpertTable";
+    /**
+     * Fields
+     *      TABLE: name of the table holding the questions for this expert
+     *      children: holds the question ids of the child nodes
+     *      current: current question id
+     *      done: boolean indicating if the expert is done asking questions
+     */
+    private final String TABLE = "EstablishmentExpertTable";
     private String[] children = {"1"};
     private String current = "1";
     private boolean done = false;
     /**
-     * Addes the question and answer pair to the expert
+     * add
+     *      Adds the question and answer pair to the expert
+     * @param question: question to be added
+     * @param answer: answer to be added
      */
     @Override
-    public void add(String qustion, String answer){
-        questions.add(qustion);
+    public void add(String question, String answer){
+        questions.add(question);
         answers.add(answer);
 
     }
 
     /**
-     * gives the next question to ask based on what the user has previously asked
+     * getQuestion
+     *      gives the next question to ask based on what the user has previously asked
      * @return the next question
      * @throws TimeoutException if the server could not be reached
      */
@@ -48,7 +60,11 @@ public class EstablishmentExpert extends Expert {
         }
         String query = getQuery("Question,LeftChild,RightChild", "ID=" + "'" + nextChild + "'");
         String raw = this.excuteQuery(query).trim().replace("\n","");
-        if(!raw.equals("")|| raw == "null") {
+        Log.e("raw", raw);
+        if(raw.equals("null")){
+            return null;
+        }
+        if(!raw.equals("")) {
             String[] raw_parsed = raw.split(",");
             try {
                 current = nextChild;
@@ -58,6 +74,7 @@ public class EstablishmentExpert extends Expert {
                 this.children = new String[]{null,null};
                 done = true;
             }
+            Log.e("question", raw_parsed[0]);
             return raw_parsed[0];
         }else{
             done = true;
@@ -65,18 +82,21 @@ public class EstablishmentExpert extends Expert {
         }
     }
 
+    /**
+     * The next two methods are in place in case of future changes
+     */
     @Override
     public MapLocation getMap() {
         return null;
     }
-
     @Override
     public Bitmap getImage() {
         return null;
     }
 
     /**
-     * States if there are any more questions to ask
+     * hasMoreQuestions
+     *      States if there are any more questions to ask
      * @return if the expert is done asking questions
      */
     @Override
@@ -85,7 +105,8 @@ public class EstablishmentExpert extends Expert {
     }
 
     /**
-     * Gives the answer of the expert
+     * getGuess
+     *      Gives the answer of the expert
      * @return the answer of the expert
      * @throws TimeoutException if the server could not be reached
      */
@@ -97,7 +118,8 @@ public class EstablishmentExpert extends Expert {
             while (this.answers.size() - count >0){
                 if(this.answers.get(answers.size()-count).equals("yes")) {
 
-                    return excuteQuery(this.getQuery("Guess", "Question=" + "'" + this.questions.get(questions.size() -count) + "'"));
+                    return excuteQuery(this.getQuery("Guess", "Question=" + "'" + this.questions.get(questions.size() -count) + "'"))
+                            .replaceAll("</br>", "\n");
                 }
                 count++;
             }
@@ -108,7 +130,8 @@ public class EstablishmentExpert extends Expert {
         }
 
     /**
-     * creates the query to excute on the database
+     * getQuery
+     *      creates the query to execute on the database
      * @param attribute the attribute we wish to get
      * @param condition the conition in which to check for
      * @return  the query to excute on the database

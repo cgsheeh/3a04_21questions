@@ -13,12 +13,21 @@ import se3a04.twentyonequestions.MessagePassing.MessageChannel;
 import se3a04.twentyonequestions.MessagePassing.QuestionType;
 
 /**
- * Created by curtis on 12/03/16.
+ * QuestionController
+ *      Controller class responsible for handling the question logic and database logic
  */
 public class QuestionController extends Thread {
 
+    /**
+     * Fields
+     *      experts: ArrayList holding expert objects
+     *      questions_asked: count of number of questions that have been asked
+     *      channel: message passing channel object
+     *      current_question: current question for the user to ask
+     *      timeoutError: boolean indicating if the controller has been blocked for too long
+     *      finished: boolean indicating if the current game is finished
+     */
     private ArrayList<Expert>  experts =  new ArrayList<Expert>();//list of experts
-
     private int questions_asked =0;
     private int experts_turn = -1;
     private MessageChannel channel;
@@ -26,17 +35,22 @@ public class QuestionController extends Thread {
     private boolean timeoutError = false;
     private boolean finished = false;
 
+    /**
+     * Constructor
+     *      Instantiates the QuestionController, creating the experts and adding to the list
+     * @param channel: message passing channel reference
+     */
     public QuestionController(MessageChannel channel){
-        //adding of experts
-
         experts.add(new EstablishmentExpert());
         experts.add(new EnviromentExpert());
         experts.add(new LocationExpert());
         this.channel = channel;
-
-
     }
 
+    /**
+     * run
+     *      Function that runs this controller as a separate thread
+     */
     @Override
     public void run(){
         try {
@@ -90,8 +104,9 @@ public class QuestionController extends Thread {
 
 
     /**
-     * States if the game is over or not
-     * @return if the game is over or not
+     * isFinished
+     *      States if the game is over or not
+     * @return: if the game is over or not
      */
     public boolean isFinished(){
         return finished || timeoutError;
@@ -99,7 +114,8 @@ public class QuestionController extends Thread {
 
 
     /**
-     * returns the answer based on each  expert
+     * getAnswer
+     *      returns the answer based on each expert
      * @return the answer from the expert
      */
     public String getAnswer() {
@@ -119,7 +135,8 @@ public class QuestionController extends Thread {
 
 
     /**
-     * sets the answer and updates the expert count
+     * addAnswer
+     *      sets the answer and updates the expert count
      */
     private void addAnswer(){
         experts.get(experts_turn).add(current_question,channel.getAnswer());
@@ -127,6 +144,6 @@ public class QuestionController extends Thread {
     }
 
     public MapLocation getMapAnswer(){
-        return new MapLocation(0,0,40);
+        return this.experts.get(2).getMap();
     }
 }

@@ -1,7 +1,8 @@
 package se3a04.twentyonequestions.MessagePassing;
 
 /**
- * Created by curtis on 25/03/16.
+ * QuestionType
+ *      Enumeration of the types of questions the experts can ask
  */
 public enum QuestionType {
     REGULAR,MAP,IMAGE

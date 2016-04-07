@@ -5,8 +5,14 @@ import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-//http://stackoverflow.com/questions/20929105/php-android-xml-encryption-decryption
-//Accessed April 1st
+
+/**
+ * MCrypt
+ *      This class is a java implementation of the php MCrypt module
+ *      It is used to encrypt data between the database and the client
+ *      Based off of http://stackoverflow.com/questions/20929105/php-android-xml-encryption-decryption
+ *      Accessed on April 1st, 2016
+ */
 public class MCrypt {
 
     private String iv = "afrosamuraicool1";
@@ -16,6 +22,10 @@ public class MCrypt {
 
     private String SecretKey = "diodebjtmosfet12";
 
+    /**
+     * Constructor
+     *      Initializes the iv and key specs, sets the cipher to AES
+     */
     public MCrypt()
     {
         ivspec = new IvParameterSpec(iv.getBytes());
@@ -33,6 +43,13 @@ public class MCrypt {
         }
     }
 
+    /**
+     * encrypt
+     *      Encrypts a string object to an array of bytes
+     * @param text: The text string to encrypt before sending to the database
+     * @return: byte array of encrypted data
+     * @throws Exception: indicating the encryption failed
+     */
     public byte[] encrypt(String text) throws Exception
     {
         if(text == null || text.length() == 0)
@@ -52,6 +69,13 @@ public class MCrypt {
         return encrypted;
     }
 
+    /**
+     * decrypt:
+     *      Decrypts a string and converts to an array of bytes
+     * @param code: the string to decrypt
+     * @return: byte array of decrypted string
+     * @throws Exception: if decryption failed
+     */
     public byte[] decrypt(String code) throws Exception
     {
         if(code == null || code.length() == 0)
@@ -71,7 +95,12 @@ public class MCrypt {
     }
 
 
-
+    /**
+     * bytesToHex:
+     *      Converts an array of bytes to a string object
+     * @param data: byte array of data to convert
+     * @return: String representation of data
+     */
     public static String bytesToHex(byte[] data)
     {
         if (data==null)
@@ -90,7 +119,12 @@ public class MCrypt {
         return str;
     }
 
-
+    /**
+     * hexToBytes
+     *      Converts a String object to a byte array representation
+     * @param str: string to convert to byte[]
+     * @return: byte array representation of str
+     */
     public static byte[] hexToBytes(String str) {
         if (str==null) {
             return null;
@@ -107,7 +141,12 @@ public class MCrypt {
     }
 
 
-
+    /**
+     * padString
+     *      Pads a string to ensure it is the correct size
+     * @param source: string of wrong size
+     * @return: String of correct size
+     */
     private static String padString(String source)
     {
         char paddingChar = ' ';
